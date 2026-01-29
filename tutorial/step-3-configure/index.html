@@ -756,10 +756,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#getting-an-anthropic-api-key" class="md-nav__link">
+  <a href="#option-a-anthropic-claude-recommended" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Getting an Anthropic API Key
+        Option A: Anthropic (Claude) - Recommended
       
     </span>
   </a>
@@ -767,10 +767,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#getting-an-openai-api-key" class="md-nav__link">
+  <a href="#option-b-openai-gpt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Getting an OpenAI API Key
+        Option B: OpenAI (GPT)
       
     </span>
   </a>
@@ -903,7 +903,7 @@
   <a href="#do" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DO ✅
+        Do
       
     </span>
   </a>
@@ -914,7 +914,7 @@
   <a href="#dont" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DON'T ❌
+        Don't
       
     </span>
   </a>
@@ -1632,10 +1632,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#getting-an-anthropic-api-key" class="md-nav__link">
+  <a href="#option-a-anthropic-claude-recommended" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Getting an Anthropic API Key
+        Option A: Anthropic (Claude) - Recommended
       
     </span>
   </a>
@@ -1643,10 +1643,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#getting-an-openai-api-key" class="md-nav__link">
+  <a href="#option-b-openai-gpt" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Getting an OpenAI API Key
+        Option B: OpenAI (GPT)
       
     </span>
   </a>
@@ -1779,7 +1779,7 @@
   <a href="#do" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DO ✅
+        Do
       
     </span>
   </a>
@@ -1790,7 +1790,7 @@
   <a href="#dont" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DON'T ❌
+        Don't
       
     </span>
   </a>
@@ -1907,17 +1907,14 @@
 
 <h1 id="step-3-configure-apis">Step 3: Configure APIs</h1>
 <p>Now that your environment is set up and process is documented, you'll configure API access for GitHub and your AI provider.</p>
-<div class="admonition info">
-<p class="admonition-title">Time Estimate</p>
-<p>10-15 minutes</p>
-</div>
+<p><strong>Time Estimate:</strong> 10-15 minutes</p>
 <h2 id="what-youll-accomplish">What You'll Accomplish</h2>
 <p>By the end of this step:</p>
 <ul>
-<li>✅ GitHub API token created and tested</li>
-<li>✅ AI provider API key obtained and configured</li>
-<li>✅ Security best practices understood</li>
-<li>✅ API connections verified</li>
+<li>GitHub API token created and tested</li>
+<li>AI provider API key obtained and configured</li>
+<li>Security best practices understood</li>
+<li>API connections verified</li>
 </ul>
 <h2 id="api-keys-youll-need">API Keys You'll Need</h2>
 <h3 id="1-github-token-required">1. GitHub Token (Required)</h3>
@@ -1931,7 +1928,7 @@
 <ol>
 <li><strong>Click "Generate new token"</strong></li>
 </ol>
-<p>Choose <strong>"Generate new token (classic)"</strong></p>
+<p>Choose "Generate new token (classic)"</p>
 <ol>
 <li>
 <p><strong>Configure Token</strong></p>
@@ -1943,28 +1940,22 @@
 <li>
 <p><strong>Scopes:</strong> Select the minimum needed:</p>
 <ul>
-<li>For public repos only: ✅ <code>public_repo</code></li>
-<li>For private repos: ✅ <code>repo</code> (full control)</li>
+<li>For public repos only: <code>public_repo</code></li>
+<li>For private repos: <code>repo</code> (full control)</li>
 </ul>
 </li>
 <li>
 <p><strong>Generate and Copy</strong></p>
 </li>
 </ol>
-<p>Click "Generate token" and <strong>copy it immediately</strong> - you won't see it again!</p>
+<p>Click "Generate token" and copy it immediately - you won't see it again.</p>
 <p>Format: <code>ghp_xxxxxxxxxxxxxxxxxxxx</code></p>
-<div class="admonition warning">
-<p class="admonition-title">Save Your Token</p>
-<p>Store the token in your password manager immediately. If you lose it, you'll need to generate a new one.</p>
-</div>
+<p><strong>Save Your Token:</strong> Store the token in your password manager immediately. If you lose it, you'll need to generate a new one.</p>
 <h3 id="2-ai-provider-api-key-required">2. AI Provider API Key (Required)</h3>
-<p>Choose <strong>one</strong> of these providers:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Anthropic (Claude)</label><label for="__tabbed_1_2">OpenAI (GPT)</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><strong>Recommended for this tutorial</strong></p>
-<p><strong>Why Claude?</strong> Excellent at following detailed instructions and explaining reasoning</p>
-<h4 id="getting-an-anthropic-api-key">Getting an Anthropic API Key</h4>
+<p>Choose one of these providers:</p>
+<h4 id="option-a-anthropic-claude-recommended">Option A: Anthropic (Claude) - Recommended</h4>
+<p><strong>Why Claude:</strong> Excellent at following detailed instructions and explaining reasoning</p>
+<p><strong>Getting an Anthropic API Key:</strong></p>
 <ol>
 <li>Go to <a href="https://console.anthropic.com/">console.anthropic.com</a></li>
 <li>Sign up or log in</li>
@@ -1973,26 +1964,21 @@
 <li>Give it a name: "Release Notes Automation"</li>
 <li>Copy the key (starts with <code>sk-ant-</code>)</li>
 </ol>
-<p><strong>Pricing:</strong> Pay-as-you-go, ~$0.01-0.03 per release notes generation</p>
+<p><strong>Pricing:</strong> Pay-as-you-go, approximately $0.01-0.03 per release notes generation</p>
 <p><strong>Free tier:</strong> $5 credit for new accounts</p>
-</div>
-<div class="tabbed-block">
-<p><strong>Alternative option</strong></p>
-<p><strong>Why GPT?</strong> Widely available, fast, good general performance</p>
-<h4 id="getting-an-openai-api-key">Getting an OpenAI API Key</h4>
+<h4 id="option-b-openai-gpt">Option B: OpenAI (GPT)</h4>
+<p><strong>Why GPT:</strong> Widely available, fast, good general performance</p>
+<p><strong>Getting an OpenAI API Key:</strong></p>
 <ol>
 <li>Go to <a href="https://platform.openai.com/">platform.openai.com</a></li>
 <li>Sign up or log in</li>
-<li>Click your profile → "View API Keys"</li>
+<li>Click your profile then "View API Keys"</li>
 <li>Click "Create new secret key"</li>
 <li>Give it a name: "Release Notes Automation"</li>
 <li>Copy the key (starts with <code>sk-</code>)</li>
 </ol>
-<p><strong>Pricing:</strong> Pay-as-you-go, ~$0.02-0.05 per release notes generation</p>
+<p><strong>Pricing:</strong> Pay-as-you-go, approximately $0.02-0.05 per release notes generation</p>
 <p><strong>Free tier:</strong> $5 credit for new accounts (first 3 months)</p>
-</div>
-</div>
-</div>
 <h2 id="configuring-your-keys">Configuring Your Keys</h2>
 <h3 id="1-open-configuration-file">1. Open Configuration File</h3>
 <p>Edit <code>config.yaml</code> in the repository root:</p>
@@ -2010,9 +1996,7 @@
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>nano<span class="w"> </span>config.yaml
 </code></pre></div>
 <h3 id="2-add-your-keys">2. Add Your Keys</h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Using Anthropic (Claude)</label><label for="__tabbed_2_2">Using OpenAI (GPT)</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><strong>If using Anthropic (Claude):</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># AI Provider</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">ai_provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;anthropic&quot;</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">ai_api_key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sk-ant-your-actual-key-here&quot;</span>
@@ -2025,8 +2009,7 @@
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="nt">default_repo</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;your-username/your-repo&quot;</span>
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="nt">output_file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;release_notes.md&quot;</span>
 </code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><strong>If using OpenAI (GPT):</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># AI Provider</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">ai_provider</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;openai&quot;</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">ai_api_key</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;sk-your-actual-key-here&quot;</span>
@@ -2039,24 +2022,18 @@
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nt">default_repo</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;your-username/your-repo&quot;</span>
 <a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="nt">output_file</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;release_notes.md&quot;</span>
 </code></pre></div>
-</div>
-</div>
-</div>
 <h3 id="3-save-the-file">3. Save the File</h3>
 <p>Save and close your editor.</p>
-<div class="admonition danger">
-<p class="admonition-title">Never Commit This File</p>
-<p>The <code>config.yaml</code> file is in <code>.gitignore</code> to prevent accidental commits. Double-check:</p>
+<p><strong>Never Commit This File:</strong> The <code>config.yaml</code> file is in <code>.gitignore</code> to prevent accidental commits. Double-check:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>status
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># Should NOT show config.yaml as modified</span>
 </code></pre></div>
-</div>
 <h2 id="testing-your-configuration">Testing Your Configuration</h2>
 <h3 id="test-1-configuration-file-loads">Test 1: Configuration File Loads</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">cd</span><span class="w"> </span><span class="m">01</span>-release-notes-automation
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import yaml; config = yaml.safe_load(open(&#39;../config.yaml&#39;)); print(&#39;✓ Configuration loaded&#39;)&quot;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import yaml; config = yaml.safe_load(open(&#39;../config.yaml&#39;)); print(&#39;Configuration loaded&#39;)&quot;</span>
 </code></pre></div>
-<p><strong>Expected:</strong> <code>✓ Configuration loaded</code></p>
+<p><strong>Expected:</strong> <code>Configuration loaded</code></p>
 <h3 id="test-2-github-api-access">Test 2: GitHub API Access</h3>
 <p>Test GitHub connection:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span>
@@ -2065,14 +2042,12 @@
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="s2">config = yaml.safe_load(open(&#39;../config.yaml&#39;))</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="s2">g = Github(config[&#39;github_token&#39;])</span>
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="s2">user = g.get_user()</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="s2">print(f&#39;✓ GitHub API working. Connected as: {user.login}&#39;)</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="s2">print(f&#39;GitHub API working. Connected as: {user.login}&#39;)</span>
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="s2">&quot;</span>
 </code></pre></div>
-<p><strong>Expected:</strong> <code>✓ GitHub API working. Connected as: your-username</code></p>
+<p><strong>Expected:</strong> <code>GitHub API working. Connected as: your-username</code></p>
 <h3 id="test-3-ai-api-access">Test 3: AI API Access</h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Test Anthropic</label><label for="__tabbed_3_2">Test OpenAI</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p><strong>Test Anthropic:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="s2">import anthropic</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="s2">import yaml</span>
@@ -2083,12 +2058,11 @@
 <a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="s2">    max_tokens=10,</span>
 <a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="s2">    messages=[{&#39;role&#39;: &#39;user&#39;, &#39;content&#39;: &#39;Say hello&#39;}]</span>
 <a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="s2">)</span>
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="s2">print(&#39;✓ Anthropic API working&#39;)</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="s2">print(&#39;Anthropic API working&#39;)</span>
 <a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="s2">print(f&#39;Response: {message.content[0].text}&#39;)</span>
 <a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="s2">&quot;</span>
 </code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><strong>Test OpenAI:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="s2">from openai import OpenAI</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="s2">import yaml</span>
@@ -2099,43 +2073,40 @@
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="s2">    messages=[{&#39;role&#39;: &#39;user&#39;, &#39;content&#39;: &#39;Say hello&#39;}],</span>
 <a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="s2">    max_tokens=10</span>
 <a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="s2">)</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="s2">print(&#39;✓ OpenAI API working&#39;)</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="s2">print(&#39;OpenAI API working&#39;)</span>
 <a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="s2">print(f&#39;Response: {response.choices[0].message.content}&#39;)</span>
 <a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="s2">&quot;</span>
 </code></pre></div>
-</div>
-</div>
-</div>
 <p><strong>Expected:</strong> Success message with a response</p>
 <h2 id="security-best-practices">Security Best Practices</h2>
-<h3 id="do">DO ✅</h3>
+<h3 id="do">Do</h3>
 <ul>
 <li>
-<p><strong>Use environment variables</strong> for production:
+<p>Use environment variables for production:
   <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">GITHUB_TOKEN</span><span class="o">=</span><span class="s2">&quot;your-token&quot;</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">AI_API_KEY</span><span class="o">=</span><span class="s2">&quot;your-key&quot;</span>
 </code></pre></div></p>
 </li>
 <li>
-<p><strong>Add config.yaml to .gitignore</strong> (already done)</p>
+<p>Add config.yaml to .gitignore (already done)</p>
 </li>
 <li>
-<p><strong>Rotate keys regularly</strong> (every 90 days)</p>
+<p>Rotate keys regularly (every 90 days)</p>
 </li>
 <li>
-<p><strong>Use minimal scopes</strong> (only <code>public_repo</code> if possible)</p>
+<p>Use minimal scopes (only <code>public_repo</code> if possible)</p>
 </li>
 <li>
-<p><strong>Store in password manager</strong> for backup</p>
+<p>Store in password manager for backup</p>
 </li>
 </ul>
-<h3 id="dont">DON'T ❌</h3>
+<h3 id="dont">Don't</h3>
 <ul>
-<li><strong>Never commit</strong> <code>config.yaml</code> with real keys</li>
-<li><strong>Don't share</strong> API keys in Slack/email</li>
-<li><strong>Don't use</strong> production tokens for testing</li>
-<li><strong>Don't hardcode</strong> keys in scripts</li>
-<li><strong>Don't push</strong> to public repositories with keys</li>
+<li>Never commit <code>config.yaml</code> with real keys</li>
+<li>Don't share API keys in Slack or email</li>
+<li>Don't use production tokens for testing</li>
+<li>Don't hardcode keys in scripts</li>
+<li>Don't push to public repositories with keys</li>
 </ul>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <h3 id="invalid-github-token">Invalid GitHub Token</h3>
@@ -2175,23 +2146,17 @@
 <h2 id="what-youve-learned">What You've Learned</h2>
 <p>In this step, you:</p>
 <ul>
-<li>✅ Created GitHub API token with appropriate scopes</li>
-<li>✅ Obtained AI provider API key</li>
-<li>✅ Configured both keys securely</li>
-<li>✅ Verified API connections work</li>
-<li>✅ Learned security best practices</li>
+<li>Created GitHub API token with appropriate scopes</li>
+<li>Obtained AI provider API key</li>
+<li>Configured both keys securely</li>
+<li>Verified API connections work</li>
+<li>Learned security best practices</li>
 </ul>
 <h2 id="next-step">Next Step</h2>
-<p>With APIs configured, you're ready to run your first automation!</p>
-<p><a class="md-button md-button--primary" href="../step-4-run-first-time/">Next: Step 4 - First Run →</a></p>
+<p>With APIs configured, you're ready to run your first automation.</p>
+<p><a href="../step-4-run-first-time/">Next: Step 4 - First Run</a></p>
 <hr />
-<div class="admonition tip">
-<p class="admonition-title">API Costs</p>
-<p><strong>Estimated cost per run:</strong>
-- GitHub API: Free (rate limited to 5,000 requests/hour)
-- AI API: $0.01-0.05 per release notes generation</p>
-<p>For typical biweekly releases: <strong>~$0.50-1.00 per month</strong></p>
-</div>
+<p><strong>API Costs:</strong> Estimated cost per run - GitHub API: Free (rate limited to 5,000 requests/hour), AI API: $0.01-0.05 per release notes generation. For typical biweekly releases: approximately $0.50-1.00 per month.</p>
 
 
 

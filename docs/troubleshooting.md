@@ -172,7 +172,7 @@ source venv/bin/activate  # bash/zsh
    --since 2024-01-01
    
    # Not future dates
-   --since 2025-12-31  # ❌ Won't find anything
+   --since 2025-12-31  # Won't find anything
    ```
 
 2. **Verify repository access:**
@@ -192,11 +192,11 @@ source venv/bin/activate  # bash/zsh
 3. **Check repository name:**
    ```bash
    # Correct format
-   --repo octocat/Hello-World  # ✅ owner/repo
+   --repo octocat/Hello-World  # owner/repo
    
    # Incorrect formats
-   --repo Hello-World          # ❌ Missing owner
-   --repo github.com/octocat/Hello-World  # ❌ Include domain
+   --repo Hello-World          # Missing owner
+   --repo github.com/octocat/Hello-World  # Include domain
    ```
 
 4. **Private repository:**
@@ -268,7 +268,7 @@ Check your provider's documentation:
    # Good: "Fix memory leak in parser"
    ```
    - AI can only categorize based on commit message
-   - Bad commit messages → bad categorization
+   - Bad commit messages lead to bad categorization
 
 4. **Iterate on prompt:**
    - See [Prompt Evolution](examples/prompt-evolution.md)
@@ -321,18 +321,18 @@ See [Prompt Engineering Reference](reference/prompt-engineering.md)
 
 ```
 New Features: "Add" + "wholly new capability"
-Examples: "Add user authentication" ✅
-Not: "Add performance improvement" ❌ (enhancement)
+Examples: "Add user authentication" (Correct)
+Not: "Add performance improvement" (Enhancement)
 
 Enhancements: "Improve", "Update", "Optimize"
-Examples: "Improve search performance" ✅
+Examples: "Improve search performance" (Correct)
 ```
 
 ### Missing Contextual Information
 
 **Problem:** Output is accurate but lacks business context
 
-**Solution:** This is expected!
+**Solution:** This is expected.
 
 The automation provides accurate categorization. Human review adds:
 
@@ -341,13 +341,13 @@ The automation provides accurate categorization. Human review adds:
 - Context for non-technical readers
 - Emphasis on important changes
 
-**Time savings still significant:** 90 minutes → 15 minutes
+Time savings still significant: 90 minutes to 15 minutes
 
 ## Performance Issues
 
 ### Script Runs Very Slowly
 
-**Problem:** Takes >5 minutes for small repository
+**Problem:** Takes more than 5 minutes for small repository
 
 **Checklist:**
 
@@ -376,12 +376,12 @@ The automation provides accurate categorization. Human review adds:
 1. **Check model selection:**
    ```yaml
    # More expensive
-   model: "claude-3-opus-20240229"    # $$$$
-   model: "gpt-4"                     # $$$
+   model: "claude-3-opus-20240229"    # Higher cost
+   model: "gpt-4"                     # Higher cost
    
    # Cost-effective
-   model: "claude-3-sonnet-20240229"  # $$
-   model: "gpt-3.5-turbo"             # $
+   model: "claude-3-sonnet-20240229"  # Moderate cost
+   model: "gpt-3.5-turbo"             # Lower cost
    ```
 
 2. **Batch requests:**
@@ -426,7 +426,7 @@ Create a new issue with:
 - Error message (full text)
 - Steps to reproduce
 - Your environment (OS, Python version)
-- Relevant configuration (with API keys removed!)
+- Relevant configuration (with API keys removed)
 
 **DO NOT share:**
 
@@ -436,4 +436,4 @@ Create a new issue with:
 
 ---
 
-**Still having issues?** [Open an issue](https://github.com/rebeja/docs-automation-examples/issues){ .md-button }
+**Still having issues?** [Open an issue](https://github.com/rebeja/docs-automation-examples/issues)

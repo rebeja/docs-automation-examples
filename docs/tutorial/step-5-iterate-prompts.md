@@ -2,23 +2,19 @@
 
 This is where the magic happens. You'll take your improvement list from Step 4 and systematically refine your prompts to achieve high-quality categorization.
 
-!!! info "Time Estimate"
-    30-60 minutes (iterative)
+**Time Estimate:** 30-60 minutes (iterative)
 
-!!! success "Key Principle"
-    **"Plans are faster to iterate than code."**
-    
-    The same applies to prompts: Refining prompts is faster than rewriting code. Small changes to your categorization instructions can dramatically improve results.
+**Key Principle:** Plans are faster to iterate than code. The same applies to prompts: Refining prompts is faster than rewriting code. Small changes to your categorization instructions can dramatically improve results.
 
 ## What You'll Accomplish
 
 By the end of this step:
 
-- ✅ Understanding of prompt engineering basics
-- ✅ Refined categorization instructions
-- ✅ Testing methodology for improvements
-- ✅ 85%+ categorization accuracy
-- ✅ Ready-to-use automation
+- Understanding of prompt engineering basics
+- Refined categorization instructions
+- Testing methodology for improvements
+- 85%+ categorization accuracy
+- Ready-to-use automation
 
 ## Understanding the Current Prompt
 
@@ -74,11 +70,11 @@ If a commit doesn't fit any category or should be excluded, omit it from the out
 
 Based on your Step 4 review, the prompt might be:
 
-- ❌ Too vague on category definitions
-- ❌ Missing specific keyword indicators
-- ❌ Insufficient examples
-- ❌ Incomplete exclusion rules
-- ❌ Unclear about edge cases
+- Too vague on category definitions
+- Missing specific keyword indicators
+- Insufficient examples
+- Incomplete exclusion rules
+- Unclear about edge cases
 
 ## The Iteration Process
 
@@ -101,36 +97,36 @@ Categories with Examples:
 
 **New Features** - Wholly new capabilities that didn't exist before
 Examples:
-- "Add user authentication system" ✅
-- "Create new dashboard view" ✅
-- "Introduce webhook support" ✅
+- "Add user authentication system" (Correct)
+- "Create new dashboard view" (Correct)
+- "Introduce webhook support" (Correct)
 NOT examples:
-- "Improve existing search" ❌ (this is an enhancement)
-- "Update authentication flow" ❌ (enhancement to existing feature)
+- "Improve existing search" (This is an enhancement)
+- "Update authentication flow" (Enhancement to existing feature)
 
 **Enhancements** - Improvements to existing features
 Examples:
-- "Improve search performance by 50%" ✅
-- "Update API response format" ✅
-- "Optimize database queries" ✅
+- "Improve search performance by 50%" (Correct)
+- "Update API response format" (Correct)
+- "Optimize database queries" (Correct)
 NOT examples:
-- "Add search feature" ❌ (this is a new feature)
-- "Fix search bug" ❌ (this is a bug fix)
+- "Add search feature" (This is a new feature)
+- "Fix search bug" (This is a bug fix)
 
 **Bug Fixes** - Corrections to existing functionality
 Examples:
-- "Fix memory leak in parser" ✅
-- "Resolve login timeout issue" ✅
-- "Correct validation logic" ✅
+- "Fix memory leak in parser" (Correct)
+- "Resolve login timeout issue" (Correct)
+- "Correct validation logic" (Correct)
 NOT examples:
-- "Improve validation performance" ❌ (this is an enhancement)
-- "Add validation to new field" ❌ (part of new feature)
+- "Improve validation performance" (This is an enhancement)
+- "Add validation to new field" (Part of new feature)
 
 **Documentation** - Content updates, guides, API docs
 Examples:
-- "Update API documentation" ✅
-- "Fix typo in README" ✅
-- "Add usage examples to guide" ✅
+- "Update API documentation" (Correct)
+- "Fix typo in README" (Correct)
+- "Add usage examples to guide" (Correct)
 
 Exclusions (do not include):
 - Commits containing: "WIP", "temp", "test only", "internal"
@@ -299,9 +295,9 @@ Manual Time - (Automation Time + Review Time) = Time Saved
 
 Track over multiple runs:
 
-- False positives (incorrectly included) → Target: <5%
-- False negatives (missed items) → Target: <3%
-- Miscategorizations → Target: <10%
+- False positives (incorrectly included) → Target: less than 5%
+- False negatives (missed items) → Target: less than 3%
+- Miscategorizations → Target: less than 10%
 
 ## Advanced Refinements
 
@@ -381,14 +377,13 @@ diff -y notes_v3.md notes_v4.md
 
 You've reached a good stopping point when:
 
-- ✅ Accuracy is 85%+ consistently
-- ✅ Time saved is significant (>70%)
-- ✅ Manual review is manageable (<20 minutes)
-- ✅ No new issues in last 2-3 iterations
-- ✅ Prompt changes are becoming very minor
+- Accuracy is 85%+ consistently
+- Time saved is significant (more than 70%)
+- Manual review is manageable (less than 20 minutes)
+- No new issues in last 2-3 iterations
+- Prompt changes are becoming very minor
 
-!!! warning "Diminishing Returns"
-    Going from 85% to 95% accuracy might take more time than the automation saves. Know when "good enough" is actually excellent.
+**Diminishing Returns:** Going from 85% to 95% accuracy might take more time than the automation saves. Know when "good enough" is actually excellent.
 
 ## Common Patterns That Work
 
@@ -398,34 +393,34 @@ Based on real projects:
 2. **Keyword lists** help with boundary cases
 3. **Negative examples** ("NOT this") clarify confusion
 4. **Specific exclusions** more effective than general rules
-5. **Shorter prompts with clear structure** > long rambling prompts
+5. **Shorter prompts with clear structure** better than long rambling prompts
 
 ## Your Final Prompt
 
 By now, you should have a refined prompt that:
 
-- ✅ Clearly defines each category with examples
-- ✅ Includes keyword indicators
-- ✅ Has comprehensive exclusion rules
-- ✅ Handles your specific edge cases
-- ✅ Matches your documented manual process
+- Clearly defines each category with examples
+- Includes keyword indicators
+- Has comprehensive exclusion rules
+- Handles your specific edge cases
+- Matches your documented manual process
 
-Save this as your production prompt!
+Save this as your production prompt.
 
 ## What You've Learned
 
 In this step, you:
 
-- ✅ Understood prompt engineering basics
-- ✅ Iteratively refined categorization instructions
-- ✅ Added examples, keywords, and exclusions
-- ✅ Measured improvement objectively
-- ✅ Achieved production-ready accuracy
-- ✅ Developed testing methodology
+- Understood prompt engineering basics
+- Iteratively refined categorization instructions
+- Added examples, keywords, and exclusions
+- Measured improvement objectively
+- Achieved production-ready accuracy
+- Developed testing methodology
 
-## You're Done! 🎉
+## You're Done
 
-Congratulations! You've built your first documentation automation using AI coding agents.
+Congratulations. You've built your first documentation automation using AI coding agents.
 
 ### Next Steps
 
@@ -436,7 +431,6 @@ Congratulations! You've built your first documentation automation using AI codin
 
 ---
 
-[View All Examples →](../examples/prompt-evolution.md){ .md-button } [Back to Tutorial Home](index.md){ .md-button }
+[View All Examples](../examples/prompt-evolution.md) | [Back to Tutorial Home](index.md)
 
-!!! tip "Keep Learning"
-    The skills you've learned here—documenting processes, prompt engineering, iterative refinement—apply to ALL automation projects, not just release notes.
+**Keep Learning:** The skills you've learned here—documenting processes, prompt engineering, iterative refinement—apply to all automation projects, not just release notes.

@@ -2,7 +2,7 @@
 
 ## Our Pledge
 
-We as members, contributors, and leaders pledge to make participation in the Release Notes Automation Starter community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
+We pledge to make participation in the Release Notes Automation Starter community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, color, religion, or sexual identity and orientation.
 
 We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community.
 
@@ -18,7 +18,6 @@ We pledge to act and interact in ways that contribute to an open, welcoming, div
 - Acknowledging and learning from mistakes
 - Helping newcomers feel welcome and supported
 - Giving and receiving feedback professionally
-- Celebrating the contributions of others
 
 ### Examples of Unacceptable Behavior
 
@@ -46,7 +45,7 @@ This Code of Conduct applies within all community spaces, including:
 - Social media when representing the project
 - Project events (virtual or in-person)
 
-This Code of Conduct also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
+This Code of Conduct also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official email address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
 
 ## Enforcement
 
@@ -105,32 +104,18 @@ Community leaders will follow these Community Impact Guidelines in determining t
 
 **Consequence**: A permanent ban from any sort of public interaction within the community.
 
-## Our Commitment to Technical Writers
+## For Technical Writers
 
-This project is specifically designed to welcome technical writers who may be new to programming and automation. We are especially committed to:
+This project is designed to welcome technical writers who may be new to programming and automation. We are committed to:
 
-### Creating a Learning-Friendly Environment
+- Welcoming all questions, regardless of experience level
+- Providing patient support for those learning new skills
+- Explaining technical concepts in accessible terms
+- Respecting various skill levels and backgrounds
+- Supporting first-time open source contributors
+- Helping contributors learn Git, GitHub, and collaboration workflows
 
-- **No "dumb questions"** - All questions are welcome, regardless of experience level
-- **Patience with learning** - We understand not everyone has a development background
-- **Explaining technical concepts** - We strive to make technical content accessible
-- **Celebrating progress** - Learning to automate is an achievement worth recognizing
-
-### Respecting Diverse Backgrounds
-
-- **Various skill levels** - From beginners to experts, all are welcome
-- **Different disciplines** - Technical writers, developers, content strategists, and more
-- **Learning styles** - We accommodate different ways of learning and contributing
-- **Professional contexts** - Understanding different workplace environments and constraints
-
-### Supporting First-Time Contributors
-
-- **First PR anxiety** - We understand contributing to open source can be intimidating
-- **Detailed feedback** - We provide constructive, educational feedback on contributions
-- **"Good first issue" labels** - We mark beginner-friendly tasks clearly
-- **Patience with process** - We help contributors learn Git, GitHub, and collaboration workflows
-
-## Additional Guidelines
+## Guidelines for Participation
 
 ### For Reviewers and Maintainers
 
@@ -170,13 +155,13 @@ We may update this Code of Conduct from time to time. We will notify the communi
 - Announcing changes in project discussions
 - Noting the change in the CHANGELOG
 
-## Questions?
+## Questions
 
 If you have questions about this Code of Conduct or how it's enforced:
 
-- **Open an issue**: For general questions or clarifications
-- **Email directly**: For sensitive concerns or reports
-- **Start a discussion**: For suggestions or improvements to this document
+- Open an issue for general questions or clarifications
+- Email directly for sensitive concerns or reports
+- Start a discussion for suggestions or improvements to this document
 
 ---
 

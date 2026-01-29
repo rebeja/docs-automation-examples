@@ -8,18 +8,18 @@ Before starting, make sure you have:
 
 ### Required
 
-- [x] **Python 3.8 or higher** - Check with `python --version` or `python3 --version`
-- [x] **Git installed** - Check with `git --version`
-- [x] **GitHub account** - For API access (or GitLab/Bitbucket equivalent)
-- [x] **AI API access** - Anthropic (Claude) or OpenAI account
-- [x] **Command line comfort** - Ability to run terminal commands
-- [x] **Text editor** - VS Code, Cursor, Sublime Text, or similar
+- Python 3.8 or higher (check with `python --version` or `python3 --version`)
+- Git installed (check with `git --version`)
+- GitHub account for API access (or GitLab/Bitbucket equivalent)
+- AI API access (Anthropic Claude or OpenAI account)
+- Command line comfort (ability to run terminal commands)
+- Text editor (VS Code, Cursor, Sublime Text, or similar)
 
-### Nice to Have
+### Recommended
 
-- [ ] **Cursor or AI coding tool** - For asking questions and iterating
-- [ ] **Existing docs-as-code workflow** - Makes adaptation easier
-- [ ] **Write the Docs community membership** - For sharing and learning
+- Cursor or AI coding tool for asking questions and iterating
+- Existing docs-as-code workflow (makes adaptation easier)
+- Write the Docs community membership for sharing and learning
 
 ## Installation
 
@@ -32,19 +32,21 @@ cd docs-automation-examples
 
 ### 2. Create Virtual Environment
 
-Using a virtual environment keeps dependencies isolated:
+Using a virtual environment keeps dependencies isolated.
 
-=== "macOS/Linux"
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
+**On macOS/Linux:**
 
-=== "Windows"
-    ```bash
-    python -m venv venv
-    venv\Scripts\activate
-    ```
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+**On Windows:**
+
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
 
 You should see `(venv)` in your terminal prompt.
 
@@ -65,10 +67,10 @@ This installs:
 ### 4. Verify Installation
 
 ```bash
-python -c "import anthropic; import github; print('✓ Dependencies installed')"
+python -c "import anthropic; import github; print('Dependencies installed')"
 ```
 
-If you see `✓ Dependencies installed`, you're ready!
+If you see `Dependencies installed`, the setup is complete.
 
 ## Configuration
 
@@ -80,8 +82,7 @@ Copy the example configuration:
 cp config.example.yaml config.yaml
 ```
 
-!!! warning "Security Note"
-    Never commit `config.yaml` with real API keys. It's already in `.gitignore`.
+**Security Note:** Never commit `config.yaml` with real API keys. It's already in `.gitignore`.
 
 ### 2. Get API Keys
 
@@ -89,7 +90,7 @@ You'll need two types of API keys:
 
 #### AI Provider (Required)
 
-Choose **either** Anthropic or OpenAI:
+Choose either Anthropic or OpenAI.
 
 **Option A: Anthropic (Claude)**
 
@@ -110,13 +111,13 @@ Choose **either** Anthropic or OpenAI:
 #### GitHub Token (Required)
 
 1. Go to [github.com/settings/tokens](https://github.com/settings/tokens)
-2. Click "Generate new token" → "Generate new token (classic)"
+2. Click "Generate new token" then "Generate new token (classic)"
 3. Give it a name like "Release Notes Automation"
 4. Select scopes:
-    - ✅ `repo` (Full control of private repositories)
+    - `repo` (Full control of private repositories)
     - Or just `public_repo` if only accessing public repos
 5. Click "Generate token"
-6. Copy the token immediately (you won't see it again!)
+6. Copy the token immediately (you won't see it again)
 
 ### 3. Edit Configuration File
 
@@ -220,39 +221,39 @@ The generated `release_notes.md` looks like:
 **Date:** 2024-01-20
 **Period:** Since 2024-01-01
 
-## 🎉 New Features
+## New Features
 
 - Add user authentication feature ([abc123](link))
 
-## ✨ Enhancements
+## Enhancements
 
 - Improve search performance by 50% ([def456](link))
 
-## 🐛 Bug Fixes
+## Bug Fixes
 
 - Fix memory leak in parser ([ghi789](link))
 
-## 📝 Documentation
+## Documentation
 
 - Update API documentation ([jkl012](link))
 ```
 
-**This is a draft** - Always review before publishing:
+**This is a draft.** Always review before publishing:
 
-- ✓ Check categorization accuracy
-- ✓ Add context for major changes
-- ✓ Remove internal-only items that slipped through
-- ✓ Adjust wording for your audience
-- ✓ Add links to related documentation
+- Check categorization accuracy
+- Add context for major changes
+- Remove internal-only items that slipped through
+- Adjust wording for your audience
+- Add links to related documentation
 
 ## Next Steps
 
 Now that you have the basics working:
 
-1. **[Document your process](tutorial/step-2-document-process.md)** - Write down your manual release notes workflow
-2. **[Iterate on prompts](tutorial/step-5-iterate-prompts.md)** - Refine categorization for your needs
-3. **[Explore examples](examples/prompt-evolution.md)** - See how others refined their prompts
+1. [Document your process](tutorial/step-2-document-process.md) - Write down your manual release notes workflow
+2. [Iterate on prompts](tutorial/step-5-iterate-prompts.md) - Refine categorization for your needs
+3. [Explore examples](examples/prompt-evolution.md) - See how others refined their prompts
 
 ---
 
-**Ready to customize?** [Start the Tutorial →](tutorial/index.md){ .md-button .md-button--primary }
+[Start the Tutorial](tutorial/index.md)

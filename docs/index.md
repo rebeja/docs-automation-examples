@@ -1,8 +1,8 @@
 # Release Notes Automation Starter
 
-## Welcome
+## Overview
 
-Transform your release notes workflow from days of manual curation to minutes of automated draft generation. This starter project shows you how to use AI coding agents to automate release notes creation from GitHub commits—no programming experience required.
+This project demonstrates how to automate release notes creation from GitHub commits using AI. It provides a working example and tutorial for technical writers exploring AI-assisted automation.
 
 ## What This Does
 
@@ -19,26 +19,17 @@ graph LR
 
 **The automation handles:**
 
-- ✅ Fetching commits from GitHub API
-- ✅ Filtering out internal/WIP changes
-- ✅ Categorizing into Features, Enhancements, Bug Fixes, Documentation
-- ✅ Formatting as Markdown with commit links
-- ✅ Generating draft for human review
+- Fetching commits from GitHub API
+- Filtering out internal/WIP changes
+- Categorizing into Features, Enhancements, Bug Fixes, Documentation
+- Formatting as Markdown with commit links
+- Generating draft for human review
 
 **You provide:**
 
 - Your categorization standards
 - Final review and context
 - Decision to publish
-
-## Time Savings
-
-| Manual Process | With Automation |
-|---------------|----------------|
-| 4-8 hours per release | 15-30 minutes |
-| Review 50+ commits | Review AI draft |
-| Manual categorization | AI categorization |
-| Inconsistent format | Consistent format |
 
 ## Quick Start
 
@@ -48,17 +39,18 @@ graph LR
 2. **[Configure the tool](tutorial/step-3-configure.md)** - Add your API keys
 3. **[Run and iterate](tutorial/step-4-run-first-time.md)** - Generate your first draft and refine the prompts
 
-👉 **[Start the Tutorial →](tutorial/index.md)**
+[Start the Tutorial](tutorial/index.md)
 
 ## Who This Is For
 
 **This starter is designed for:**
 
-- ✅ Technical writers working in docs-as-code environments
-- ✅ Teams using GitHub, GitLab, or Bitbucket
-- ✅ Anyone with basic Git knowledge and command line comfort
-- ✅ Writers exploring AI-assisted automation
-- ❌ No programming experience required!
+- Technical writers working in docs-as-code environments
+- Teams using GitHub, GitLab, or Bitbucket
+- Anyone with basic Git knowledge and command line comfort
+- Writers exploring AI-assisted automation
+
+No programming experience is required.
 
 ## What You'll Learn
 
@@ -74,53 +66,56 @@ By working through this project, you'll learn:
 
 This project demonstrates important automation principles:
 
-!!! success "Document Your Process First"
-    Before automating anything, write down your manual workflow. Your documented process becomes the foundation for your automation prompt.
+### Document Your Process First
 
-!!! success "Plan Before Code"
-    Ask AI to write a plan first, then implement. Plans are faster to iterate than code.
+Before automating anything, write down your manual workflow. Your documented process becomes the foundation for your automation prompt.
 
-!!! success "Human-in-the-Loop"
-    Automation generates drafts; humans provide final review and context. This maintains quality while saving time.
+### Plan Before Code
 
-!!! success "Iterate Based on Results"
-    Your first prompt won't be perfect. Test, refine, and improve based on real outputs.
+Ask AI to write a plan first, then implement. Plans are faster to iterate than code.
+
+### Human-in-the-Loop
+
+Automation generates drafts. Humans provide final review and context. This maintains quality while saving time.
+
+### Iterate Based on Results
+
+Your first prompt won't be perfect. Test, refine, and improve based on real outputs.
 
 ## What's Included
 
 This repository contains:
 
-- **Working Python script** - Connects to GitHub API and generates release notes
-- **Sample prompts** - Categorization instructions for AI
-- **Prompt evolution examples** - Shows iteration from simple to refined
-- **Configuration templates** - Easy setup for API keys
-- **Sample data** - Test without API access initially
-- **Step-by-step tutorial** - Complete walkthrough for beginners
-- **Troubleshooting guide** - Solutions to common issues
+- Working Python script that connects to GitHub API and generates release notes
+- Sample prompts with categorization instructions for AI
+- Prompt evolution examples showing iteration from simple to refined
+- Configuration templates for API keys
+- Sample data to test without API access initially
+- Step-by-step tutorial with complete walkthrough
+- Troubleshooting guide with solutions to common issues
 
 ## Next Steps
 
-=== "New to This?"
-    Start with the **[Getting Started](getting-started.md)** guide for prerequisites and installation.
+**New to this?**  
+Start with the [Getting Started](getting-started.md) guide for prerequisites and installation.
 
-=== "Ready to Build?"
-    Jump into the **[Tutorial](tutorial/index.md)** to build your first automation.
+**Ready to build?**  
+Jump into the [Tutorial](tutorial/index.md) to build your first automation.
 
-=== "Need Help?"
-    Check the **[Troubleshooting](troubleshooting.md)** guide or **[FAQ](faq.md)**.
+**Need help?**  
+Check the [Troubleshooting](troubleshooting.md) guide or [FAQ](faq.md).
 
-=== "Want Details?"
-    Explore the **[Reference](reference/configuration.md)** documentation.
+**Want details?**  
+Explore the [Reference](reference/configuration.md) documentation.
 
-## Support This Project
+## Contributing
 
-If this project helps you, please:
+If you'd like to contribute:
 
-- ⭐ Star the [GitHub repository](https://github.com/rebeja/docs-automation-examples)
-- 📝 Share your experience with the technical writing community
-- 🐛 Report issues or suggest improvements
-- 🤝 Contribute examples or improvements
+- Report issues or suggest improvements in the [GitHub repository](https://github.com/rebeja/docs-automation-examples/issues)
+- Share examples or improvements via pull requests
+- See [CONTRIBUTING.md](https://github.com/rebeja/docs-automation-examples/blob/main/CONTRIBUTING.md) for guidelines
 
 ---
 
-**Ready to automate your release notes?** [Get Started →](getting-started.md){ .md-button .md-button--primary }
+[Get Started](getting-started.md)

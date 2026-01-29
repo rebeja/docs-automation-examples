@@ -1,24 +1,22 @@
-# Step 5: Iterate Prompts
+# Step 5: Iterate prompts
 
-This is where the magic happens. You'll take your improvement list from Step 4 and systematically refine your prompts to achieve high-quality categorization.
+Take your improvement list from Step 4 and refine your prompts to achieve high-quality categorization.
 
-**Time Estimate:** 30-60 minutes (iterative)
+**Time estimate:** 30-60 minutes (iterative)
 
-**Key Principle:** Plans are faster to iterate than code. The same applies to prompts: Refining prompts is faster than rewriting code. Small changes to your categorization instructions can dramatically improve results.
+**Key principle:** Plans are faster to iterate than code. The same applies to prompts. Refining prompts is faster than rewriting code. Small changes to your categorization instructions can improve results.
 
-## What You'll Accomplish
+## Complete these tasks
 
-By the end of this step:
+- Learn prompt engineering basics
+- Refine categorization instructions
+- Use testing methodology for improvements
+- Achieve 85%+ categorization accuracy
+- Complete ready-to-use automation
 
-- Understanding of prompt engineering basics
-- Refined categorization instructions
-- Testing methodology for improvements
-- 85%+ categorization accuracy
-- Ready-to-use automation
+## Understand the current prompt
 
-## Understanding the Current Prompt
-
-### 1. Review the Base Prompt
+### 1. Review the base prompt
 
 Open `prompts/categorization_prompt.txt`:
 
@@ -27,7 +25,7 @@ cd 01-release-notes-automation
 cat prompts/categorization_prompt.txt
 ```
 
-**Initial version (simple):**
+Initial version (simple):
 
 ```
 You are helping categorize GitHub commits for release notes.
@@ -66,9 +64,9 @@ Format your response as:
 If a commit doesn't fit any category or should be excluded, omit it from the output.
 ```
 
-### 2. Identify Weaknesses
+### 2. Identify weaknesses
 
-Based on your Step 4 review, the prompt might be:
+The prompt might have these issues based on your Step 4 review:
 
 - Too vague on category definitions
 - Missing specific keyword indicators
@@ -76,15 +74,15 @@ Based on your Step 4 review, the prompt might be:
 - Incomplete exclusion rules
 - Unclear about edge cases
 
-## The Iteration Process
+## Follow the iteration process
 
-Follow this cycle: **Test → Analyze → Refine → Repeat**
+Follow this cycle: Test → Analyze → Refine → Repeat
 
-### Iteration 1: Add Specific Examples
+### Iteration 1: Add specific examples
 
-**Problem:** AI confused about features vs enhancements
+Problem: AI confused about features versus enhancements
 
-**Solution:** Add concrete examples to each category
+Solution: Add concrete examples to each category
 
 Create `prompts/categorization_prompt_v2.txt`:
 
@@ -155,7 +153,7 @@ Format your response as:
 If a commit doesn't fit any category or should be excluded, omit it from the output.
 ```
 
-**Test this version:**
+Test this version:
 
 ```bash
 python generate_release_notes.py \
@@ -165,23 +163,23 @@ python generate_release_notes.py \
   --output release_notes_v2.md
 ```
 
-**Compare results:**
+Compare results:
 
 ```bash
 diff release_notes.md release_notes_v2.md
 ```
 
-**Measure improvement:**
+Measure improvement:
 
-- Did categorization accuracy increase?
-- Are features vs enhancements clearer?
-- Were more appropriate items excluded?
+- Categorization accuracy increased
+- Features versus enhancements clearer
+- More appropriate items excluded
 
-### Iteration 2: Add Keyword Indicators
+### Iteration 2: Add keyword indicators
 
-**Problem:** Still some confusion on edge cases
+Problem: Some confusion on edge cases
 
-**Solution:** Add explicit keyword guidance
+Solution: Add explicit keyword guidance
 
 Create `prompts/categorization_prompt_v3.txt`:
 
@@ -212,7 +210,7 @@ When keywords conflict (e.g., "add improvement"), prioritize based on:
 3. Does this correct unintended behavior? → Bug Fix
 ```
 
-**Test and compare:**
+Test and compare:
 
 ```bash
 python generate_release_notes.py \
@@ -222,11 +220,11 @@ python generate_release_notes.py \
   --output release_notes_v3.md
 ```
 
-### Iteration 3: Refine Exclusions
+### Iteration 3: Refine exclusions
 
-**Problem:** Internal changes still appearing
+Problem: Internal changes still appearing
 
-**Solution:** Add comprehensive exclusion patterns
+Solution: Add comprehensive exclusion patterns
 
 ```
 [Add to exclusion section:]
@@ -261,11 +259,11 @@ Exclusions (do not include):
 When unsure if something should be excluded, include it with a note.
 ```
 
-## Measuring Success
+## Measure success
 
-After each iteration, calculate:
+Calculate these metrics after each iteration:
 
-### Categorization Accuracy
+### Categorization accuracy
 
 ```
 Accuracy = Correct Categories / Total Commits × 100%
@@ -278,20 +276,20 @@ Accuracy = Correct Categories / Total Commits × 100%
 | v3 (with keywords) | 88% | Much improved |
 | v4 (refined exclusions) | 92% | Production ready |
 
-### Time Savings
+### Time savings
 
 ```
 Manual Time - (Automation Time + Review Time) = Time Saved
 ```
 
-**Example:**
+Example:
 
 - Manual process: 90 minutes
 - Automation run: 30 seconds
-- Review/edit draft: 15 minutes
-- **Time saved: 74.5 minutes** (83% reduction)
+- Review or edit draft: 15 minutes
+- Time saved: 74.5 minutes (83% reduction)
 
-### Quality Metrics
+### Quality metrics
 
 Track over multiple runs:
 
@@ -299,9 +297,9 @@ Track over multiple runs:
 - False negatives (missed items) → Target: less than 3%
 - Miscategorizations → Target: less than 10%
 
-## Advanced Refinements
+## Add advanced refinements
 
-### Adding Contextual Rules
+### Add contextual rules
 
 ```
 Special handling:
@@ -319,21 +317,21 @@ Categorize as Enhancements with "(Deprecation Notice)" prefix
 Categorize as Enhancements unless fixing a performance bug
 ```
 
-### Audience-Specific Variations
+### Create audience-specific variations
 
 Create different prompts for different audiences:
 
-**Internal release notes** (`prompts/internal_categorization.txt`):
+Internal release notes (`prompts/internal_categorization.txt`):
 - Include internal tool improvements
-- More technical language OK
+- Use technical language
 - Include infrastructure changes
 
-**External release notes** (`prompts/external_categorization.txt`):
+External release notes (`prompts/external_categorization.txt`):
 - Exclude all internal items
 - Focus on user-facing changes only
 - Use customer-friendly language
 
-**Use with:**
+Use with:
 ```bash
 python generate_release_notes.py \
   --repo your/repo \
@@ -342,9 +340,9 @@ python generate_release_notes.py \
   --output external_release_notes.md
 ```
 
-## Testing Methodology
+## Use testing methodology
 
-### Regression Testing
+### Run regression testing
 
 Create a test set of commits with known correct categorizations:
 
@@ -353,7 +351,7 @@ Create a test set of commits with known correct categorizations:
 3. Track accuracy over iterations
 4. Ensure new refinements don't break previous fixes
 
-### A/B Comparison
+### Compare A/B results
 
 ```bash
 # Generate with two prompt versions
@@ -373,21 +371,21 @@ python generate_release_notes.py \
 diff -y notes_v3.md notes_v4.md
 ```
 
-## When to Stop Iterating
+## Know when to stop iterating
 
-You've reached a good stopping point when:
+Stop iterating when these conditions are met:
 
 - Accuracy is 85%+ consistently
 - Time saved is significant (more than 70%)
 - Manual review is manageable (less than 20 minutes)
 - No new issues in last 2-3 iterations
-- Prompt changes are becoming very minor
+- Prompt changes are becoming minor
 
-**Diminishing Returns:** Going from 85% to 95% accuracy might take more time than the automation saves. Know when "good enough" is actually excellent.
+Going from 85% to 95% accuracy might take more time than the automation saves. Recognize when "good enough" is excellent.
 
-## Common Patterns That Work
+## Apply common patterns
 
-Based on real projects:
+These patterns work in real projects:
 
 1. **Explicit examples** beat vague descriptions
 2. **Keyword lists** help with boundary cases
@@ -395,42 +393,33 @@ Based on real projects:
 4. **Specific exclusions** more effective than general rules
 5. **Shorter prompts with clear structure** better than long rambling prompts
 
-## Your Final Prompt
+## Create your final prompt
 
-By now, you should have a refined prompt that:
+Your refined prompt should have these elements:
 
-- Clearly defines each category with examples
-- Includes keyword indicators
-- Has comprehensive exclusion rules
-- Handles your specific edge cases
-- Matches your documented manual process
+- Clear definitions for each category with examples
+- Keyword indicators
+- Comprehensive exclusion rules
+- Handling for your specific edge cases
+- Match to your documented manual process
 
 Save this as your production prompt.
 
-## What You've Learned
+## Summary
 
-In this step, you:
+You learned prompt engineering basics, iteratively refined categorization instructions, added examples, keywords, and exclusions, measured improvement objectively, achieved production-ready accuracy, and developed testing methodology.
 
-- Understood prompt engineering basics
-- Iteratively refined categorization instructions
-- Added examples, keywords, and exclusions
-- Measured improvement objectively
-- Achieved production-ready accuracy
-- Developed testing methodology
+## Next steps
 
-## You're Done
+You built your first documentation automation using AI coding agents.
 
-Congratulations. You've built your first documentation automation using AI coding agents.
-
-### Next Steps
-
-- **Integrate into workflow** - Use for your next release
-- **Share with team** - Show others how to use it
-- **Build on success** - Try other automation opportunities
-- **Join community** - Share learnings in Write the Docs
+- Integrate into workflow - Use for your next release
+- Share with team - Show others how to use it
+- Build on success - Try other automation opportunities
+- Join community - Share learnings in Write the Docs
 
 ---
 
-[View All Examples](../examples/prompt-evolution.md) | [Back to Tutorial Home](index.md)
+[View all examples](../examples/prompt-evolution.md) | [Back to tutorial home](index.md)
 
-**Keep Learning:** The skills you've learned here—documenting processes, prompt engineering, iterative refinement—apply to all automation projects, not just release notes.
+The skills you learned here—documenting processes, prompt engineering, iterative refinement—apply to all automation projects, not just release notes.

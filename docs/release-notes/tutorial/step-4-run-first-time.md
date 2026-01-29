@@ -1,30 +1,28 @@
-# Step 4: First Run
+# Step 4: First run
 
-Time to generate your first automated release notes. In this step, you'll run the script with sample data, then with a real repository, and learn how to evaluate the results.
+Generate your first automated release notes with sample data, then with a real repository.
 
-**Time Estimate:** 20-30 minutes
+**Time estimate:** 20-30 minutes
 
-## What You'll Accomplish
+## Complete these tasks
 
-By the end of this step:
+- Complete first successful run with sample data
+- Generate release notes from real repository
+- Review output quality
+- Create list of improvements needed
+- Build confidence to iterate
 
-- First successful run with sample data
-- Release notes generated from real repository
-- Understanding of what to review
-- List of improvements needed
-- Confidence to iterate
-
-## Running with Sample Data
+## Run with sample data
 
 Start with built-in sample data to verify everything works without using API credits.
 
-### 1. Navigate to Project Directory
+### 1. Navigate to project directory
 
 ```bash
 cd 01-release-notes-automation
 ```
 
-### 2. Run with Sample Flag
+### 2. Run with sample flag
 
 ```bash
 python generate_release_notes.py \
@@ -35,9 +33,9 @@ python generate_release_notes.py \
 
 The `--sample` flag uses built-in test commits instead of calling GitHub API.
 
-### 3. Review Output
+### 3. Review output
 
-You should see:
+The output shows:
 
 ```
 Fetching commits from sample/repo since 2024-01-01...
@@ -47,13 +45,13 @@ Generating release notes...
 Release notes written to release_notes.md
 ```
 
-### 4. Open the Generated File
+### 4. Open the generated file
 
 ```bash
 cat release_notes.md
 ```
 
-**Example output:**
+Example output:
 
 ```markdown
 # Release Notes
@@ -83,32 +81,32 @@ cat release_notes.md
 
 If you see categorized release notes, the automation is working.
 
-## Running with Real Repository
+## Run with real repository
 
-Now try with an actual GitHub repository.
+Try with an actual GitHub repository.
 
-### 1. Choose a Repository
+### 1. Choose a repository
 
-Options:
+Choose one option:
 
-**Option A: Use your own repository**
+Use your own repository:
 ```bash
 --repo your-username/your-repo
 ```
 
-**Option B: Use a public test repository**
+Use a public test repository:
 ```bash
 --repo octocat/Hello-World
 ```
 
-**Option C: Use an Indeed public repository** (if from Indeed)
+Use an Indeed public repository (if from Indeed):
 ```bash
 --repo indeedeng/proctor
 ```
 
-### 2. Determine Date Range
+### 2. Determine date range
 
-Pick a date range with meaningful commits:
+Choose a date range with meaningful commits:
 
 ```bash
 # Last 30 days
@@ -121,7 +119,7 @@ Pick a date range with meaningful commits:
 --since 2024-01-01 --until 2024-01-31
 ```
 
-### 3. Run the Script
+### 3. Run the script
 
 ```bash
 python generate_release_notes.py \
@@ -129,9 +127,9 @@ python generate_release_notes.py \
   --since 2024-01-01
 ```
 
-### 4. Monitor Progress
+### 4. Monitor progress
 
-You'll see:
+The output shows:
 
 ```
 Fetching commits from octocat/Hello-World since 2024-01-01...
@@ -141,9 +139,9 @@ Generating release notes...
 Release notes written to release_notes.md
 ```
 
-**Timing:** Typically 10-30 seconds depending on commit count and AI provider.
+Typical timing: 10-30 seconds depending on commit count and AI provider.
 
-### 5. Review the Output
+### 5. Review the output
 
 ```bash
 cat release_notes.md
@@ -156,15 +154,13 @@ code release_notes.md    # VS Code
 cursor release_notes.md  # Cursor
 ```
 
-## Evaluating Quality
+## Evaluate quality
 
-Now comes the important part: reviewing the output for quality and identifying improvements.
+Review the output for quality and identify improvements.
 
-### What to Check
+### Check these items
 
-Use this checklist:
-
-#### Categorization Accuracy
+#### Categorization accuracy
 
 - Are features actually new features (not enhancements)?
 - Are bug fixes correctly identified?
@@ -173,81 +169,81 @@ Use this checklist:
 
 #### Exclusions
 
-- Were internal-only changes excluded?
-- Were WIP/temp commits filtered out?
-- Were merge commits without substance removed?
-- Were test-only changes excluded?
+- Internal-only changes excluded
+- WIP or temp commits filtered out
+- Merge commits without substance removed
+- Test-only changes excluded
 
 #### Formatting
 
-- Are commit links working?
-- Is the format consistent?
-- Are emoji icons displaying correctly?
-- Is the date/period information accurate?
+- Commit links working
+- Format consistent
+- Emoji icons displaying correctly
+- Date or period information accurate
 
 #### Completeness
 
-- Are all user-facing changes included?
-- Are major changes properly represented?
-- Is anything important missing?
+- All user-facing changes included
+- Major changes properly represented
+- No important information missing
 
-### Common Issues
+### Common issues
 
-**Issue 1: Enhancements Categorized as Features**
+Issue 1: Enhancements categorized as features
 
 ```markdown
 ## New Features
 - Improve search performance by 50%  [This is an enhancement]
 ```
 
-**Why:** Prompt needs clearer distinction between "new" and "improved"
+Prompt needs clearer distinction between "new" and "improved".
 
-**Fix:** Refine categorization standards (Step 5)
+Fix: Refine categorization standards (Step 5)
 
 ---
 
-**Issue 2: Internal Changes Included**
+Issue 2: Internal changes included
 
 ```markdown
 ## Enhancements
 - Update CI/CD pipeline configuration  [Internal only]
 ```
 
-**Why:** Exclusion rules not specific enough
+Exclusion rules not specific enough.
 
-**Fix:** Add explicit exclusion patterns (Step 5)
+Fix: Add explicit exclusion patterns (Step 5)
 
 ---
 
-**Issue 3: Vague Descriptions**
+Issue 3: Vague descriptions
 
 ```markdown
 ## Bug Fixes
 - Fix bug  [Too vague]
 ```
 
-**Why:** Commit message was vague, AI has nothing to work with
+Commit message was vague, AI has nothing to work with.
 
-**Fix:** Can't fix bad commit messages, but can add context in review
+Fix: Cannot fix bad commit messages, but can add context in review
 
 ---
 
-**Issue 4: Missing Context**
+Issue 4: Missing context
 
 ```markdown
 ## New Features
 - Add webhook support  [Needs context about what it enables]
 ```
 
-**Why:** Automation can't infer business context
+Automation cannot infer business context.
 
-**Fix:** Human adds: "Add webhook support (enables real-time integrations)"
+Fix: Human adds "Add webhook support (enables real-time integrations)"
 
-## Comparing to Your Manual Process
+## Compare to your manual process
 
-Pull out your [documented manual process](step-2-document-process.md) from Step 2.
+Reference your [documented manual process](step-2-document-process.md) from Step 2.
 
-### Side-by-Side Comparison
+### Create a side-by-side comparison
 
 Create a comparison table:
 
@@ -257,49 +253,49 @@ Create a comparison table:
 | "Improve performance" | Enhancement | New Feature | No | AI needs clarity |
 | "Update CI config" | (Excluded) | Enhancement | No | Missing exclusion rule |
 
-### Calculate Accuracy
+### Calculate accuracy
 
 ```
 Accuracy = Correct Categorizations / Total Commits × 100%
 ```
 
-**Example:** 15 correct out of 20 commits = 75% accuracy
+Example: 15 correct out of 20 commits = 75% accuracy
 
-**Targets:**
+Targets:
 
-- **First run:** 60-70% is normal
-- **After iteration:** Aim for 85-95%
-- **Never perfect:** 100% is unrealistic (and unnecessary)
+- First run: 60-70% is normal
+- After iteration: Aim for 85-95%
+- Never perfect: 100% is unrealistic and unnecessary
 
-## Creating Your Improvement List
+## Create your improvement list
 
-Based on your review, create a prioritized list:
+Create a prioritized list based on your review:
 
-### High Priority (Breaks Quality)
+### High priority (breaks quality)
 
-Things that make the output unusable:
+Issues that make the output unusable:
 
 - Missing critical exclusion rules
 - Major miscategorizations
 - Including internal-only changes
 
-### Medium Priority (Reduces Quality)
+### Medium priority (reduces quality)
 
-Things that require significant manual cleanup:
+Issues that require significant manual cleanup:
 
 - Inconsistent categorization of similar commits
 - Unclear boundary between features and enhancements
 - Some internal changes leaking through
 
-### Low Priority (Nice to Have)
+### Low priority (nice to have)
 
-Minor issues that don't significantly impact workflow:
+Minor issues that do not significantly impact workflow:
 
 - Formatting preferences
 - Wording tweaks
 - Edge cases affecting less than 5% of commits
 
-### Example Improvement List
+### Example improvement list
 
 ```markdown
 ## Improvements Needed
@@ -320,22 +316,16 @@ Minor issues that don't significantly impact workflow:
 3. Add links to pull requests (not just commits)
 ```
 
-## What You've Learned
+## Summary
 
-In this step, you:
+You generated release notes with sample data, ran automation on a real repository, evaluated output quality systematically, created a prioritized improvement list, and compared AI output to manual standards.
 
-- Generated release notes with sample data
-- Ran automation on a real repository
-- Evaluated output quality systematically
-- Created prioritized improvement list
-- Compared AI output to manual standards
+## Next step
 
-## Next Step
+Iterate on your prompts to improve quality.
 
-Now you're ready for the most rewarding part: iterating on your prompts to dramatically improve quality.
-
-[Next: Step 5 - Iterate Prompts](step-5-iterate-prompts.md)
+[Next: Step 5 - Iterate prompts](step-5-iterate-prompts.md)
 
 ---
 
-**Keep Your Notes:** Save your generated `release_notes.md` files (rename to `release_notes_v1.md`, etc.), improvement list, and accuracy calculations. You'll reference these when refining prompts in Step 5.
+Save your generated `release_notes.md` files (rename to `release_notes_v1.md`, etc.), improvement list, and accuracy calculations. You will reference these when refining prompts in Step 5.

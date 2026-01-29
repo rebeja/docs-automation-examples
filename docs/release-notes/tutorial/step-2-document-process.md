@@ -1,39 +1,35 @@
-# Step 2: Document Your Process
+# Step 2: Document your process
 
-This is the most important step in the entire tutorial. Before automating anything, you need to clearly document your manual workflow.
+This is the most important step in the tutorial. Document your manual workflow before automating anything.
 
-**Time Estimate:** 30-45 minutes
+**Time estimate:** 30-45 minutes
 
-**Key Principle:** Before automating, write down your actual manual process—automation replicates your workflow. If your manual process is poorly defined, your automation will be poorly defined too.
+**Key principle:** Automation replicates your workflow. Poorly defined manual processes create poorly defined automation.
 
-## Why This Matters
+## Why documentation matters
 
 Your documented manual process becomes:
 
-1. **The foundation for your automation prompt** - Each manual step maps to an automated step
-2. **Your quality baseline** - How do you know if automation works? Compare to your manual standards
-3. **Your training material** - For teaching the AI what good categorization looks like
-4. **Your troubleshooting guide** - When automation fails, check which manual step is misaligned
+1. **Foundation for automation prompt** - Each manual step maps to an automated step
+2. **Quality baseline** - Compare automation output to your manual standards
+3. **Training material** - Teach the AI what good categorization looks like
+4. **Troubleshooting guide** - Check which manual step is misaligned when automation fails
 
-## What You'll Accomplish
+## Complete these tasks
 
-By the end of this step:
+- Document complete workflow
+- Define clear categorization standards
+- Specify exclusion rules
+- Create output format specification
+- Prepare automation prompt
 
-- Complete workflow documentation
-- Clear categorization standards
-- Defined exclusion rules
-- Output format specification
-- Ready-to-use automation prompt
+## Workflow worksheet
 
-## The Workflow Worksheet
+Answer each question based on your current manual process.
 
-Complete this worksheet by answering each question based on YOUR current manual process.
+### Part 1: Current manual workflow
 
-### Part 1: Current Manual Workflow
-
-**What steps do you currently follow to create release notes?**
-
-Write each step in order:
+List each step you follow to create release notes:
 
 ```markdown
 ## My Manual Release Notes Process
@@ -55,7 +51,7 @@ Write each step in order:
 **Total time per release:** _____ hours/minutes
 ```
 
-**Example:**
+Example:
 
 ```markdown
 ## My Manual Release Notes Process
@@ -91,11 +87,9 @@ Write each step in order:
 **Total time per release:** 1.5-2 hours
 ```
 
-### Part 2: Categorization Standards
+### Part 2: Categorization standards
 
-**How do you decide which category each change belongs to?**
-
-**Be Specific:** Instead of "I know a bug fix when I see one," write: "Bug fixes contain words like 'fix', 'bug', 'issue', 'resolve' and describe correcting existing functionality."
+Define how you decide which category each change belongs to. Be specific with keywords and indicators, not vague descriptions like "I know a bug fix when I see one."
 
 Complete this table:
 
@@ -107,30 +101,28 @@ Complete this table:
 | **Documentation** | | | |
 | **Other** | | | |
 
-**Example:**
+Example:
 
 | Category | Definition | Keyword Indicators | Examples |
 |----------|-----------|-------------------|----------|
-| **New Features** | Wholly new capabilities that didn't exist before | "add", "new", "create", "introduce" | "Add user authentication", "New dashboard view" |
+| **New Features** | Capabilities that didn't exist before | "add", "new", "create", "introduce" | "Add user authentication", "New dashboard view" |
 | **Enhancements** | Improvements to existing features | "improve", "update", "enhance", "optimize", "increase" | "Improve search performance", "Update API response format" |
 | **Bug Fixes** | Corrections to existing functionality | "fix", "bug", "resolve", "issue", "correct" | "Fix memory leak", "Resolve login timeout" |
 | **Documentation** | Content updates, guides, API docs | "docs", "documentation", "guide", "readme" | "Update API guide", "Fix typo in docs" |
 
-### Part 3: Exclusion Rules
+### Part 3: Exclusion rules
 
-**What types of commits should NOT appear in release notes?**
-
-Check all that apply and add specifics:
+Define which commits should not appear in release notes:
 
 - Merge commits without meaningful changes
 - Work-in-progress commits (WIP, temp, test)
 - Internal tooling changes
-- Code formatting/style changes
+- Code formatting or style changes
 - Test file updates (unless new features)
 - Dependency updates (unless user-facing)
 - Other: _______________
 
-**Write specific exclusion criteria:**
+Write specific exclusion criteria:
 
 ```markdown
 ## What to Exclude
@@ -141,7 +133,7 @@ Check all that apply and add specifics:
 4. Exclude commits by these authors: _______________
 ```
 
-**Example:**
+Example:
 
 ```markdown
 ## What to Exclude
@@ -152,11 +144,9 @@ Check all that apply and add specifics:
 4. Exclude commits by these authors: automation-bot@company.com
 ```
 
-### Part 4: Output Format
+### Part 4: Output format
 
-**What does your final release notes format look like?**
-
-Provide a template:
+Define your final release notes format:
 
 ```markdown
 ## My Release Notes Format
@@ -180,7 +170,7 @@ Provide a template:
 - Include: _______________
 ```
 
-**Example:**
+Example:
 
 ```markdown
 ## My Release Notes Format
@@ -204,18 +194,18 @@ Provide a template:
 - Include: "For questions, contact docs@company.com"
 ```
 
-### Part 5: Audience Considerations
+### Part 5: Audience considerations
 
-**Who reads your release notes?**
+Identify who reads your release notes:
 
 - Internal engineering team
 - External customers
 - Product managers
 - Support team
-- Sales/Marketing
+- Sales or Marketing
 - Other: _______________
 
-**How should language be adjusted for this audience?**
+Define language adjustments for this audience:
 
 ```markdown
 ## Audience Guidance
@@ -226,7 +216,7 @@ Avoid: _______________
 Emphasize: _______________
 ```
 
-**Example:**
+Example:
 
 ```markdown
 ## Audience Guidance
@@ -237,15 +227,15 @@ Avoid: Internal jargon, overly technical implementation details
 Emphasize: User impact, benefits, links to documentation
 ```
 
-## Completed Worksheet Example
+## Completed worksheet example
 
-See a [complete example worksheet](../../examples/manual-process-example.md) showing real documentation from a docs team.
+Review a [complete example worksheet](../../examples/manual-process-example.md) showing real documentation from a docs team.
 
-## Converting to an Automation Prompt
+## Convert to automation prompt
 
-Once you've completed the worksheet, you'll convert it into an automation prompt in [Step 5](step-5-iterate-prompts.md).
+After completing the worksheet, convert it into an automation prompt in [Step 5](step-5-iterate-prompts.md).
 
-**The mapping:**
+Manual steps map to automation steps:
 
 | Manual Step | Automation Step |
 |-------------|----------------|
@@ -256,22 +246,16 @@ Once you've completed the worksheet, you'll convert it into an automation prompt
 | Format consistently | Template in prompt |
 | Add context | Human review (stays manual) |
 
-## What You've Learned
+## Summary
 
-In this step, you:
+You documented your complete manual workflow, defined clear categorization standards, specified exclusion rules, created output format template, and considered audience needs.
 
-- Documented your complete manual workflow
-- Defined clear categorization standards
-- Specified exclusion rules
-- Created output format template
-- Considered audience needs
+## Next step
 
-## Next Step
-
-With your process documented, you're ready to set up API access.
+Set up API access with your process documented.
 
 [Next: Step 3 - Configure APIs](step-3-configure.md)
 
 ---
 
-**Save Your Worksheet:** Keep this documentation. You'll reference it when writing your first prompt (Step 5), troubleshooting categorization errors, training new team members, and building other automation projects.
+Keep this documentation. Reference it when writing your first prompt (Step 5), troubleshooting categorization errors, training new team members, and building other automation projects.

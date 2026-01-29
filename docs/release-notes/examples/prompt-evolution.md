@@ -1,14 +1,14 @@
-# Prompt Evolution Example
+# Prompt evolution example
 
-This page shows the real journey of refining a release notes categorization prompt from simple to production-ready.
+This page shows the journey of refining a release notes categorization prompt from simple to production-ready.
 
-## The Journey: Simple → Refined
+## Journey: Simple to refined
 
-### Version 1: Initial (Simple)
+### Version 1: Initial (simple)
 
-**When:** First attempt after documenting manual process
+First attempt after documenting manual process
 
-**Approach:** Basic categories with minimal guidance
+Approach: Basic categories with minimal guidance
 
 ```
 Categorize GitHub commits as:
@@ -21,23 +21,23 @@ Commits:
 {COMMITS}
 ```
 
-**Results:**
+Results:
 
 - Basic categorization working
 - 35% of commits miscategorized
 - Internal changes included
-- Feature vs Enhancement boundary unclear
+- Feature versus Enhancement boundary unclear
 - No exclusion logic
 
-**Accuracy: 65%** - Not usable
+Accuracy: 65% - Not usable
 
 ---
 
-### Version 2: Add Definitions
+### Version 2: Add definitions
 
-**When:** After reviewing first test results
+After reviewing first test results
 
-**Changes:** Added clearer category definitions
+Changes: Added clearer category definitions
 
 ```
 Categorize GitHub commits as:
@@ -57,23 +57,23 @@ Commits:
 {COMMITS}
 ```
 
-**Results:**
+Results:
 
-- Better feature/enhancement distinction
+- Better feature or enhancement distinction
 - Some internal changes filtered
-- Still many edge case confusions
-- "Wholly new" vs "existing" ambiguous
+- Many edge case confusions
+- "Wholly new" versus "existing" ambiguous
 - Exclusions too vague
 
-**Accuracy: 72%** - Improved but not production-ready
+Accuracy: 72% - Improved but not production-ready
 
 ---
 
-### Version 3: Add Examples
+### Version 3: Add examples
 
-**When:** After seeing specific patterns of confusion
+After seeing specific patterns of confusion
 
-**Changes:** Added concrete examples of each category
+Changes: Added concrete examples of each category
 
 ```
 Categorize GitHub commits for release notes.
@@ -117,23 +117,23 @@ Format:
 - [commit message]
 ```
 
-**Results:**
+Results:
 
-- Feature vs Enhancement much clearer
+- Feature versus Enhancement much clearer
 - Better exclusion of WIP commits
 - More consistent categorization
-- Still some internal changes leaking
+- Some internal changes leaking
 - Test-related commits sometimes included
 
-**Accuracy: 83%** - Getting close
+Accuracy: 83% - Getting close
 
 ---
 
-### Version 4: Refined Production
+### Version 4: Refined production
 
-**When:** After several test runs on different repositories
+After several test runs on different repositories
 
-**Changes:** Added keyword indicators, comprehensive exclusions, and format specifications
+Changes: Added keyword indicators, comprehensive exclusions, and format specifications
 
 ```
 You are helping categorize GitHub commits for release notes.
@@ -259,7 +259,7 @@ Format your response exactly as:
 {COMMITS}
 ```
 
-**Results:**
+Results:
 
 - Consistent categorization across different repositories
 - Effective filtering of internal changes
@@ -267,45 +267,45 @@ Format your response exactly as:
 - Appropriate format and context
 - Minimal manual cleanup needed
 
-**Accuracy: 91%** - Production ready
+Accuracy: 91% - Production ready
 
 ---
 
-## What Changed and Why
+## What changed and why
 
-### Adding Examples (v1 → v3)
+### Add examples (v1 to v3)
 
-**Problem:** "Wholly new" vs "improvements" was ambiguous
+Problem: "Wholly new" versus "improvements" was ambiguous
 
-**Solution:** Concrete examples with both positive and negative cases
+Solution: Concrete examples with both positive and negative cases
 
-**Impact:** +18 percentage points in accuracy
+Impact: +18 percentage points in accuracy
 
-### Adding Keywords (v3 → v4)
+### Add keywords (v3 to v4)
 
-**Problem:** AI struggling with commits using unexpected wording
+Problem: AI struggling with commits using unexpected wording
 
-**Solution:** Explicit keyword indicators for each category
+Solution: Explicit keyword indicators for each category
 
-**Impact:** +8 percentage points in accuracy
+Impact: +8 percentage points in accuracy
 
-### Refining Exclusions (v2 → v4)
+### Refine exclusions (v2 to v4)
 
-**Problem:** Internal changes appearing in release notes
+Problem: Internal changes appearing in release notes
 
-**Solution:** Comprehensive exclusion rules by keyword, prefix, path, and author
+Solution: Comprehensive exclusion rules by keyword, prefix, path, and author
 
-**Impact:** Reduced false positives by 85%
+Impact: Reduced false positives by 85%
 
-### Adding Decision Rules (v4)
+### Add decision rules (v4)
 
-**Problem:** Edge cases with conflicting signals
+Problem: Edge cases with conflicting signals
 
-**Solution:** Priority-based decision tree
+Solution: Priority-based decision tree
 
-**Impact:** More consistent categorization of ambiguous commits
+Impact: More consistent categorization of ambiguous commits
 
-## Metrics Summary
+## Metrics summary
 
 | Version | Accuracy | False Positives | False Negatives | Review Time |
 |---------|----------|----------------|----------------|-------------|
@@ -314,15 +314,15 @@ Format your response exactly as:
 | v3 | 83% | 12% | 5% | 20 min |
 | v4 | 91% | 4% | 5% | 12 min |
 
-**Time Savings:**
+Time savings:
 
 - Manual process: 90 minutes
 - v4 automation + review: 12.5 minutes
-- **Saved: 77.5 minutes (86% reduction)**
+- Saved: 77.5 minutes (86% reduction)
 
-## Lessons Learned
+## Lessons learned
 
-### What Worked
+### What worked
 
 1. **Concrete examples** were more effective than abstract definitions
 2. **Negative examples** ("NOT this") clarified boundaries
@@ -330,27 +330,27 @@ Format your response exactly as:
 4. **Comprehensive exclusions** better than general guidelines
 5. **Decision trees** resolved conflicts
 
-### What Didn't Work
+### What did not work
 
-1. **Overly complex prompts** (more than 2000 words) - diminishing returns
-2. **Too many categories** (7+ categories became confusing)
-3. **Vague language** like "generally" or "usually"
-4. **Assuming context** the AI couldn't have
-5. **Perfection seeking** (90% is often better ROI than 98%)
+1. Overly complex prompts (more than 2000 words) - diminishing returns
+2. Too many categories (7+ categories became confusing)
+3. Vague language like "generally" or "usually"
+4. Assuming context the AI could not have
+5. Perfection seeking (90% is often better ROI than 98%)
 
-### Iteration Strategy
+### Iteration strategy
 
-1. **Test with same dataset** to compare versions fairly
-2. **Track metrics** systematically (don't rely on gut feel)
-3. **Focus on patterns** not individual failures
-4. **Stop iterating** when improvements are less than 3 percentage points
-5. **Version control prompts** to enable rollback
+1. Test with same dataset to compare versions fairly
+2. Track metrics systematically (do not rely on gut feel)
+3. Focus on patterns not individual failures
+4. Stop iterating when improvements are less than 3 percentage points
+5. Version control prompts to enable rollback
 
-## Adapting This for Your Workflow
+## Adapt this for your workflow
 
-### Start with Version 3
+### Start with version 3
 
-Don't start from scratch. Begin with v3 structure and customize:
+Start with v3 structure and customize:
 
 1. Update category definitions to match your standards
 2. Add examples from your actual commits
@@ -358,37 +358,37 @@ Don't start from scratch. Begin with v3 structure and customize:
 4. Test and measure
 5. Iterate based on your specific issues
 
-### Repository-Specific Variations
+### Repository-specific variations
 
 Different repositories may need different prompts:
 
-**Frontend repository:**
-- More emphasis on UI/UX improvements
-- Exclude: styling-only changes, component refactors
+Frontend repository:
+- More emphasis on UI or UX improvements
+- Exclude styling-only changes or component refactors
 
-**Backend API repository:**
+Backend API repository:
 - Separate category for breaking changes
-- Emphasize: endpoint additions, performance
-- Exclude: database migration details
+- Emphasize endpoint additions or performance
+- Exclude database migration details
 
-**Documentation repository:**
-- Simpler categorization (Content vs Structure vs Fixes)
-- All commits are "user-facing"
+Documentation repository:
+- Simpler categorization (Content versus Structure versus Fixes)
+- All commits are user-facing
 - Focus on impact to readers
 
-### Audience-Specific Variations
+### Audience-specific variations
 
-**Internal release notes:**
+Internal release notes:
 - Include infrastructure improvements
-- More technical language
-- Keep some "excluded" items
+- Use technical language
+- Keep some excluded items
 
-**External release notes:**
+External release notes:
 - Stricter exclusions
 - User-benefit focused
 - Customer-friendly language
 
-## Try It Yourself
+## Try it yourself
 
 Use this prompt as your starting point:
 
@@ -400,4 +400,4 @@ Use this prompt as your starting point:
 
 ---
 
-**Ready to use this?** [Go to Tutorial](../tutorial/index.md)
+[Go to tutorial](../tutorial/index.md)

@@ -1,18 +1,18 @@
-# Prompt Engineering Reference
+# Prompt engineering reference
 
 Complete guide to writing effective categorization prompts for release notes automation.
 
-## What is Prompt Engineering?
+## What is prompt engineering?
 
 Prompt engineering is the practice of crafting clear, specific instructions that help AI understand your categorization standards and produce consistent, high-quality results.
 
-**Key insight:** Your prompt is essentially documentation of your manual process, translated into instructions for AI.
+Your prompt is essentially documentation of your manual process, translated into instructions for AI.
 
-## Anatomy of a Good Prompt
+## Anatomy of a good prompt
 
 An effective categorization prompt has five key components:
 
-### 1. Clear Purpose Statement
+### 1. Clear purpose statement
 
 Tell the AI what it's doing:
 
@@ -20,15 +20,15 @@ Tell the AI what it's doing:
 You are helping categorize GitHub commits for release notes.
 ```
 
-### 2. Category Definitions
+### 2. Category definitions
 
 Define each category with:
-- **Clear definition** - What belongs in this category
-- **Positive examples** - Commits that should be categorized here
-- **Negative examples** - Commits that should NOT be here
-- **Keyword indicators** - Words that suggest this category
+- Clear definition - What belongs in this category
+- Positive examples - Commits that should be categorized here
+- Negative examples - Commits that should NOT be here
+- Keyword indicators - Words that suggest this category
 
-**Example:**
+Example:
 
 ```
 **New Features** - Wholly new capabilities that didn't exist before
@@ -43,7 +43,7 @@ NOT examples:
 Keywords: "add", "new", "create", "introduce"
 ```
 
-### 3. Exclusion Rules
+### 3. Exclusion rules
 
 Be specific about what to exclude:
 
@@ -55,7 +55,7 @@ Exclusions (do not include):
 - By author: dependabot[bot]
 ```
 
-### 4. Decision Rules
+### 4. Decision rules
 
 Handle edge cases with clear priority:
 
@@ -66,7 +66,7 @@ When keywords conflict:
 3. Does it fix a bug? → Bug Fix
 ```
 
-### 5. Output Format
+### 5. Output format
 
 Specify exactly how you want the response:
 
@@ -80,11 +80,11 @@ Format your response as:
 - [commit message] - Brief explanation if needed
 ```
 
-## Common Prompt Patterns
+## Common prompt patterns
 
-### Pattern 1: Simple Categorization
+### Pattern 1: Simple categorization
 
-**Use when:** Basic four-category release notes
+Use when: Basic four-category release notes
 
 ```
 Categories:
@@ -94,12 +94,12 @@ Categories:
 - Documentation: Content updates
 ```
 
-**Pros:** Quick to write, easy to understand  
-**Cons:** May not handle edge cases well
+Pros: Quick to write, easy to understand  
+Cons: May not handle edge cases well
 
-### Pattern 2: Detailed with Examples
+### Pattern 2: Detailed with examples
 
-**Use when:** Need better accuracy and consistency
+Use when: Need better accuracy and consistency
 
 ```
 **New Features**
@@ -109,12 +109,12 @@ NOT Examples: [2-3 counter-examples]
 Keywords: [list of indicators]
 ```
 
-**Pros:** Much better accuracy (15-20% improvement)  
-**Cons:** Takes time to create examples
+Pros: Much better accuracy (15-20% improvement)  
+Cons: Takes time to create examples
 
-### Pattern 3: Domain-Specific
+### Pattern 3: Domain-specific
 
-**Use when:** Specialized repositories (frontend, backend, docs)
+Use when: Specialized repositories (frontend, backend, docs)
 
 ```
 **Frontend: New Components**
@@ -128,12 +128,12 @@ Keywords: [list of indicators]
 - Layout improvements
 ```
 
-**Pros:** Highly accurate for specific domains  
-**Cons:** Requires separate prompts per repository type
+Pros: Highly accurate for specific domains  
+Cons: Requires separate prompts per repository type
 
-## Iteration Strategy
+## Iteration strategy
 
-### Start Simple
+### Start simple
 
 Begin with basic definitions:
 
@@ -145,7 +145,7 @@ Categories:
 - Docs
 ```
 
-### Add Examples
+### Add examples
 
 After first test run, add specific examples:
 
@@ -156,7 +156,7 @@ Examples:
 - "Create API endpoint" (Correct)
 ```
 
-### Refine Based on Errors
+### Refine based on errors
 
 For each miscategorization, add counter-examples:
 
@@ -166,7 +166,7 @@ NOT Examples:
 - "Improve login performance" (Enhancement)
 ```
 
-### Add Keywords
+### Add keywords
 
 For remaining issues, add keyword guidance:
 
@@ -176,9 +176,9 @@ Keywords: "add", "new", "create"
 Only when describing wholly new functionality
 ```
 
-## Testing Your Prompt
+## Test your prompt
 
-### Create a Test Set
+### Create a test set
 
 Save 20-30 commits with known correct categories:
 
@@ -195,18 +195,18 @@ Save 20-30 commits with known correct categories:
 ]
 ```
 
-### Measure Accuracy
+### Measure accuracy
 
 ```
 Accuracy = Correct / Total × 100%
 ```
 
-**Targets:**
+Targets:
 - First iteration: 60-70%
 - After refinement: 85-90%
 - Optimized: 90-95%
 
-### Track Improvements
+### Track improvements
 
 | Version | Changes | Accuracy | Notes |
 |---------|---------|----------|-------|
@@ -214,13 +214,13 @@ Accuracy = Correct / Total × 100%
 | v2 | Added examples | 78% | Better boundaries |
 | v3 | Added keywords | 88% | Production ready |
 
-## Common Issues and Solutions
+## Common issues and solutions
 
-### Issue: Features vs Enhancements Confused
+### Issue: Features versus enhancements confused
 
-**Problem:** AI categorizes improvements as features
+Problem: AI categorizes improvements as features
 
-**Solution:**
+Solution:
 ```
 **New Features** - Must be COMPLETELY new
 Examples: "Add authentication" (Correct)
@@ -231,11 +231,11 @@ Examples: "Improve search performance" (Correct)
 NOT: "Add search feature" (New feature)
 ```
 
-### Issue: Internal Changes Appearing
+### Issue: Internal changes appearing
 
-**Problem:** CI/CD, tests, internal tools in output
+Problem: CI or CD, tests, internal tools in output
 
-**Solution:**
+Solution:
 ```
 Exclusions:
 - Commits containing: "internal", "ci:", "test:"
@@ -243,11 +243,11 @@ Exclusions:
 - By author: github-actions[bot], dependabot[bot]
 ```
 
-### Issue: Inconsistent Categorization
+### Issue: Inconsistent categorization
 
-**Problem:** Similar commits categorized differently
+Problem: Similar commits categorized differently
 
-**Solution:** Add more examples from your actual repository:
+Solution: Add more examples from your actual repository:
 
 ```
 From YOUR repository:
@@ -256,27 +256,27 @@ From YOUR repository:
 - "Fix cache corruption" → Bug Fix (corrects behavior)
 ```
 
-## Best Practices
+## Best practices
 
-### Do
+Follow these practices:
 
-- **Use examples from your repository** - Domain-specific examples work best
-- **Test iteratively** - Measure improvement after each change
-- **Be specific** - "Add new capability" is clearer than "Add something"
-- **Include counter-examples** - "NOT this" clarifies boundaries
-- **Document your decisions** - Keep notes on why you categorized things
+- Use examples from your repository - Domain-specific examples work best
+- Test iteratively - Measure improvement after each change
+- Be specific - "Add new capability" is clearer than "Add something"
+- Include counter-examples - "NOT this" clarifies boundaries
+- Document your decisions - Keep notes on why you categorized things
 
-### Don't
+Avoid these practices:
 
-- **Don't make prompts too long** - Over 1500 words has diminishing returns
-- **Don't use vague language** - "Generally", "usually", "often" are unclear
-- **Don't assume context** - AI doesn't know your team's conventions
-- **Don't skip testing** - Assumptions about accuracy are often wrong
-- **Don't aim for perfection** - 90% is often better ROI than 98%
+- Make prompts too long - Over 1500 words has diminishing returns
+- Use vague language - "Generally", "usually", "often" are unclear
+- Assume context - AI does not know your team conventions
+- Skip testing - Assumptions about accuracy are often wrong
+- Aim for perfection - 90% is often better ROI than 98%
 
-## Prompt Templates
+## Prompt templates
 
-### Basic Template
+### Basic template
 
 ```
 You are helping categorize GitHub commits for release notes.
@@ -296,16 +296,16 @@ Commits to categorize:
 Format: [Your desired output format]
 ```
 
-### Advanced Template
+### Advanced template
 
-See [Prompt Evolution Example](../examples/prompt-evolution.md) for a complete production-ready template.
+See [Prompt evolution example](../examples/prompt-evolution.md) for a complete production-ready template.
 
-## Further Reading
+## Further reading
 
-- [Tutorial Step 5: Iterate Prompts](../tutorial/step-5-iterate-prompts.md)
-- [Prompt Evolution Example](../examples/prompt-evolution.md)
-- [Sample Outputs](../examples/sample-outputs.md)
+- [Tutorial step 5: Iterate prompts](../tutorial/step-5-iterate-prompts.md)
+- [Prompt evolution example](../examples/prompt-evolution.md)
+- [Sample outputs](../examples/sample-outputs.md)
 
 ---
 
-**Need help?** Check the [FAQ](../faq.md) or [Troubleshooting Guide](../troubleshooting.md).
+Check the [FAQ](../faq.md) or [Troubleshooting guide](../troubleshooting.md).

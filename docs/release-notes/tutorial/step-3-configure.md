@@ -1,37 +1,31 @@
 # Step 3: Configure APIs
 
-Now that your environment is set up and process is documented, you'll configure API access for GitHub and your AI provider.
+Configure API access for GitHub and your AI provider.
 
-**Time Estimate:** 10-15 minutes
+**Time estimate:** 10-15 minutes
 
-## What You'll Accomplish
+## Complete these tasks
 
-By the end of this step:
+- Create and test GitHub API token
+- Obtain and configure AI provider API key
+- Review security best practices
+- Verify API connections
 
-- GitHub API token created and tested
-- AI provider API key obtained and configured
-- Security best practices understood
-- API connections verified
+## Get API keys
 
-## API Keys You'll Need
+### 1. GitHub token (required)
 
-### 1. GitHub Token (Required)
+Fetch commits and pull requests from repositories with this token.
 
-**Purpose:** Fetch commits and pull requests from repositories
+Free for public repos, included with GitHub account for private repos.
 
-**Cost:** Free for public repos, included with GitHub account for private repos
+#### Create a GitHub token
 
-#### Creating a GitHub Token
+1. Navigate to [github.com/settings/tokens](https://github.com/settings/tokens)
 
-1. **Go to GitHub Settings**
-   
-   Navigate to [github.com/settings/tokens](https://github.com/settings/tokens)
+2. Click **Generate new token** and choose **Generate new token (classic)**
 
-2. **Click "Generate new token"**
-   
-   Choose "Generate new token (classic)"
-
-3. **Configure Token**
+3. Configure the token:
    
    - **Note:** "Release Notes Automation" (describes purpose)
    - **Expiration:** Choose based on your security policy (90 days recommended)
@@ -39,60 +33,56 @@ By the end of this step:
      - For public repos only: `public_repo`
      - For private repos: `repo` (full control)
 
-4. **Generate and Copy**
-   
-   Click "Generate token" and copy it immediately - you won't see it again.
-   
-   Format: `ghp_xxxxxxxxxxxxxxxxxxxx`
+4. Click **Generate token** and copy it immediately. The token format is `ghp_xxxxxxxxxxxxxxxxxxxx`.
 
-**Save Your Token:** Store the token in your password manager immediately. If you lose it, you'll need to generate a new one.
+Store the token in your password manager immediately. You cannot view it again after leaving the page.
 
-### 2. AI Provider API Key (Required)
+### 2. AI provider API key (required)
 
-Choose one of these providers:
+Choose one provider:
 
 #### Option A: Anthropic (Claude) - Recommended
 
-**Why Claude:** Excellent at following detailed instructions and explaining reasoning
+Claude excels at following detailed instructions and explaining reasoning.
 
-**Getting an Anthropic API Key:**
+Get an Anthropic API key:
 
 1. Go to [console.anthropic.com](https://console.anthropic.com/)
 2. Sign up or log in
-3. Click "Get API Keys" in the navigation
-4. Click "Create Key"
-5. Give it a name: "Release Notes Automation"
+3. Click **Get API Keys** in the navigation
+4. Click **Create Key**
+5. Name it "Release Notes Automation"
 6. Copy the key (starts with `sk-ant-`)
 
-**Pricing:** Pay-as-you-go, approximately $0.01-0.03 per release notes generation
+Pay-as-you-go pricing: approximately $0.01-0.03 per release notes generation
 
-**Free tier:** $5 credit for new accounts
+Free tier: $5 credit for new accounts
 
 #### Option B: OpenAI (GPT)
 
-**Why GPT:** Widely available, fast, good general performance
+GPT offers wide availability, fast performance, and good general capabilities.
 
-**Getting an OpenAI API Key:**
+Get an OpenAI API key:
 
 1. Go to [platform.openai.com](https://platform.openai.com/)
 2. Sign up or log in
-3. Click your profile then "View API Keys"
-4. Click "Create new secret key"
-5. Give it a name: "Release Notes Automation"
+3. Click your profile then **View API Keys**
+4. Click **Create new secret key**
+5. Name it "Release Notes Automation"
 6. Copy the key (starts with `sk-`)
 
-**Pricing:** Pay-as-you-go, approximately $0.02-0.05 per release notes generation
+Pay-as-you-go pricing: approximately $0.02-0.05 per release notes generation
 
-**Free tier:** $5 credit for new accounts (first 3 months)
+Free tier: $5 credit for new accounts (first 3 months)
 
-## Configuring Your Keys
+## Configure your keys
 
-### 1. Open Configuration File
+### 1. Open configuration file
 
 Edit `config.yaml` in the repository root:
 
 ```bash
-# Navigate to repository root if not already there
+# Navigate to repository root
 cd /path/to/docs-automation-examples
 ```
 
@@ -109,9 +99,9 @@ cursor config.yaml
 nano config.yaml
 ```
 
-### 2. Add Your Keys
+### 2. Add your keys
 
-**If using Anthropic (Claude):**
+For Anthropic (Claude):
 
 ```yaml
 # AI Provider
@@ -127,7 +117,7 @@ default_repo: "your-username/your-repo"
 output_file: "release_notes.md"
 ```
 
-**If using OpenAI (GPT):**
+For OpenAI (GPT):
 
 ```yaml
 # AI Provider
@@ -143,31 +133,29 @@ default_repo: "your-username/your-repo"
 output_file: "release_notes.md"
 ```
 
-### 3. Save the File
+### 3. Save the file
 
 Save and close your editor.
 
-**Never Commit This File:** The `config.yaml` file is in `.gitignore` to prevent accidental commits. Double-check:
+The `config.yaml` file is in `.gitignore` to prevent accidental commits. Never commit this file. Verify it does not appear in git status:
 
 ```bash
 git status
-# Should NOT show config.yaml as modified
+# config.yaml should not appear as modified
 ```
 
-## Testing Your Configuration
+## Test your configuration
 
-### Test 1: Configuration File Loads
+### Test 1: Configuration file loads
 
 ```bash
 cd 01-release-notes-automation
 python -c "import yaml; config = yaml.safe_load(open('../config.yaml')); print('Configuration loaded')"
 ```
 
-**Expected:** `Configuration loaded`
+The output shows `Configuration loaded`.
 
-### Test 2: GitHub API Access
-
-Test GitHub connection:
+### Test 2: GitHub API access
 
 ```bash
 python -c "
@@ -180,11 +168,11 @@ print(f'GitHub API working. Connected as: {user.login}')
 "
 ```
 
-**Expected:** `GitHub API working. Connected as: your-username`
+The output shows `GitHub API working. Connected as: your-username`.
 
-### Test 3: AI API Access
+### Test 3: AI API access
 
-**Test Anthropic:**
+Test Anthropic:
 
 ```bash
 python -c "
@@ -202,7 +190,7 @@ print(f'Response: {message.content[0].text}')
 "
 ```
 
-**Test OpenAI:**
+Test OpenAI:
 
 ```bash
 python -c "
@@ -220,11 +208,11 @@ print(f'Response: {response.choices[0].message.content}')
 "
 ```
 
-**Expected:** Success message with a response
+The output shows a success message with a response.
 
-## Security Best Practices
+## Follow security best practices
 
-### Do
+### Do these actions
 
 - Use environment variables for production:
   ```bash
@@ -236,78 +224,72 @@ print(f'Response: {response.choices[0].message.content}')
 
 - Rotate keys regularly (every 90 days)
 
-- Use minimal scopes (only `public_repo` if possible)
+- Use minimal scopes (only `public_repo` when possible)
 
 - Store in password manager for backup
 
-### Don't
+### Avoid these actions
 
 - Never commit `config.yaml` with real keys
-- Don't share API keys in Slack or email
-- Don't use production tokens for testing
-- Don't hardcode keys in scripts
-- Don't push to public repositories with keys
+- Share API keys in Slack or email
+- Use production tokens for testing
+- Hardcode keys in scripts
+- Push to public repositories with keys
 
 ## Troubleshooting
 
-### Invalid GitHub Token
+### Invalid GitHub token
 
-**Error:** `401 Unauthorized` or `Bad credentials`
+Error: `401 Unauthorized` or `Bad credentials`
 
-**Solutions:**
+Solutions:
 
 1. Verify token is copied correctly (no extra spaces)
-2. Check token hasn't expired
+2. Check token has not expired
 3. Verify required scopes are enabled
 4. Try regenerating the token
 
-### Invalid AI API Key
+### Invalid AI API key
 
-**Error:** `Invalid API key` or `Authentication failed`
+Error: `Invalid API key` or `Authentication failed`
 
-**Solutions:**
+Solutions:
 
 1. Verify key is copied correctly
-2. Check you're using the right provider (`anthropic` vs `openai`)
+2. Check you are using the right provider (`anthropic` versus `openai`)
 3. Verify billing is set up (after free tier)
 4. Check API key is active in provider console
 
-### Configuration File Not Found
+### Configuration file not found
 
-**Error:** `FileNotFoundError: config.yaml`
+Error: `FileNotFoundError: config.yaml`
 
-**Solutions:**
+Solutions:
 
-1. Verify you're in the right directory
+1. Verify you are in the right directory
 2. Check the file exists: `ls -la config.yaml`
 3. Verify you copied from `config.example.yaml`
 
-### Module Import Errors
+### Module import errors
 
-**Error:** `ModuleNotFoundError: No module named 'anthropic'`
+Error: `ModuleNotFoundError: No module named 'anthropic'`
 
-**Solutions:**
+Solutions:
 
 1. Activate virtual environment: `source venv/bin/activate`
 2. Reinstall dependencies: `pip install -r requirements.txt`
 3. Verify Python version: `python --version` (3.8+)
 
-## What You've Learned
+## Summary
 
-In this step, you:
+You created a GitHub API token with appropriate scopes, obtained an AI provider API key, configured both keys securely, verified API connections work, and reviewed security best practices.
 
-- Created GitHub API token with appropriate scopes
-- Obtained AI provider API key
-- Configured both keys securely
-- Verified API connections work
-- Learned security best practices
+## Next step
 
-## Next Step
+Run your first automation with APIs configured.
 
-With APIs configured, you're ready to run your first automation.
-
-[Next: Step 4 - First Run](step-4-run-first-time.md)
+[Next: Step 4 - First run](step-4-run-first-time.md)
 
 ---
 
-**API Costs:** Estimated cost per run - GitHub API: Free (rate limited to 5,000 requests/hour), AI API: $0.01-0.05 per release notes generation. For typical biweekly releases: approximately $0.50-1.00 per month.
+Estimated cost per run: GitHub API is free (rate limited to 5,000 requests per hour), AI API costs $0.01-0.05 per release notes generation. For typical biweekly releases: approximately $0.50-1.00 per month.

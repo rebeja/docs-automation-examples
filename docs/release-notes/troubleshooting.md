@@ -2,155 +2,155 @@
 
 Common issues and solutions when using the release notes automation.
 
-## Installation Issues
+## Installation issues
 
-### Python Command Not Found
+### Python command not found
 
-**Problem:** `python: command not found` or `python3: command not found`
+Problem: `python: command not found` or `python3: command not found`
 
-**Solutions:**
+Solutions:
 
-1. **Check if Python is installed:**
+1. Check if Python is installed:
    ```bash
    which python3
    python3 --version
    ```
 
-2. **Install Python:**
+2. Install Python:
    - macOS: `brew install python3`
-   - Ubuntu/Debian: `sudo apt-get install python3`
+   - Ubuntu or Debian: `sudo apt-get install python3`
    - Windows: Download from [python.org](https://www.python.org/downloads/)
 
-3. **Use full path:**
+3. Use full path:
    ```bash
    /usr/bin/python3 generate_release_notes.py --help
    ```
 
-### Virtual Environment Activation Fails
+### Virtual environment activation fails
 
-**Problem (Windows):** `cannot be loaded because running scripts is disabled`
+Problem (Windows): `cannot be loaded because running scripts is disabled`
 
-**Solution:**
+Solution:
 ```powershell
 # Run PowerShell as Administrator
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-**Problem (macOS/Linux):** `source: command not found`
+Problem (macOS or Linux): `source: command not found`
 
-**Solution:**
+Solution:
 ```bash
 # Use the correct shell activation
-source venv/bin/activate  # bash/zsh
+source venv/bin/activate  # bash or zsh
 . venv/bin/activate       # alternative
 ```
 
-### Module Import Errors
+### Module import errors
 
-**Problem:** `ModuleNotFoundError: No module named 'anthropic'`
+Problem: `ModuleNotFoundError: No module named 'anthropic'`
 
-**Checklist:**
+Checklist:
 
-1. **Verify virtual environment is activated:**
+1. Verify virtual environment is activated:
    ```bash
    which python
    # Should show path ending in /venv/bin/python
    ```
 
-2. **Reinstall dependencies:**
+2. Reinstall dependencies:
    ```bash
    pip install --upgrade pip
    pip install -r requirements.txt
    ```
 
-3. **Check Python version:**
+3. Check Python version:
    ```bash
    python --version  # Must be 3.8+
    ```
 
-4. **Verify installation:**
+4. Verify installation:
    ```bash
    pip list | grep anthropic
    ```
 
-## Configuration Issues
+## Configuration issues
 
-### Invalid API Key
+### Invalid API key
 
-**Problem:** `401 Unauthorized` or `Invalid API key`
+Problem: `401 Unauthorized` or `Invalid API key`
 
-**Solutions:**
+Solutions:
 
-1. **Check for extra spaces:**
+1. Check for extra spaces:
    ```bash
    # Bad: "sk-ant-123 " (trailing space)
    # Good: "sk-ant-123"
    ```
 
-2. **Verify correct provider:**
+2. Verify correct provider:
    ```yaml
    # Make sure this matches your key type
    ai_provider: "anthropic"  # for sk-ant-* keys
    ai_provider: "openai"     # for sk-* keys (OpenAI)
    ```
 
-3. **Check key is active:**
+3. Check key is active:
    - Log into your AI provider console
-   - Verify key hasn't been revoked
+   - Verify key has not been revoked
    - Check billing is set up (after free tier)
 
-4. **Regenerate key:**
+4. Regenerate key:
    - Create a new API key
    - Update `config.yaml`
    - Try again
 
-### GitHub Authentication Failed
+### GitHub authentication failed
 
-**Problem:** `Bad credentials` or `401` when accessing GitHub
+Problem: `Bad credentials` or `401` when accessing GitHub
 
-**Solutions:**
+Solutions:
 
-1. **Verify token format:**
+1. Verify token format:
    ```yaml
    github_token: "ghp_xxxxxxxxxxxx"  # Classic token
    github_token: "github_pat_xxxxx"  # Fine-grained token
    ```
 
-2. **Check token scopes:**
+2. Check token scopes:
    - For private repos: Need `repo` scope
    - For public repos: Need `public_repo` scope
    - Go to [github.com/settings/tokens](https://github.com/settings/tokens) to verify
 
-3. **Token expiration:**
+3. Token expiration:
    - Check if token has expired
    - Generate new token if needed
 
-4. **Repository access:**
+4. Repository access:
    ```bash
    # Test access
    curl -H "Authorization: token YOUR_TOKEN" \
      https://api.github.com/repos/OWNER/REPO
    ```
 
-### Configuration File Not Found
+### Configuration file not found
 
-**Problem:** `FileNotFoundError: ../config.yaml`
+Problem: `FileNotFoundError: ../config.yaml`
 
-**Solutions:**
+Solutions:
 
-1. **Check current directory:**
+1. Check current directory:
    ```bash
    pwd  # Should be in 01-release-notes-automation/
    ls ../config.yaml  # Should exist
    ```
 
-2. **Create from example:**
+2. Create from example:
    ```bash
    cd ..  # Go to repository root
    cp config.example.yaml config.yaml
    ```
 
-3. **Use explicit path:**
+3. Use explicit path:
    ```bash
    python generate_release_notes.py \
      --config /full/path/to/config.yaml \
@@ -158,15 +158,15 @@ source venv/bin/activate  # bash/zsh
      --since 2024-01-01
    ```
 
-## Runtime Issues
+## Runtime issues
 
-### No Commits Found
+### No commits found
 
-**Problem:** `Found 0 commits` even though commits exist
+Problem: `Found 0 commits` even though commits exist
 
-**Solutions:**
+Solutions:
 
-1. **Check date range:**
+1. Check date range:
    ```bash
    # Make sure date is in the past
    --since 2024-01-01
@@ -175,7 +175,7 @@ source venv/bin/activate  # bash/zsh
    --since 2025-12-31  # Won't find anything
    ```
 
-2. **Verify repository access:**
+2. Verify repository access:
    ```bash
    # Can you access the repo?
    python -c "
@@ -189,7 +189,7 @@ source venv/bin/activate  # bash/zsh
    "
    ```
 
-3. **Check repository name:**
+3. Check repository name:
    ```bash
    # Correct format
    --repo octocat/Hello-World  # owner/repo
@@ -199,22 +199,22 @@ source venv/bin/activate  # bash/zsh
    --repo github.com/octocat/Hello-World  # Include domain
    ```
 
-4. **Private repository:**
+4. Private repository:
    - Verify token has `repo` scope
    - Verify you have access to the repository
 
-### Rate Limit Exceeded
+### Rate limit exceeded
 
-**Problem:** `API rate limit exceeded`
+Problem: `API rate limit exceeded`
 
-**GitHub Rate Limits:**
+GitHub rate limits:
 
-- Authenticated: 5,000 requests/hour
-- Unauthenticated: 60 requests/hour
+- Authenticated: 5,000 requests per hour
+- Unauthenticated: 60 requests per hour
 
-**Solutions:**
+Solutions:
 
-1. **Wait for reset:**
+1. Wait for reset:
    ```bash
    # Check when rate limit resets
    python -c "
@@ -228,41 +228,41 @@ source venv/bin/activate  # bash/zsh
    "
    ```
 
-2. **Reduce date range:**
+2. Reduce date range:
    ```bash
    # Instead of --since 2023-01-01 (lots of commits)
    # Try --since 2024-01-01 (fewer commits)
    ```
 
-3. **Use caching:**
+3. Use caching:
    - Script should cache commits between runs
    - Implemented in improved version
 
-**AI Provider Rate Limits:**
+AI provider rate limits:
 
-Check your provider's documentation:
+Check your provider documentation:
 
 - Anthropic: [docs.anthropic.com/rate-limits](https://docs.anthropic.com/)
 - OpenAI: [platform.openai.com/docs/guides/rate-limits](https://platform.openai.com/)
 
-### AI Categorization Errors
+### AI categorization errors
 
-**Problem:** Commits consistently miscategorized
+Problem: Commits consistently miscategorized
 
-**Solutions:**
+Solutions:
 
-1. **Review prompt quality:**
+1. Review prompt quality:
    - Are examples clear?
    - Are definitions specific enough?
    - Are exclusions comprehensive?
 
-2. **Test with smaller set:**
+2. Test with smaller set:
    ```bash
    # Use date range with fewer commits to iterate faster
    --since 2024-01-20 --until 2024-01-25
    ```
 
-3. **Check commit message quality:**
+3. Check commit message quality:
    ```bash
    # Poor: "fix bug"
    # Good: "Fix memory leak in parser"
@@ -270,39 +270,39 @@ Check your provider's documentation:
    - AI can only categorize based on commit message
    - Bad commit messages lead to bad categorization
 
-4. **Iterate on prompt:**
-   - See [Prompt Evolution](examples/prompt-evolution.md)
+4. Iterate on prompt:
+   - See [Prompt evolution](examples/prompt-evolution.md)
    - Add specific examples from your repository
-   - Follow [Tutorial Step 5](tutorial/step-5-iterate-prompts.md)
+   - Follow [Tutorial step 5](tutorial/step-5-iterate-prompts.md)
 
-### Output File Permission Denied
+### Output file permission denied
 
-**Problem:** `PermissionError: [Errno 13] Permission denied: 'release_notes.md'`
+Problem: `PermissionError: [Errno 13] Permission denied: 'release_notes.md'`
 
-**Solutions:**
+Solutions:
 
-1. **Check if file is open:**
+1. Check if file is open:
    - Close file in your text editor
    - Try again
 
-2. **Check file permissions:**
+2. Check file permissions:
    ```bash
    ls -l release_notes.md
    chmod 644 release_notes.md
    ```
 
-3. **Use different output file:**
+3. Use different output file:
    ```bash
    --output release_notes_new.md
    ```
 
-## Output Quality Issues
+## Output quality issues
 
-### Internal Changes Appearing
+### Internal changes appearing
 
-**Problem:** CI/CD, test, or internal changes in output
+Problem: CI or CD, test, or internal changes in output
 
-**Solution:** Refine exclusion rules in prompt
+Solution: Refine exclusion rules in prompt
 
 ```
 Exclusions:
@@ -311,13 +311,13 @@ Exclusions:
 - By author: dependabot[bot]
 ```
 
-See [Prompt Engineering Reference](reference/prompt-engineering.md)
+See [Prompt engineering reference](reference/prompt-engineering.md)
 
-### Features vs Enhancements Confused
+### Features versus enhancements confused
 
-**Problem:** Improvements categorized as features
+Problem: Improvements categorized as features
 
-**Solution:** Add clearer examples in prompt
+Solution: Add clearer examples in prompt
 
 ```
 New Features: "Add" + "wholly new capability"
@@ -328,11 +328,11 @@ Enhancements: "Improve", "Update", "Optimize"
 Examples: "Improve search performance" (Correct)
 ```
 
-### Missing Contextual Information
+### Missing contextual information
 
-**Problem:** Output is accurate but lacks business context
+Problem: Output is accurate but lacks business context
 
-**Solution:** This is expected.
+Solution: This is expected.
 
 The automation provides accurate categorization. Human review adds:
 
@@ -343,37 +343,37 @@ The automation provides accurate categorization. Human review adds:
 
 Time savings still significant: 90 minutes to 15 minutes
 
-## Performance Issues
+## Performance issues
 
-### Script Runs Very Slowly
+### Script runs very slowly
 
-**Problem:** Takes more than 5 minutes for small repository
+Problem: Takes more than 5 minutes for small repository
 
-**Checklist:**
+Checklist:
 
-1. **Check internet connection**
-2. **Verify API provider status**
+1. Check internet connection
+2. Verify API provider status
    - Anthropic: [status.anthropic.com](https://status.anthropic.com/)
    - OpenAI: [status.openai.com](https://status.openai.com/)
    - GitHub: [githubstatus.com](https://www.githubstatus.com/)
 
-3. **Reduce commit count:**
+3. Reduce commit count:
    ```bash
    # Narrow date range
    --since 2024-01-20 --until 2024-01-31
    ```
 
-4. **Check rate limiting:**
+4. Check rate limiting:
    - May be throttled by provider
    - Wait and retry
 
-### High AI API Costs
+### High AI API costs
 
-**Problem:** Unexpectedly high API bills
+Problem: Unexpectedly high API bills
 
-**Solutions:**
+Solutions:
 
-1. **Check model selection:**
+1. Check model selection:
    ```yaml
    # More expensive
    model: "claude-3-opus-20240229"    # Higher cost
@@ -384,25 +384,25 @@ Time savings still significant: 90 minutes to 15 minutes
    model: "gpt-3.5-turbo"             # Lower cost
    ```
 
-2. **Batch requests:**
+2. Batch requests:
    - Process multiple releases at once
-   - Don't run for every commit
+   - Do not run for every commit
 
-3. **Set budget alerts:**
+3. Set budget alerts:
    - Anthropic: Console → Billing → Budget Alerts
    - OpenAI: Console → Usage → Limits
 
-## Getting Help
+## Get help
 
-If you're still stuck:
+If you are still stuck:
 
-### 1. Check Documentation
+### 1. Check documentation
 
 - [FAQ](faq.md) - Common questions
 - [Tutorial](tutorial/index.md) - Step-by-step guide
 - [Examples](examples/prompt-evolution.md) - Real-world cases
 
-### 2. Review Error Messages
+### 2. Review error messages
 
 Enable verbose output:
 
@@ -413,13 +413,13 @@ python generate_release_notes.py \
   --verbose  # Add if available
 ```
 
-### 3. Search Issues
+### 3. Search issues
 
 Check if others have encountered this:
 
-- [GitHub Issues](https://github.com/rebeja/docs-automation-examples/issues)
+- [GitHub issues](https://github.com/rebeja/docs-automation-examples/issues)
 
-### 4. Ask for Help
+### 4. Ask for help
 
 Create a new issue with:
 
@@ -428,7 +428,7 @@ Create a new issue with:
 - Your environment (OS, Python version)
 - Relevant configuration (with API keys removed)
 
-**DO NOT share:**
+Do not share:
 
 - API keys
 - GitHub tokens  
@@ -436,4 +436,4 @@ Create a new issue with:
 
 ---
 
-**Still having issues?** [Open an issue](https://github.com/rebeja/docs-automation-examples/issues)
+[Open an issue](https://github.com/rebeja/docs-automation-examples/issues) if you are still having issues.

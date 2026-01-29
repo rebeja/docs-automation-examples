@@ -1,30 +1,26 @@
-# Step 1: Setup Environment
+# Step 1: Setup environment
 
-In this step, you'll set up your development environment with all necessary tools and dependencies.
+Set up your development environment with all necessary tools and dependencies.
 
-**Time Estimate:** 15-20 minutes
+**Time estimate:** 15-20 minutes
 
-## What You'll Accomplish
+## Complete these tasks
 
-By the end of this step:
-
-- Python 3.8+ installed and verified
-- Virtual environment created
-- All dependencies installed
-- Configuration file created
-- First test run successful
+- Install and verify Python 3.8+
+- Create virtual environment
+- Install all dependencies
+- Create configuration file
+- Run first test successfully
 
 ## Prerequisites
 
-Before starting, ensure you have:
-
-- Command line/terminal access
+- Command line or terminal access
 - Text editor installed
 - Internet connection for downloads
 
-## Step-by-Step Instructions
+## Instructions
 
-### 1. Verify Python Installation
+### 1. Verify Python installation
 
 Check if Python is installed:
 
@@ -34,69 +30,69 @@ python --version
 python3 --version
 ```
 
-**Expected output:** `Python 3.8.0` or higher
+The output shows `Python 3.8.0` or higher.
 
-**If you see Python 2.x or no Python installed:** Download Python 3.8+ from [python.org](https://www.python.org/downloads/)
+Download Python 3.8+ from [python.org](https://www.python.org/downloads/) if you see Python 2.x or no Python installed.
 
-### 2. Clone the Repository
+### 2. Clone the repository
 
 ```bash
 git clone https://github.com/rebeja/docs-automation-examples.git
 cd docs-automation-examples
 ```
 
-**Verify:** You should see the project files:
+Verify the project files exist:
 
 ```bash
 ls
-# Expected: 01-release-notes-automation/ README.md requirements.txt ...
+# Shows: 01-release-notes-automation/ README.md requirements.txt ...
 ```
 
-### 3. Create Virtual Environment
+### 3. Create virtual environment
 
 Virtual environments keep project dependencies isolated.
 
-**On macOS/Linux:**
+**macOS or Linux:**
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-**On Windows (PowerShell):**
+**Windows (PowerShell):**
 
 ```bash
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 ```
 
-**On Windows (Command Prompt):**
+**Windows (Command Prompt):**
 
 ```bash
 python -m venv venv
 venv\Scripts\activate.bat
 ```
 
-**Verify:** Your prompt should now show `(venv)`:
+Verify your prompt shows `(venv)`:
 
 ```
 (venv) your-computer:docs-automation-examples$
 ```
 
-**Activation Issues on Windows:** You may need to enable script execution:
+Enable script execution on Windows if needed:
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-### 4. Install Dependencies
+### 4. Install dependencies
 
 ```bash
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-This installs:
+Installed packages:
 
 | Package | Purpose |
 |---------|---------|
@@ -107,15 +103,15 @@ This installs:
 | `python-dotenv` | Environment variable management |
 | `requests` | HTTP requests |
 
-**Verify installation:**
+Verify installation:
 
 ```bash
 pip list | grep -E "anthropic|openai|PyGithub"
 ```
 
-Should show installed versions.
+The output shows installed versions.
 
-### 5. Create Configuration File
+### 5. Create configuration file
 
 Copy the example configuration:
 
@@ -123,7 +119,7 @@ Copy the example configuration:
 cp config.example.yaml config.yaml
 ```
 
-**Open config.yaml in your editor:**
+Open `config.yaml` in your editor:
 
 ```yaml
 # AI Provider - Choose ONE
@@ -139,18 +135,18 @@ default_repo: ""
 output_file: "release_notes.md"
 ```
 
-**Security Note:** The `config.yaml` file is in `.gitignore` to prevent accidental commits of API keys. Never commit files with real API keys.
+The `config.yaml` file is in `.gitignore` to prevent accidental commits of API keys. Never commit files with real API keys.
 
-### 6. Get API Keys (Placeholder for Now)
+### 6. Get API keys (placeholder for now)
 
-You'll get real API keys in [Step 3](step-3-configure.md). For now, leave placeholders:
+Get real API keys in [Step 3](step-3-configure.md). For now, leave placeholders:
 
 ```yaml
 ai_api_key: "PLACEHOLDER"
 github_token: "PLACEHOLDER"
 ```
 
-### 7. Verify Setup
+### 7. Verify setup
 
 Test that imports work:
 
@@ -158,16 +154,16 @@ Test that imports work:
 python -c "import anthropic; import github; import yaml; print('All dependencies imported successfully')"
 ```
 
-**Expected output:** `All dependencies imported successfully`
+The output shows `All dependencies imported successfully`.
 
-### 8. Navigate to Project Directory
+### 8. Navigate to project directory
 
 ```bash
 cd 01-release-notes-automation
 ls
 ```
 
-You should see:
+The directory contains these files:
 
 ```
 generate_release_notes.py
@@ -176,13 +172,13 @@ examples/
 README.md
 ```
 
-### 9. Test Help Command
+### 9. Test help command
 
 ```bash
 python generate_release_notes.py --help
 ```
 
-**Expected output:**
+The output shows:
 
 ```
 usage: generate_release_notes.py [-h] --repo REPO --since SINCE
@@ -198,17 +194,17 @@ optional arguments:
   --output OUTPUT  Output file
 ```
 
-If you see this, setup is complete.
+Setup is complete when you see this output.
 
 ## Troubleshooting
 
-### Python Command Not Found
+### Python command not found
 
 **Problem:** `python: command not found`
 
 **Solution:** Try `python3` instead, or install Python from [python.org](https://www.python.org/downloads/)
 
-### Permission Denied (Windows)
+### Permission denied (Windows)
 
 **Problem:** Cannot activate virtual environment
 
@@ -218,7 +214,7 @@ If you see this, setup is complete.
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-### Import Errors
+### Import errors
 
 **Problem:** `ModuleNotFoundError: No module named 'anthropic'`
 
@@ -228,7 +224,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 2. Reinstall dependencies: `pip install -r requirements.txt`
 3. Check Python version: `python --version` (must be 3.8+)
 
-### Git Clone Fails
+### Git clone fails
 
 **Problem:** Cannot clone repository
 
@@ -238,21 +234,16 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 2. Check internet connection
 3. Try HTTPS URL instead of SSH
 
-## What You've Learned
+## Summary
 
-In this step, you:
+You set up a Python virtual environment, installed required dependencies, created configuration files, and verified the setup works.
 
-- Set up a Python virtual environment
-- Installed required dependencies
-- Created configuration files
-- Verified the setup works
+## Next step
 
-## Next Step
+Document your manual process—the most important step in this tutorial.
 
-Now that your environment is ready, move on to the most important step: documenting your manual process.
-
-[Next: Step 2 - Document Your Process](step-2-document-process.md)
+[Next: Step 2 - Document your process](step-2-document-process.md)
 
 ---
 
-**Having issues?** Check the [Troubleshooting Guide](../troubleshooting.md) or [FAQ](../faq.md).
+Check the [Troubleshooting Guide](../troubleshooting.md) or [FAQ](../faq.md) for help with issues.

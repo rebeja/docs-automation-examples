@@ -1,17 +1,17 @@
-# API Integration Reference
+# API integration reference
 
-How the release notes automation integrates with GitHub and AI provider APIs.
+The release notes automation integrates with GitHub and AI provider APIs.
 
 ## Overview
 
 The automation connects to two types of APIs:
 
-1. **GitHub API** - Fetches commit data
-2. **AI Provider API** - Categorizes commits
+1. GitHub API - Fetches commit data
+2. AI provider API - Categorizes commits
 
-Both use standard REST/HTTP patterns with authentication tokens.
+Both use standard REST or HTTP patterns with authentication tokens.
 
-## GitHub API Integration
+## GitHub API integration
 
 ### Authentication
 
@@ -22,19 +22,19 @@ Uses personal access tokens (PAT):
 github_token: "ghp_xxxxxxxxxxxx"
 ```
 
-### API Endpoints Used
+### API endpoints used
 
-**Get Repository:**
+Get repository:
 ```
 GET /repos/:owner/:repo
 ```
 
-**Get Commits:**
+Get commits:
 ```
 GET /repos/:owner/:repo/commits?since=YYYY-MM-DD
 ```
 
-### Code Example
+### Code example
 
 ```python
 from github import Github
@@ -54,21 +54,21 @@ for commit in commits:
     print(f"{commit.sha}: {commit.commit.message}")
 ```
 
-### Rate Limits
+### Rate limits
 
-- **Authenticated:** 5,000 requests/hour
-- **Unauthenticated:** 60 requests/hour
+- Authenticated: 5,000 requests per hour
+- Unauthenticated: 60 requests per hour
 
-**Checking limits:**
+Check limits:
 ```python
 rate_limit = g.get_rate_limit()
 print(f"Remaining: {rate_limit.core.remaining}")
 print(f"Resets at: {rate_limit.core.reset}")
 ```
 
-### Error Handling
+### Error handling
 
-**Common errors:**
+Common errors:
 
 | Status Code | Meaning | Solution |
 |-------------|---------|----------|
@@ -76,18 +76,18 @@ print(f"Resets at: {rate_limit.core.reset}")
 | 403 | Rate limit or permissions | Wait or check scopes |
 | 404 | Repository not found | Verify repo name and access |
 
-## AI Provider Integration
+## AI provider integration
 
 ### Anthropic (Claude)
 
-**Authentication:**
+Authentication:
 ```yaml
 ai_provider: "anthropic"
 ai_api_key: "sk-ant-xxxxx"
 model: "claude-3-sonnet-20240229"
 ```
 
-**API Call:**
+API call:
 ```python
 import anthropic
 
@@ -106,20 +106,20 @@ message = client.messages.create(
 response_text = message.content[0].text
 ```
 
-**Pricing:**
-- Claude 3 Sonnet: ~$0.015-0.02 per release notes generation
-- Claude 3 Opus: ~$0.03-0.05 per generation
+Pricing:
+- Claude 3 Sonnet: approximately $0.015-0.02 per release notes generation
+- Claude 3 Opus: approximately $0.03-0.05 per generation
 
 ### OpenAI (GPT)
 
-**Authentication:**
+Authentication:
 ```yaml
 ai_provider: "openai"
 ai_api_key: "sk-xxxxx"
 model: "gpt-4"
 ```
 
-**API Call:**
+API call:
 ```python
 import openai
 
@@ -138,11 +138,11 @@ response = client.chat.completions.create(
 response_text = response.choices[0].message.content
 ```
 
-**Pricing:**
-- GPT-4: ~$0.02-0.03 per generation
-- GPT-3.5-turbo: ~$0.005-0.01 per generation
+Pricing:
+- GPT-4: approximately $0.02-0.03 per generation
+- GPT-3.5-turbo: approximately $0.005-0.01 per generation
 
-## Data Flow
+## Data flow
 
 ```
 1. Load Configuration
@@ -160,11 +160,11 @@ response_text = response.choices[0].message.content
 7. Save to File
 ```
 
-## Configuration Management
+## Configuration management
 
-### Environment Variables
+### Environment variables
 
-For production, use environment variables:
+Use environment variables for production:
 
 ```bash
 export GITHUB_TOKEN="ghp_xxxxx"
@@ -173,7 +173,7 @@ export AI_PROVIDER="anthropic"
 export AI_MODEL="claude-3-sonnet-20240229"
 ```
 
-### Config File Priority
+### Config file priority
 
 1. Command line arguments (highest)
 2. Environment variables
@@ -181,21 +181,21 @@ export AI_MODEL="claude-3-sonnet-20240229"
 
 ### Security
 
-**Do:**
-- Use environment variables in CI/CD
+Follow these practices:
+- Use environment variables in CI or CD
 - Rotate tokens every 90 days
 - Use minimal GitHub token scopes
 - Store tokens in password manager
 
-**Don't:**
+Avoid these practices:
 - Commit config.yaml with real keys
-- Share tokens in Slack/email
+- Share tokens in Slack or email
 - Use production keys for testing
 - Log API keys in error messages
 
-## Error Handling
+## Error handling
 
-### GitHub API Errors
+### GitHub API errors
 
 ```python
 from github import GithubException
@@ -211,7 +211,7 @@ except GithubException as e:
         print("Rate limit exceeded")
 ```
 
-### AI API Errors
+### AI API errors
 
 ```python
 try:
@@ -222,21 +222,21 @@ except anthropic.RateLimitError as e:
     print("Rate limit exceeded, wait and retry")
 ```
 
-## Performance Optimization
+## Performance optimization
 
-### Reduce API Calls
+### Reduce API calls
 
-**GitHub:**
+GitHub:
 - Fetch commits in batches
 - Cache results locally
 - Use specific date ranges
 
-**AI Provider:**
+AI provider:
 - Batch commits in single request (up to token limit)
 - Cache categorization results
-- Don't re-process unchanged commits
+- Do not reprocess unchanged commits
 
-### Retry Strategy
+### Retry strategy
 
 ```python
 import time
@@ -252,7 +252,7 @@ def fetch_with_retry(url):
     return response.json()
 ```
 
-## Alternative Platforms
+## Alternative platforms
 
 ### GitLab
 
@@ -275,9 +275,9 @@ response = requests.get(url, headers=headers)
 commits = response.json()['values']
 ```
 
-## Monitoring and Logging
+## Monitoring and logging
 
-### Track API Usage
+### Track API usage
 
 ```python
 import logging
@@ -290,7 +290,7 @@ logger.info(f"Found {len(commits)} commits")
 logger.info(f"AI categorization complete, cost: ${estimated_cost}")
 ```
 
-### Cost Tracking
+### Cost tracking
 
 ```python
 def estimate_cost(commit_count, provider, model):
@@ -308,7 +308,7 @@ def estimate_cost(commit_count, provider, model):
 
 ## Testing
 
-### Mock API Responses
+### Mock API responses
 
 ```python
 from unittest.mock import Mock, patch
@@ -329,7 +329,7 @@ def test_fetch_commits(mock_github):
 
 ## Troubleshooting
 
-### Connection Issues
+### Connection issues
 
 ```bash
 # Test GitHub API access
@@ -342,7 +342,7 @@ curl https://api.anthropic.com/v1/messages \
   -H "anthropic-version: 2023-06-01"
 ```
 
-### Debug Mode
+### Debug mode
 
 ```python
 # Enable verbose output
@@ -352,7 +352,7 @@ http.client.HTTPConnection.debuglevel = 1
 
 ---
 
-**Related:**
-- [Configuration Reference](configuration.md)
-- [Troubleshooting Guide](../troubleshooting.md)
+Related:
+- [Configuration reference](configuration.md)
+- [Troubleshooting guide](../troubleshooting.md)
 - [FAQ](../faq.md)

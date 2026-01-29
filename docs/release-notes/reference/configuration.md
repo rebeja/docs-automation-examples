@@ -1,10 +1,10 @@
-# Configuration Reference
+# Configuration reference
 
 Complete reference for `config.yaml` configuration file.
 
-## File Location
+## File location
 
-The `config.yaml` file should be in the repository root:
+Place the `config.yaml` file in the repository root:
 
 ```
 docs-automation-examples/
@@ -14,7 +14,7 @@ docs-automation-examples/
 └── ...
 ```
 
-## Complete Configuration Example
+## Complete configuration example
 
 ```yaml
 # AI Provider Configuration
@@ -36,13 +36,13 @@ include_merge_commits: false
 verbose: false
 ```
 
-## Required Fields
+## Required fields
 
 ### `ai_provider`
 
-**Type:** String  
-**Required:** Yes  
-**Options:** `"anthropic"` or `"openai"`
+Type: String  
+Required: Yes  
+Options: `"anthropic"` or `"openai"`
 
 Specifies which AI provider to use.
 
@@ -54,7 +54,7 @@ ai_provider: "anthropic"
 ai_provider: "openai"
 ```
 
-**Choosing a provider:**
+Choose a provider:
 
 | Provider | Best For | Model Options |
 |----------|---------|---------------|
@@ -63,9 +63,9 @@ ai_provider: "openai"
 
 ### `ai_api_key`
 
-**Type:** String  
-**Required:** Yes  
-**Format:** Depends on provider
+Type: String  
+Required: Yes  
+Format: Depends on provider
 
 Your AI provider API key.
 
@@ -77,26 +77,26 @@ ai_api_key: "sk-ant-api03-xxxxx..."
 ai_api_key: "sk-xxxxx..."
 ```
 
-**Security:**
+Security:
 
 - Never commit this file with real keys
 - Already in `.gitignore`
 - Use environment variables for production
 
-**Getting keys:**
+Get keys:
 
 - Anthropic: [console.anthropic.com](https://console.anthropic.com/)
 - OpenAI: [platform.openai.com](https://platform.openai.com/)
 
 ### `model`
 
-**Type:** String  
-**Required:** Yes  
-**Format:** Provider-specific model identifier
+Type: String  
+Required: Yes  
+Format: Provider-specific model identifier
 
 The specific AI model to use.
 
-**Anthropic models:**
+Anthropic models:
 
 ```yaml
 # Recommended: Good balance of quality and cost
@@ -109,7 +109,7 @@ model: "claude-3-opus-20240229"
 model: "claude-3-haiku-20240229"
 ```
 
-**OpenAI models:**
+OpenAI models:
 
 ```yaml
 # Recommended: Most capable
@@ -122,7 +122,7 @@ model: "gpt-4-turbo-preview"
 model: "gpt-3.5-turbo"
 ```
 
-**Cost comparison (approximate):**
+Cost comparison (approximate):
 
 | Model | Cost per Run | Quality |
 |-------|-------------|---------|
@@ -133,9 +133,9 @@ model: "gpt-3.5-turbo"
 
 ### `github_token`
 
-**Type:** String  
-**Required:** Yes  
-**Format:** GitHub personal access token
+Type: String  
+Required: Yes  
+Format: GitHub personal access token
 
 Your GitHub API token for accessing repositories.
 
@@ -143,7 +143,7 @@ Your GitHub API token for accessing repositories.
 github_token: "ghp_xxxxxxxxxxxxxxxxxxxx"
 ```
 
-**Required scopes:**
+Required scopes:
 
 For public repositories:
 ```
@@ -155,27 +155,27 @@ For private repositories:
 repo (full control)
 ```
 
-**Creating a token:**
+Create a token:
 
 1. Go to [github.com/settings/tokens](https://github.com/settings/tokens)
 2. Click "Generate new token (classic)"
 3. Select appropriate scopes
 4. Copy token immediately
 
-**Security:**
+Security:
 
 - Treat like a password
 - Set expiration (90 days recommended)
 - Rotate regularly
-- Don't share in Slack/email
+- Do not share in Slack or email
 
-## Optional Fields
+## Optional fields
 
 ### `default_repo`
 
-**Type:** String  
-**Required:** No  
-**Format:** `owner/repo-name`
+Type: String  
+Required: No  
+Format: `owner/repo-name`
 
 Default repository if not specified via command line.
 
@@ -183,7 +183,7 @@ Default repository if not specified via command line.
 default_repo: "octocat/Hello-World"
 ```
 
-**Usage:**
+Usage:
 
 ```bash
 # With default_repo set
@@ -195,9 +195,9 @@ python generate_release_notes.py --repo other/repo --since 2024-01-01
 
 ### `output_file`
 
-**Type:** String  
-**Required:** No  
-**Default:** `"release_notes.md"`
+Type: String  
+Required: No  
+Default: `"release_notes.md"`
 
 Default filename for generated release notes.
 
@@ -205,7 +205,7 @@ Default filename for generated release notes.
 output_file: "RELEASE_NOTES.md"
 ```
 
-**Overriding:**
+Override with:
 
 ```bash
 python generate_release_notes.py \
@@ -216,12 +216,12 @@ python generate_release_notes.py \
 
 ### `date_format`
 
-**Type:** String  
-**Required:** No  
-**Default:** `"%Y-%m-%d"`
-**Format:** Python strftime format
+Type: String  
+Required: No  
+Default: `"%Y-%m-%d"`
+Format: Python strftime format
 
-How dates are formatted in output.
+Formats dates in output.
 
 ```yaml
 # ISO format (default)
@@ -239,9 +239,9 @@ date_format: "%B %d, %Y"
 
 ### `max_commits`
 
-**Type:** Integer  
-**Required:** No  
-**Default:** No limit
+Type: Integer  
+Required: No  
+Default: No limit
 
 Maximum number of commits to process.
 
@@ -249,7 +249,7 @@ Maximum number of commits to process.
 max_commits: 100
 ```
 
-**Use cases:**
+Use cases:
 
 - Testing with smaller datasets
 - Rate limit management
@@ -257,11 +257,11 @@ max_commits: 100
 
 ### `include_merge_commits`
 
-**Type:** Boolean  
-**Required:** No  
-**Default:** `false`
+Type: Boolean  
+Required: No  
+Default: `false`
 
-Whether to include merge commits in categorization.
+Include merge commits in categorization.
 
 ```yaml
 # Exclude merge commits (recommended)
@@ -271,13 +271,13 @@ include_merge_commits: false
 include_merge_commits: true
 ```
 
-**Note:** Most merge commits should be filtered by prompt's exclusion rules.
+Most merge commits should be filtered by prompt exclusion rules.
 
 ### `verbose`
 
-**Type:** Boolean  
-**Required:** No  
-**Default:** `false`
+Type: Boolean  
+Required: No  
+Default: `false`
 
 Enable detailed logging.
 
@@ -285,7 +285,7 @@ Enable detailed logging.
 verbose: true
 ```
 
-**Output with verbose:**
+Output with verbose:
 
 ```
 [DEBUG] Loading configuration from ../config.yaml
@@ -297,9 +297,9 @@ verbose: true
 [INFO] Release notes written to release_notes.md
 ```
 
-## Environment Variables
+## Environment variables
 
-Alternative to `config.yaml` for production:
+Use as alternative to `config.yaml` for production:
 
 ```bash
 # AI Provider
@@ -314,17 +314,17 @@ export GITHUB_TOKEN="ghp_..."
 python generate_release_notes.py --repo owner/repo --since 2024-01-01
 ```
 
-**Priority:**
+Priority:
 
 1. Command line arguments (highest)
 2. Environment variables
 3. `config.yaml` file (lowest)
 
-## Configuration Validation
+## Configuration validation
 
-### Check Configuration
+### Check configuration
 
-Test if configuration is valid:
+Test configuration validity:
 
 ```bash
 python -c "
@@ -339,7 +339,7 @@ else:
 "
 ```
 
-### Test API Connections
+### Test API connections
 
 Verify API keys work:
 
@@ -364,7 +364,7 @@ print('AI Provider: Connected')
 "
 ```
 
-## Multiple Configurations
+## Multiple configurations
 
 Maintain different configurations:
 
@@ -379,7 +379,7 @@ config.prod.yaml
 config.test.yaml
 ```
 
-**Use with:**
+Use with:
 
 ```bash
 python generate_release_notes.py \
@@ -388,27 +388,27 @@ python generate_release_notes.py \
   --since 2024-01-01
 ```
 
-## Security Best Practices
+## Security best practices
 
-### Do
+Follow these practices:
 
 - Keep `config.yaml` in `.gitignore`
-- Use environment variables for CI/CD
+- Use environment variables for CI or CD
 - Rotate keys every 90 days
 - Use minimal GitHub token scopes
 - Set token expiration dates
 
-### Don't
+Avoid these practices:
 
 - Commit `config.yaml` with real keys
-- Share keys via Slack/email
+- Share keys via Slack or email
 - Use production keys for testing
 - Grant unnecessary permissions
 - Store keys in plaintext elsewhere
 
-## Troubleshooting Configuration
+## Troubleshooting configuration
 
-### Configuration File Not Found
+### Configuration file not found
 
 ```bash
 # Check location
@@ -418,26 +418,26 @@ ls -la config.yaml
 cp config.example.yaml config.yaml
 ```
 
-### Invalid YAML Syntax
+### Invalid YAML syntax
 
-**Problem:** `yaml.scanner.ScannerError`
+Problem: `yaml.scanner.ScannerError`
 
-**Solution:** Validate YAML:
+Solution: Validate YAML:
 
 ```bash
 python -c "import yaml; yaml.safe_load(open('config.yaml'))"
 ```
 
-**Common issues:**
+Common issues:
 
 - Missing quotes around values with special characters
 - Incorrect indentation (use spaces, not tabs)
 - Unescaped characters in strings
 
-### API Keys Not Working
+### API keys not working
 
-See [Troubleshooting Guide](../troubleshooting.md#configuration-issues).
+See [Troubleshooting guide](../troubleshooting.md#configuration-issues).
 
 ---
 
-**Next:** [Prompt Engineering](prompt-engineering.md)
+Next: [Prompt engineering](prompt-engineering.md)

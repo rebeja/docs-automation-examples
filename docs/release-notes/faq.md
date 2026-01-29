@@ -1,6 +1,6 @@
-# Frequently Asked Questions
+# Frequently asked questions
 
-## General Questions
+## General questions
 
 ### What is this project?
 
@@ -30,14 +30,14 @@ Your technical writing skills are exactly what you need.
 
 ### What AI tools does this work with?
 
-The example uses **Anthropic Claude** or **OpenAI GPT**, but the principles apply to:
+The example uses Anthropic Claude or OpenAI GPT, but the principles apply to:
 
 - Cursor with Claude
 - GitHub Copilot
 - ChatGPT
 - Any AI coding assistant
 
-The key is the **approach**, not the specific tool.
+The key is the approach, not the specific tool.
 
 ### What version control systems are supported?
 
@@ -50,7 +50,7 @@ The code uses GitHub, but patterns work with:
 
 The same automation pattern applies—just different API calls.
 
-## Setup Questions
+## Setup questions
 
 ### How long does setup take?
 
@@ -59,9 +59,9 @@ The same automation pattern applies—just different API calls.
 - First successful run: 10 minutes
 - Prompt iteration: 30-60 minutes
 
-**Total: 2-3 hours** for complete tutorial
+Total: 2-3 hours for complete tutorial
 
-This investment can save 4-8 hours per release cycle going forward.
+This investment can save 4-8 hours per release cycle.
 
 ### What if I don't have API keys?
 
@@ -76,12 +76,12 @@ Free tier available for both Anthropic and OpenAI.
 
 ### How much do API calls cost?
 
-**Per release notes generation:**
+Per release notes generation:
 
 - GitHub API: Free (rate limited)
 - AI API: $0.01 - $0.05 per run
 
-**For typical biweekly releases:**
+For typical biweekly releases:
 
 - Approximately $0.50 - $1.00 per month
 
@@ -95,7 +95,7 @@ Yes. Just ensure:
 
 The automation works the same for public or private repos.
 
-## Usage Questions
+## Usage questions
 
 ### How accurate is the categorization?
 
@@ -126,7 +126,7 @@ Yes. You can:
 - Remove categories
 - Customize for different audiences
 
-See [Prompt Engineering Reference](reference/prompt-engineering.md).
+See [Prompt engineering reference](reference/prompt-engineering.md).
 
 ### How do I handle different release note audiences?
 
@@ -159,11 +159,11 @@ Not in the current version, but you could:
 
 This is a great example of extending the automation.
 
-## Prompt Engineering Questions
+## Prompt engineering questions
 
 ### How do I improve categorization accuracy?
 
-Follow the iteration process in [Tutorial Step 5](tutorial/step-5-iterate-prompts.md):
+Follow the iteration process in [Tutorial step 5](tutorial/step-5-iterate-prompts.md):
 
 1. Run with current prompt
 2. Review output systematically
@@ -182,7 +182,7 @@ Key elements:
 - Comprehensive exclusion rules
 - Decision rules for edge cases
 
-See [Prompt Evolution Example](examples/prompt-evolution.md).
+See [Prompt evolution example](examples/prompt-evolution.md).
 
 ### Should I use examples from my actual commits?
 
@@ -190,7 +190,7 @@ Yes. The more domain-specific your examples, the better. Generic examples work O
 
 ### How long should my prompt be?
 
-**Sweet spot: 500-1000 words**
+Sweet spot: 500-1000 words
 
 - Too short (less than 300 words): Vague, inconsistent results
 - Just right (500-1000 words): Clear, consistent, maintainable
@@ -208,17 +208,17 @@ Start with one prompt, then customize per repository:
 
 Clone and customize rather than using one prompt for all.
 
-## Workflow Questions
+## Workflow questions
 
 ### When should I run this automation?
 
-**Recommended timing:**
+Recommended timing:
 
 - Before release (1-2 days prior)
 - After all commits are merged
 - When you have time to review output
 
-**Workflow:**
+Workflow:
 
 1. Development team finalizes release
 2. Run automation to generate draft
@@ -241,8 +241,8 @@ This requires additional setup not covered in the tutorial, but ask your AI codi
 
 The automation can only work with what it has. If commit messages are vague:
 
-1. **Short term:** Add context during review
-2. **Long term:** Improve commit message standards
+1. Short term: Add context during review
+2. Long term: Improve commit message standards
 
 Consider creating a commit message template or guide for your team.
 
@@ -266,7 +266,7 @@ Or mark in existing categories:
 - Update API format **(Breaking Change)** - New JSON structure
 ```
 
-## Integration Questions
+## Integration questions
 
 ### Can I output in different formats?
 
@@ -313,7 +313,7 @@ The current version focuses on Git commits, but you could:
 
 This requires additional API integration.
 
-## Security Questions
+## Security questions
 
 ### Is it safe to use API keys?
 
@@ -335,7 +335,7 @@ Only commit messages and metadata:
 - Author names
 - Commit SHA
 
-**Not sent:**
+Not sent:
 
 - Actual code changes
 - File contents
@@ -361,7 +361,7 @@ For sensitive code:
 4. Use fine-grained GitHub tokens with minimal access
 5. Consider internal-only AI solutions
 
-## Maintenance Questions
+## Maintenance questions
 
 ### Do I need to update prompts regularly?
 
@@ -381,7 +381,7 @@ Check:
 3. Rate limits not exceeded
 4. Dependencies up to date: `pip install --upgrade -r requirements.txt`
 
-See [Troubleshooting Guide](troubleshooting.md).
+See [Troubleshooting guide](troubleshooting.md).
 
 ### How do I onboard new team members?
 
@@ -394,7 +394,7 @@ Share:
 
 The [Tutorial](tutorial/index.md) is designed for onboarding.
 
-## Advanced Questions
+## Advanced questions
 
 ### Can I use this for other documentation tasks?
 
@@ -406,11 +406,11 @@ Yes. The same pattern applies to:
 - Automated screenshots
 - API reference generation
 
-**The approach:** Document manual process → Convert to automation prompt → Iterate
+The approach: Document manual process → Convert to automation prompt → Iterate
 
 ### Can I contribute improvements?
 
-Yes. See [Contributing Guidelines](https://github.com/rebeja/docs-automation-examples/blob/main/CONTRIBUTING.md).
+Yes. See [Contributing guidelines](https://github.com/rebeja/docs-automation-examples/blob/main/CONTRIBUTING.md).
 
 Ways to contribute:
 
@@ -422,13 +422,13 @@ Ways to contribute:
 
 ### Where can I learn more?
 
-**Resources:**
+Resources:
 
 - [Write the Docs](https://www.writethedocs.org/)
 - [Anthropic Prompt Library](https://docs.anthropic.com/claude/prompt-library)
 - [OpenAI Prompt Engineering Guide](https://platform.openai.com/docs/guides/prompt-engineering)
 
-**Community:**
+Community:
 
 - Write the Docs Slack
 - Technical Writer HQ
@@ -436,4 +436,4 @@ Ways to contribute:
 
 ---
 
-**Have a question not answered here?** [Open an issue](https://github.com/rebeja/docs-automation-examples/issues)
+[Open an issue](https://github.com/rebeja/docs-automation-examples/issues) if you have a question not answered here.

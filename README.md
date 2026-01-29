@@ -14,11 +14,11 @@ Automate release notes creation from GitHub commits using AI coding agents. This
 
 Complete documentation includes:
 
-- ✅ Step-by-step tutorial (2-3 hours)
-- ✅ Prompt engineering examples with evolution
-- ✅ Troubleshooting guide and FAQ
-- ✅ Sample outputs and metrics
-- ✅ Configuration reference
+- Step-by-step tutorial (2-3 hours)
+- Prompt engineering examples with evolution
+- Troubleshooting guide and FAQ
+- Sample outputs and metrics
+- Configuration reference
 
 ---
 

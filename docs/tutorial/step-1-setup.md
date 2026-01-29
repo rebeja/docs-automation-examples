@@ -2,18 +2,17 @@
 
 In this step, you'll set up your development environment with all necessary tools and dependencies.
 
-!!! info "Time Estimate"
-    15-20 minutes
+**Time Estimate:** 15-20 minutes
 
 ## What You'll Accomplish
 
 By the end of this step:
 
-- ✅ Python 3.8+ installed and verified
-- ✅ Virtual environment created
-- ✅ All dependencies installed
-- ✅ Configuration file created
-- ✅ First test run successful
+- Python 3.8+ installed and verified
+- Virtual environment created
+- All dependencies installed
+- Configuration file created
+- First test run successful
 
 ## Prerequisites
 
@@ -37,8 +36,7 @@ python3 --version
 
 **Expected output:** `Python 3.8.0` or higher
 
-!!! warning "Python Version"
-    If you see Python 2.x or no Python installed, [download Python 3.8+](https://www.python.org/downloads/)
+**If you see Python 2.x or no Python installed:** Download Python 3.8+ from [python.org](https://www.python.org/downloads/)
 
 ### 2. Clone the Repository
 
@@ -56,25 +54,28 @@ ls
 
 ### 3. Create Virtual Environment
 
-Virtual environments keep project dependencies isolated:
+Virtual environments keep project dependencies isolated.
 
-=== "macOS/Linux"
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate
-    ```
+**On macOS/Linux:**
 
-=== "Windows (PowerShell)"
-    ```bash
-    python -m venv venv
-    .\venv\Scripts\Activate.ps1
-    ```
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
 
-=== "Windows (Command Prompt)"
-    ```bash
-    python -m venv venv
-    venv\Scripts\activate.bat
-    ```
+**On Windows (PowerShell):**
+
+```bash
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+```
+
+**On Windows (Command Prompt):**
+
+```bash
+python -m venv venv
+venv\Scripts\activate.bat
+```
 
 **Verify:** Your prompt should now show `(venv)`:
 
@@ -82,11 +83,11 @@ Virtual environments keep project dependencies isolated:
 (venv) your-computer:docs-automation-examples$
 ```
 
-!!! tip "Activation Issues?"
-    On Windows, you may need to enable script execution:
-    ```powershell
-    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-    ```
+**Activation Issues on Windows:** You may need to enable script execution:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
 
 ### 4. Install Dependencies
 
@@ -138,8 +139,7 @@ default_repo: ""
 output_file: "release_notes.md"
 ```
 
-!!! warning "Don't Commit Secrets"
-    The `config.yaml` file is in `.gitignore` to prevent accidental commits of API keys. Never commit files with real API keys!
+**Security Note:** The `config.yaml` file is in `.gitignore` to prevent accidental commits of API keys. Never commit files with real API keys.
 
 ### 6. Get API Keys (Placeholder for Now)
 
@@ -155,10 +155,10 @@ github_token: "PLACEHOLDER"
 Test that imports work:
 
 ```bash
-python -c "import anthropic; import github; import yaml; print('✓ All dependencies imported successfully')"
+python -c "import anthropic; import github; import yaml; print('All dependencies imported successfully')"
 ```
 
-**Expected output:** `✓ All dependencies imported successfully`
+**Expected output:** `All dependencies imported successfully`
 
 ### 8. Navigate to Project Directory
 
@@ -198,7 +198,7 @@ optional arguments:
   --output OUTPUT  Output file
 ```
 
-If you see this, setup is complete! 🎉
+If you see this, setup is complete.
 
 ## Troubleshooting
 
@@ -242,16 +242,16 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 In this step, you:
 
-- ✅ Set up a Python virtual environment
-- ✅ Installed required dependencies
-- ✅ Created configuration files
-- ✅ Verified the setup works
+- Set up a Python virtual environment
+- Installed required dependencies
+- Created configuration files
+- Verified the setup works
 
 ## Next Step
 
 Now that your environment is ready, move on to the most important step: documenting your manual process.
 
-[Next: Step 2 - Document Your Process →](step-2-document-process.md){ .md-button .md-button--primary }
+[Next: Step 2 - Document Your Process](step-2-document-process.md)
 
 ---
 

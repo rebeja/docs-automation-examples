@@ -5,59 +5,115 @@
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://rebeja.github.io/docs-automation-examples/faq/</loc>
-         <lastmod>2026-01-29</lastmod>
-    </url>
-    <url>
          <loc>https://rebeja.github.io/docs-automation-examples/getting-started/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://rebeja.github.io/docs-automation-examples/troubleshooting/</loc>
+         <loc>https://rebeja.github.io/docs-automation-examples/doc-site/faq/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://rebeja.github.io/docs-automation-examples/examples/prompt-evolution/</loc>
+         <loc>https://rebeja.github.io/docs-automation-examples/doc-site/troubleshooting/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://rebeja.github.io/docs-automation-examples/examples/sample-outputs/</loc>
+         <loc>https://rebeja.github.io/docs-automation-examples/doc-site/examples/portfolio-examples/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://rebeja.github.io/docs-automation-examples/reference/api-integration/</loc>
+         <loc>https://rebeja.github.io/docs-automation-examples/doc-site/examples/prompt-templates/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://rebeja.github.io/docs-automation-examples/reference/configuration/</loc>
+         <loc>https://rebeja.github.io/docs-automation-examples/doc-site/reference/ai-collaboration/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://rebeja.github.io/docs-automation-examples/reference/prompt-engineering/</loc>
+         <loc>https://rebeja.github.io/docs-automation-examples/doc-site/reference/content-types/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://rebeja.github.io/docs-automation-examples/tutorial/</loc>
+         <loc>https://rebeja.github.io/docs-automation-examples/doc-site/reference/site-structure/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://rebeja.github.io/docs-automation-examples/tutorial/step-1-setup/</loc>
+         <loc>https://rebeja.github.io/docs-automation-examples/doc-site/tutorial/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://rebeja.github.io/docs-automation-examples/tutorial/step-2-document-process/</loc>
+         <loc>https://rebeja.github.io/docs-automation-examples/doc-site/tutorial/step-1-setup/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://rebeja.github.io/docs-automation-examples/tutorial/step-3-configure/</loc>
+         <loc>https://rebeja.github.io/docs-automation-examples/doc-site/tutorial/step-2-plan-site/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://rebeja.github.io/docs-automation-examples/tutorial/step-4-run-first-time/</loc>
+         <loc>https://rebeja.github.io/docs-automation-examples/doc-site/tutorial/step-3-generate-structure/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
     <url>
-         <loc>https://rebeja.github.io/docs-automation-examples/tutorial/step-5-iterate-prompts/</loc>
+         <loc>https://rebeja.github.io/docs-automation-examples/doc-site/tutorial/step-4-write-content/</loc>
+         <lastmod>2026-01-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rebeja.github.io/docs-automation-examples/doc-site/tutorial/step-5-refine-with-ai/</loc>
+         <lastmod>2026-01-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rebeja.github.io/docs-automation-examples/doc-site/tutorial/step-6-deploy/</loc>
+         <lastmod>2026-01-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rebeja.github.io/docs-automation-examples/release-notes/faq/</loc>
+         <lastmod>2026-01-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rebeja.github.io/docs-automation-examples/release-notes/troubleshooting/</loc>
+         <lastmod>2026-01-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rebeja.github.io/docs-automation-examples/release-notes/examples/prompt-evolution/</loc>
+         <lastmod>2026-01-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rebeja.github.io/docs-automation-examples/release-notes/examples/sample-outputs/</loc>
+         <lastmod>2026-01-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rebeja.github.io/docs-automation-examples/release-notes/reference/api-integration/</loc>
+         <lastmod>2026-01-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rebeja.github.io/docs-automation-examples/release-notes/reference/configuration/</loc>
+         <lastmod>2026-01-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rebeja.github.io/docs-automation-examples/release-notes/reference/prompt-engineering/</loc>
+         <lastmod>2026-01-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rebeja.github.io/docs-automation-examples/release-notes/tutorial/</loc>
+         <lastmod>2026-01-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rebeja.github.io/docs-automation-examples/release-notes/tutorial/step-1-setup/</loc>
+         <lastmod>2026-01-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rebeja.github.io/docs-automation-examples/release-notes/tutorial/step-2-document-process/</loc>
+         <lastmod>2026-01-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rebeja.github.io/docs-automation-examples/release-notes/tutorial/step-3-configure/</loc>
+         <lastmod>2026-01-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rebeja.github.io/docs-automation-examples/release-notes/tutorial/step-4-run-first-time/</loc>
+         <lastmod>2026-01-29</lastmod>
+    </url>
+    <url>
+         <loc>https://rebeja.github.io/docs-automation-examples/release-notes/tutorial/step-5-iterate-prompts/</loc>
          <lastmod>2026-01-29</lastmod>
     </url>
 </urlset>

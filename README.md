@@ -1,5 +1,7 @@
 # Release Notes Automation Starter
 
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
 > AI-assisted release notes generation for technical writers
 
 Automate release notes creation from GitHub commits using AI coding agents. This starter project demonstrates practical automation patterns for docs-as-code workflows—no programming experience required.
@@ -185,7 +187,14 @@ GitHub API → Fetch Commits → Filter → AI Categorization → Format → Hum
 
 ## 📝 License
 
-MIT License - see [LICENSE](./LICENSE) file for details.
+[![CC BY 4.0][cc-by-shield]][cc-by]
+
+This work is licensed under a [Creative Commons Attribution 4.0 International License][cc-by].
+
+You are free to share and adapt this material for any purpose, even commercially, as long as you give appropriate credit.
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
+[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
 
 ---
 
@@ -213,7 +222,7 @@ Created for the technical writing community to demonstrate practical AI-assisted
 - [Contributing Guidelines](./CONTRIBUTING.md) - How to contribute
 - [Code of Conduct](./CODE_OF_CONDUCT.md) - Community standards
 - [Changelog](./CHANGELOG.md) - Version history
-- [License](./LICENSE) - MIT License
+- [License](./LICENSE) - CC BY 4.0 License
 
 ---
 

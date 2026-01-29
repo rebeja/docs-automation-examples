@@ -2058,7 +2058,7 @@
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>--since<span class="w"> </span><span class="m">2024</span>-01-01
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
 <a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="c1"># Not future dates</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>--since<span class="w"> </span><span class="m">2025</span>-12-31<span class="w">  </span><span class="c1"># ❌ Won&#39;t find anything</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>--since<span class="w"> </span><span class="m">2025</span>-12-31<span class="w">  </span><span class="c1"># Won&#39;t find anything</span>
 </code></pre></div></p>
 </li>
 <li>
@@ -2078,11 +2078,11 @@
 <li>
 <p><strong>Check repository name:</strong>
    <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Correct format</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>--repo<span class="w"> </span>octocat/Hello-World<span class="w">  </span><span class="c1"># ✅ owner/repo</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>--repo<span class="w"> </span>octocat/Hello-World<span class="w">  </span><span class="c1"># owner/repo</span>
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1"># Incorrect formats</span>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>--repo<span class="w"> </span>Hello-World<span class="w">          </span><span class="c1"># ❌ Missing owner</span>
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>--repo<span class="w"> </span>github.com/octocat/Hello-World<span class="w">  </span><span class="c1"># ❌ Include domain</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>--repo<span class="w"> </span>Hello-World<span class="w">          </span><span class="c1"># Missing owner</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>--repo<span class="w"> </span>github.com/octocat/Hello-World<span class="w">  </span><span class="c1"># Include domain</span>
 </code></pre></div></p>
 </li>
 <li>
@@ -2156,7 +2156,7 @@
 </li>
 <li>AI can only categorize based on commit message</li>
 <li>
-<p>Bad commit messages → bad categorization</p>
+<p>Bad commit messages lead to bad categorization</p>
 </li>
 <li>
 <p><strong>Iterate on prompt:</strong></p>
@@ -2200,15 +2200,15 @@
 <p><strong>Problem:</strong> Improvements categorized as features</p>
 <p><strong>Solution:</strong> Add clearer examples in prompt</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>New Features: &quot;Add&quot; + &quot;wholly new capability&quot;
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>Examples: &quot;Add user authentication&quot; ✅
-<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>Not: &quot;Add performance improvement&quot; ❌ (enhancement)
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>Examples: &quot;Add user authentication&quot; (Correct)
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>Not: &quot;Add performance improvement&quot; (Enhancement)
 <a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
 <a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>Enhancements: &quot;Improve&quot;, &quot;Update&quot;, &quot;Optimize&quot;
-<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>Examples: &quot;Improve search performance&quot; ✅
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>Examples: &quot;Improve search performance&quot; (Correct)
 </code></pre></div>
 <h3 id="missing-contextual-information">Missing Contextual Information</h3>
 <p><strong>Problem:</strong> Output is accurate but lacks business context</p>
-<p><strong>Solution:</strong> This is expected!</p>
+<p><strong>Solution:</strong> This is expected.</p>
 <p>The automation provides accurate categorization. Human review adds:</p>
 <ul>
 <li>Business value explanations</li>
@@ -2216,10 +2216,10 @@
 <li>Context for non-technical readers</li>
 <li>Emphasis on important changes</li>
 </ul>
-<p><strong>Time savings still significant:</strong> 90 minutes → 15 minutes</p>
+<p>Time savings still significant: 90 minutes to 15 minutes</p>
 <h2 id="performance-issues">Performance Issues</h2>
 <h3 id="script-runs-very-slowly">Script Runs Very Slowly</h3>
-<p><strong>Problem:</strong> Takes &gt;5 minutes for small repository</p>
+<p><strong>Problem:</strong> Takes more than 5 minutes for small repository</p>
 <p><strong>Checklist:</strong></p>
 <ol>
 <li><strong>Check internet connection</strong></li>
@@ -2248,12 +2248,12 @@
 <li>
 <p><strong>Check model selection:</strong>
    <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># More expensive</span>
-<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;claude-3-opus-20240229&quot;</span><span class="w">    </span><span class="c1"># $$$$</span>
-<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;gpt-4&quot;</span><span class="w">                     </span><span class="c1"># $$$</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;claude-3-opus-20240229&quot;</span><span class="w">    </span><span class="c1"># Higher cost</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;gpt-4&quot;</span><span class="w">                     </span><span class="c1"># Higher cost</span>
 <a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
 <a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="c1"># Cost-effective</span>
-<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;claude-3-sonnet-20240229&quot;</span><span class="w">  </span><span class="c1"># $$</span>
-<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;gpt-3.5-turbo&quot;</span><span class="w">             </span><span class="c1"># $</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;claude-3-sonnet-20240229&quot;</span><span class="w">  </span><span class="c1"># Moderate cost</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;gpt-3.5-turbo&quot;</span><span class="w">             </span><span class="c1"># Lower cost</span>
 </code></pre></div></p>
 </li>
 <li>
@@ -2295,7 +2295,7 @@
 <li>Error message (full text)</li>
 <li>Steps to reproduce</li>
 <li>Your environment (OS, Python version)</li>
-<li>Relevant configuration (with API keys removed!)</li>
+<li>Relevant configuration (with API keys removed)</li>
 </ul>
 <p><strong>DO NOT share:</strong></p>
 <ul>
@@ -2304,7 +2304,7 @@
 <li>Private repository details</li>
 </ul>
 <hr />
-<p><strong>Still having issues?</strong> <a class="md-button" href="https://github.com/rebeja/docs-automation-examples/issues">Open an issue</a></p>
+<p><strong>Still having issues?</strong> <a href="https://github.com/rebeja/docs-automation-examples/issues">Open an issue</a></p>
 
 
 

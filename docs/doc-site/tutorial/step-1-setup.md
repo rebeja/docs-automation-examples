@@ -260,6 +260,92 @@ Add `.env` to `.gitignore`:
 echo ".env" >> .gitignore
 ```
 
+## Customize theme (optional)
+
+Basic theme customization makes your portfolio unique. These changes are optional but recommended.
+
+### Choose colors
+
+Edit `mkdocs.yml` to change color scheme:
+
+```yaml
+theme:
+  name: material
+  palette:
+    scheme: default  # or 'slate' for dark mode
+    primary: indigo  # Change to: blue, teal, purple, etc.
+    accent: cyan     # Change to: light blue, green, orange, etc.
+```
+
+**Color options**: red, pink, purple, deep purple, indigo, blue, light blue, cyan, teal, green, light green, lime, yellow, amber, orange, deep orange
+
+**Recommended combinations**:
+- Professional: `primary: blue`, `accent: light blue`
+- Modern: `primary: indigo`, `accent: cyan`
+- Vibrant: `primary: teal`, `accent: green`
+
+### Enable dark mode toggle
+
+Allow visitors to switch between light and dark:
+
+```yaml
+theme:
+  name: material
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+```
+
+This adds a theme toggle button in the header.
+
+### Choose fonts (optional)
+
+Change text and code fonts:
+
+```yaml
+theme:
+  name: material
+  font:
+    text: Inter       # or: Open Sans, Ubuntu, Roboto
+    code: Fira Code   # or: Source Code Pro, Roboto Mono
+```
+
+Or use system fonts for faster loading:
+
+```yaml
+theme:
+  font: false
+```
+
+### Test your customizations
+
+After making changes:
+
+```bash
+# Restart the server
+# Press Ctrl+C to stop, then:
+mkdocs serve
+```
+
+Open [http://127.0.0.1:8000](http://127.0.0.1:8000) to see your customizations.
+
+For more customization options, see [Theme customization reference](../reference/theme-customization.md).
+
 ## Verify setup
 
 Check everything is working:

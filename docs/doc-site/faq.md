@@ -195,16 +195,32 @@ Choose MkDocs for simplicity and documentation focus.
 
 ### Can I customize the theme?
 
-Yes. Material for MkDocs supports extensive customization:
+Yes. Material for MkDocs supports extensive customization without requiring custom code:
 
-- Colors and fonts
-- Navigation structure
-- Feature toggles
-- Custom CSS
+**Basic customization** (no code required):
+- Color schemes (light and dark mode)
+- Primary and accent colors
+- Fonts (text and code)
 - Logo and favicon
+- Navigation features
 - Social links
 
-See [Material for MkDocs documentation](https://squidfunk.github.io/mkdocs-material/) for customization options.
+**Advanced customization**:
+- Custom CSS
+- Custom templates
+- JavaScript enhancements
+- Homepage layouts
+
+**Quick example** - Change colors:
+```yaml
+theme:
+  name: material
+  palette:
+    primary: teal
+    accent: green
+```
+
+See [Theme customization reference](reference/theme-customization.md) for complete guide.
 
 ### How do I add a resume or PDF?
 

@@ -79,9 +79,9 @@ ai_api_key: "sk-xxxxx..."
 
 **Security:**
 
-- ⚠️ Never commit this file with real keys
-- ⚠️ Already in `.gitignore`
-- ✅ Use environment variables for production
+- Never commit this file with real keys
+- Already in `.gitignore`
+- Use environment variables for production
 
 **Getting keys:**
 
@@ -147,12 +147,12 @@ github_token: "ghp_xxxxxxxxxxxxxxxxxxxx"
 
 For public repositories:
 ```
-✅ public_repo
+public_repo
 ```
 
 For private repositories:
 ```
-✅ repo (full control)
+repo (full control)
 ```
 
 **Creating a token:**
@@ -333,9 +333,9 @@ config = yaml.safe_load(open('config.yaml'))
 required = ['ai_provider', 'ai_api_key', 'model', 'github_token']
 missing = [f for f in required if f not in config]
 if missing:
-    print(f'❌ Missing: {missing}')
+    print(f'Missing: {missing}')
 else:
-    print('✅ All required fields present')
+    print('All required fields present')
 "
 ```
 
@@ -351,7 +351,7 @@ import yaml
 config = yaml.safe_load(open('../config.yaml'))
 g = Github(config['github_token'])
 user = g.get_user()
-print(f'✅ GitHub: Connected as {user.login}')
+print(f'GitHub: Connected as {user.login}')
 
 import anthropic
 client = anthropic.Anthropic(api_key=config['ai_api_key'])
@@ -360,7 +360,7 @@ message = client.messages.create(
     max_tokens=10,
     messages=[{'role': 'user', 'content': 'Hi'}]
 )
-print('✅ AI Provider: Connected')
+print('AI Provider: Connected')
 "
 ```
 
@@ -390,7 +390,7 @@ python generate_release_notes.py \
 
 ## Security Best Practices
 
-### DO ✅
+### Do
 
 - Keep `config.yaml` in `.gitignore`
 - Use environment variables for CI/CD
@@ -398,7 +398,7 @@ python generate_release_notes.py \
 - Use minimal GitHub token scopes
 - Set token expiration dates
 
-### DON'T ❌
+### Don't
 
 - Commit `config.yaml` with real keys
 - Share keys via Slack/email
@@ -440,4 +440,4 @@ See [Troubleshooting Guide](../troubleshooting.md#configuration-issues).
 
 ---
 
-**Next:** [Prompt Engineering →](prompt-engineering.md){ .md-button }
+**Next:** [Prompt Engineering](prompt-engineering.md)

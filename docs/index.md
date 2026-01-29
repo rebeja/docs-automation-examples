@@ -1,74 +1,70 @@
-# Release Notes Automation Starter
+# Documentation Automation Examples
 
 ## Overview
 
-This project demonstrates how to automate release notes creation from GitHub commits using AI. It provides a working example and tutorial for technical writers exploring AI-assisted automation.
+This repository provides practical examples for technical writers exploring AI-assisted documentation automation. Each project demonstrates a different automation approach with complete tutorials and working examples.
 
-## What This Does
+## Available Projects
 
-```mermaid
-graph LR
-    A[GitHub Commits] --> B[Fetch via API]
-    B --> C[AI Categorization]
-    C --> D[Formatted Draft]
-    D --> E[Human Review]
-    E --> F[Published Notes]
-    style C fill:#e1f5ff
-    style E fill:#fff4e1
-```
+### Release Notes Automation
 
-**The automation handles:**
+Automate release notes creation from GitHub commits using AI categorization.
 
-- Fetching commits from GitHub API
-- Filtering out internal/WIP changes
-- Categorizing into Features, Enhancements, Bug Fixes, Documentation
-- Formatting as Markdown with commit links
-- Generating draft for human review
+**What it does:**
 
-**You provide:**
+- Fetches commits from GitHub API
+- Filters out internal/WIP changes
+- Categorizes into Features, Enhancements, Bug Fixes, Documentation
+- Generates formatted Markdown drafts
 
-- Your categorization standards
-- Final review and context
-- Decision to publish
+**Best for:**
 
-## Quick Start
-
-**Three steps to get started:**
-
-1. **[Document your manual process](tutorial/step-2-document-process.md)** - Write down how you currently create release notes
-2. **[Configure the tool](tutorial/step-3-configure.md)** - Add your API keys
-3. **[Run and iterate](tutorial/step-4-run-first-time.md)** - Generate your first draft and refine the prompts
-
-[Start the Tutorial](tutorial/index.md)
-
-## Who This Is For
-
-**This starter is designed for:**
-
-- Technical writers working in docs-as-code environments
+- Technical writers in docs-as-code environments
 - Teams using GitHub, GitLab, or Bitbucket
-- Anyone with basic Git knowledge and command line comfort
-- Writers exploring AI-assisted automation
+- Anyone releasing software regularly
 
-No programming experience is required.
+[Start Release Notes Tutorial](release-notes/tutorial/index.md)
+
+---
+
+### Doc Site Portfolio
+
+Build a professional technical writing portfolio site with AI assistance.
+
+**What it does:**
+
+- Provides MkDocs template for portfolio sites
+- Guides you through content generation with AI
+- Helps refine and improve writing quality
+- Deploys to GitHub Pages
+
+**Best for:**
+
+- Technical writers building portfolios
+- Writers showcasing documentation projects
+- Anyone creating a professional web presence
+
+[Start Portfolio Tutorial](doc-site/tutorial/index.md)
+
+---
 
 ## What You'll Learn
 
-By working through this project, you'll learn:
+Both projects teach fundamental automation skills:
 
-1. **Process documentation** - How to document manual workflows before automating
-2. **Prompt engineering** - How to teach AI your categorization standards
+1. **Process documentation** - How to document workflows before automating
+2. **Prompt engineering** - How to teach AI your standards
 3. **Iterative refinement** - How to improve automation based on results
-4. **API integration** - How scripts connect to version control systems
+4. **API integration** - How to connect tools and services
 5. **Plan-before-code** - Why planning saves time over jumping straight to implementation
 
 ## Key Principles
 
-This project demonstrates important automation principles:
+These projects demonstrate important automation principles:
 
 ### Document Your Process First
 
-Before automating anything, write down your manual workflow. Your documented process becomes the foundation for your automation prompt.
+Before automating anything, write down your manual workflow. Your documented process becomes the foundation for your automation.
 
 ### Plan Before Code
 
@@ -82,31 +78,19 @@ Automation generates drafts. Humans provide final review and context. This maint
 
 Your first prompt won't be perfect. Test, refine, and improve based on real outputs.
 
-## What's Included
-
-This repository contains:
-
-- Working Python script that connects to GitHub API and generates release notes
-- Sample prompts with categorization instructions for AI
-- Prompt evolution examples showing iteration from simple to refined
-- Configuration templates for API keys
-- Sample data to test without API access initially
-- Step-by-step tutorial with complete walkthrough
-- Troubleshooting guide with solutions to common issues
-
-## Next Steps
+## Getting Started
 
 **New to this?**  
 Start with the [Getting Started](getting-started.md) guide for prerequisites and installation.
 
-**Ready to build?**  
-Jump into the [Tutorial](tutorial/index.md) to build your first automation.
+**Ready to build release notes automation?**  
+Jump into the [Release Notes Tutorial](release-notes/tutorial/index.md).
+
+**Ready to build your portfolio site?**  
+Jump into the [Doc Site Portfolio Tutorial](doc-site/tutorial/index.md).
 
 **Need help?**  
-Check the [Troubleshooting](troubleshooting.md) guide or [FAQ](faq.md).
-
-**Want details?**  
-Explore the [Reference](reference/configuration.md) documentation.
+Check the [Troubleshooting](release-notes/troubleshooting.md) guides or [FAQ](release-notes/faq.md).
 
 ## Contributing
 

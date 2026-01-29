@@ -6,11 +6,11 @@ This step-by-step tutorial guides you through building your first release notes 
 
 By the end of this tutorial, you'll have:
 
-- ✅ A working release notes automation script
-- ✅ Your documented manual process
-- ✅ Customized AI categorization prompts
-- ✅ Ability to iterate and improve the automation
-- ✅ Understanding of the pattern for future automations
+- A working release notes automation script
+- Your documented manual process
+- Customized AI categorization prompts
+- Ability to iterate and improve the automation
+- Understanding of the pattern for future automations
 
 ## Tutorial Structure
 
@@ -28,7 +28,7 @@ Install dependencies, create configuration files, and verify everything works.
 ### 2. [Document Your Process](step-2-document-process.md)
 **Time: 30 minutes**
 
-Write down your current manual release notes workflow. This is the most important step!
+Write down your current manual release notes workflow. This is the most important step.
 
 **What you'll do:**
 
@@ -77,26 +77,27 @@ Refine your categorization prompts based on results.
 
 ## Before You Start
 
-### Prerequisites Checklist
+### Prerequisites
 
-- [x] Completed [Getting Started](../getting-started.md) guide
-- [x] Environment set up and tested
-- [x] API keys configured
-- [x] 30-60 minutes of focused time
+- Completed [Getting Started](../getting-started.md) guide
+- Environment set up and tested
+- API keys configured
+- 30-60 minutes of focused time
 
 ### What You'll Need
 
 - Your text editor open
 - Terminal/command line ready
 - Example repository in mind (or use provided samples)
-- Patience for iteration (first attempts won't be perfect!)
+- Patience for iteration (first attempts won't be perfect)
 
 ## Learning Approach
 
-This tutorial follows the **plan-before-code** principle:
+This tutorial follows the **plan-before-code** principle.
 
-!!! tip "Plan First, Code Second"
-    In each step, we'll discuss the approach before implementing. This mirrors how you should work with AI coding agents—ask for a plan first, then implement.
+### Plan First, Code Second
+
+In each step, we'll discuss the approach before implementing. This mirrors how you should work with AI coding agents—ask for a plan first, then implement.
 
 ### How to Use This Tutorial
 
@@ -116,10 +117,10 @@ Jump to specific sections as needed when building your own automation.
 
 If you get stuck:
 
-1. **Check [Troubleshooting](../troubleshooting.md)** - Common issues and solutions
-2. **Review [FAQ](../faq.md)** - Frequently asked questions
-3. **Read [Examples](../examples/prompt-evolution.md)** - See how others solved similar problems
-4. **Ask your AI coding tool** - If using Cursor/Claude, ask it to explain errors
+1. Check [Troubleshooting](../troubleshooting.md) - Common issues and solutions
+2. Review [FAQ](../faq.md) - Frequently asked questions
+3. Read [Examples](../examples/prompt-evolution.md) - See how others solved similar problems
+4. Ask your AI coding tool - If using Cursor/Claude, ask it to explain errors
 
 ## Expected Outcomes
 
@@ -136,10 +137,10 @@ You'll have refined prompts producing high-quality categorization.
 
 Once you complete this tutorial:
 
-- **Apply to your workflow** - Integrate into your release process
-- **Build confidence** - Try with different repositories
-- **Explore variations** - Adapt for different audiences (internal vs external)
-- **Share learnings** - Help others in the technical writing community
+- Apply to your workflow - Integrate into your release process
+- Build confidence - Try with different repositories
+- Explore variations - Adapt for different audiences (internal vs external)
+- Share learnings - Help others in the technical writing community
 
 ## Time Investment
 
@@ -150,8 +151,8 @@ Once you complete this tutorial:
 - First runs: 30 minutes
 - Prompt iteration: 1-2 hours
 
-**Worth it?** Yes! You'll save 4-8 hours per release cycle going forward.
+This tutorial demonstrates an automation pattern that can save 4-8 hours per release cycle.
 
 ---
 
-**Ready to start?** [Begin with Step 1: Setup Environment →](step-1-setup.md){ .md-button .md-button--primary }
+[Begin with Step 1: Setup Environment](step-1-setup.md)

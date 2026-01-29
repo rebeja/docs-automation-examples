@@ -1,0 +1,6 @@
+[Placeholder: AI prompt for generating About page content]
+
+This prompt will help technical writers draft their About page,
+highlighting their experience, skills, and approach to documentation.
+
+TODO: Add detailed prompt for About page generation

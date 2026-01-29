@@ -1,0 +1,6 @@
+[Placeholder: AI prompt for generating site navigation and structure]
+
+This prompt will help technical writers plan their portfolio site structure
+based on their experience and the types of work they want to showcase.
+
+TODO: Add detailed prompt for site structure planning

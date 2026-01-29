@@ -1,0 +1,6 @@
+[Placeholder: AI prompt for generating project showcase pages]
+
+This prompt will help technical writers document their projects
+in a consistent, professional format that highlights their contributions.
+
+TODO: Add detailed prompt for project page generation

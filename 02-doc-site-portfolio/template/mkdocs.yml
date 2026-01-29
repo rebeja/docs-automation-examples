@@ -1,0 +1,70 @@
+# Portfolio Site Configuration
+# This is a starter template - customize with your information
+
+site_name: Your Name - Technical Writer
+site_description: Technical writing portfolio showcasing documentation projects
+site_author: Your Name
+site_url: https://yourusername.github.io/portfolio/
+
+repo_name: your-portfolio
+repo_url: https://github.com/yourusername/portfolio
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - def_list
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - tables
+  - footnotes
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - About: about.md
+  - Projects:
+    - Overview: projects/index.md
+  - Writing Samples: samples.md
+  - Contact: contact.md
+
+copyright: Copyright &copy; 2026 Your Name

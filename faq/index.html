@@ -2421,13 +2421,13 @@
 <li>Are exploring AI-assisted automation</li>
 <li>Have basic command line and Git knowledge</li>
 </ul>
-<p><strong>No programming experience required!</strong></p>
+<p>No programming experience is required.</p>
 <h3 id="do-i-need-to-know-how-to-code">Do I need to know how to code?</h3>
-<p>No! This project teaches you how to work with AI coding agents to build automation. You'll learn:</p>
+<p>No. This project teaches you how to work with AI coding agents to build automation. You'll learn:</p>
 <ul>
-<li>How to document workflows (you already do this!)</li>
-<li>How to write clear instructions for AI (like writing documentation!)</li>
-<li>How to iterate based on results (like editing!)</li>
+<li>How to document workflows (you already do this)</li>
+<li>How to write clear instructions for AI (like writing documentation)</li>
+<li>How to iterate based on results (like editing)</li>
 </ul>
 <p>Your technical writing skills are exactly what you need.</p>
 <h3 id="what-ai-tools-does-this-work-with">What AI tools does this work with?</h3>
@@ -2457,7 +2457,7 @@
 <li>Prompt iteration: 30-60 minutes</li>
 </ul>
 <p><strong>Total: 2-3 hours</strong> for complete tutorial</p>
-<p><strong>Worth it?</strong> You'll save 4-8 hours per release cycle going forward.</p>
+<p>This investment can save 4-8 hours per release cycle going forward.</p>
 <h3 id="what-if-i-dont-have-api-keys">What if I don't have API keys?</h3>
 <p>You can still:</p>
 <ol>
@@ -2475,11 +2475,10 @@
 </ul>
 <p><strong>For typical biweekly releases:</strong></p>
 <ul>
-<li><strong>~$0.50 - $1.00 per month</strong></li>
+<li>Approximately $0.50 - $1.00 per month</li>
 </ul>
-<p>Compare to hours of manual work saved!</p>
 <h3 id="can-i-use-this-with-private-repositories">Can I use this with private repositories?</h3>
-<p>Yes! Just ensure:</p>
+<p>Yes. Just ensure:</p>
 <ol>
 <li>Your GitHub token has <code>repo</code> scope (not just <code>public_repo</code>)</li>
 <li>You have access to the private repositories</li>
@@ -2493,18 +2492,18 @@
 <li>Initial run: 60-70%</li>
 <li>After iteration: 85-95%</li>
 </ul>
-<p><strong>Remember:</strong> 90% accuracy with 10 minutes of human review beats 100% manual work taking 90 minutes.</p>
+<p>Remember: 90% accuracy with 10 minutes of human review beats 100% manual work taking 90 minutes.</p>
 <h3 id="what-if-the-ai-miscategorizes-commits">What if the AI miscategorizes commits?</h3>
-<p>This is expected and normal! That's why human review is part of the workflow:</p>
+<p>This is expected and normal. That's why human review is part of the workflow:</p>
 <ol>
-<li>AI generates draft (accurate ~90%)</li>
-<li>Human reviews and corrects (~10 minutes)</li>
+<li>AI generates draft (accurate approximately 90%)</li>
+<li>Human reviews and corrects (approximately 10 minutes)</li>
 <li>Human adds business context</li>
 <li>Publish</li>
 </ol>
-<p>Still <strong>80%+ time savings</strong> over fully manual process.</p>
+<p>Still 80%+ time savings over fully manual process.</p>
 <h3 id="can-i-customize-categories">Can I customize categories?</h3>
-<p>Yes! You can:</p>
+<p>Yes. You can:</p>
 <ul>
 <li>Change category names</li>
 <li>Add new categories</li>
@@ -2534,7 +2533,7 @@
 <li>Use your AI coding tool to add this feature</li>
 <li>Ask: "How can I filter commits by file path?"</li>
 </ol>
-<p>This is a great example of extending the automation!</p>
+<p>This is a great example of extending the automation.</p>
 <h2 id="prompt-engineering-questions">Prompt Engineering Questions</h2>
 <h3 id="how-do-i-improve-categorization-accuracy">How do I improve categorization accuracy?</h3>
 <p>Follow the iteration process in <a href="../tutorial/step-5-iterate-prompts/">Tutorial Step 5</a>:</p>
@@ -2549,21 +2548,21 @@
 <h3 id="what-makes-a-good-categorization-prompt">What makes a good categorization prompt?</h3>
 <p>Key elements:</p>
 <ul>
-<li>✅ Clear category definitions</li>
-<li>✅ Concrete examples (positive and negative)</li>
-<li>✅ Keyword indicators</li>
-<li>✅ Comprehensive exclusion rules</li>
-<li>✅ Decision rules for edge cases</li>
+<li>Clear category definitions</li>
+<li>Concrete examples (positive and negative)</li>
+<li>Keyword indicators</li>
+<li>Comprehensive exclusion rules</li>
+<li>Decision rules for edge cases</li>
 </ul>
 <p>See <a href="../examples/prompt-evolution/">Prompt Evolution Example</a>.</p>
 <h3 id="should-i-use-examples-from-my-actual-commits">Should I use examples from my actual commits?</h3>
-<p>Yes! The more domain-specific your examples, the better. Generic examples work OK, but examples from your actual repository work better.</p>
+<p>Yes. The more domain-specific your examples, the better. Generic examples work OK, but examples from your actual repository work better.</p>
 <h3 id="how-long-should-my-prompt-be">How long should my prompt be?</h3>
 <p><strong>Sweet spot: 500-1000 words</strong></p>
 <ul>
-<li>Too short (&lt;300 words): Vague, inconsistent results</li>
+<li>Too short (less than 300 words): Vague, inconsistent results</li>
 <li>Just right (500-1000 words): Clear, consistent, maintainable</li>
-<li>Too long (&gt;1500 words): Diminishing returns, hard to maintain</li>
+<li>Too long (more than 1500 words): Diminishing returns, hard to maintain</li>
 </ul>
 <p>Focus on quality over quantity.</p>
 <h3 id="can-i-use-the-same-prompt-for-all-repositories">Can I use the same prompt for all repositories?</h3>
@@ -2591,7 +2590,7 @@
 <li>Publish</li>
 </ol>
 <h3 id="can-i-integrate-this-into-cicd">Can I integrate this into CI/CD?</h3>
-<p>Yes! You could:</p>
+<p>Yes. You could:</p>
 <ol>
 <li>Run automatically on release branch</li>
 <li>Create pull request with draft notes</li>
@@ -2643,7 +2642,7 @@
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">webhook_url</span> <span class="o">=</span> <span class="s2">&quot;your-slack-webhook&quot;</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">webhook_url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="n">notes</span><span class="p">})</span>
 </code></pre></div>
-<p>These are great examples of extending the automation!</p>
+<p>These are great examples of extending the automation.</p>
 <h3 id="does-this-work-with-jira-or-other-issue-trackers">Does this work with Jira or other issue trackers?</h3>
 <p>The current version focuses on Git commits, but you could:</p>
 <ol>
@@ -2656,12 +2655,12 @@
 <h3 id="is-it-safe-to-use-api-keys">Is it safe to use API keys?</h3>
 <p>Yes, if you follow best practices:</p>
 <ul>
-<li>✅ Use <code>config.yaml</code> (in <code>.gitignore</code>)</li>
-<li>✅ Use environment variables for production</li>
-<li>✅ Rotate keys regularly (every 90 days)</li>
-<li>✅ Use minimal scopes needed</li>
-<li>❌ Never commit keys to version control</li>
-<li>❌ Don't share keys in Slack/email</li>
+<li>Use <code>config.yaml</code> (in <code>.gitignore</code>)</li>
+<li>Use environment variables for production</li>
+<li>Rotate keys regularly (every 90 days)</li>
+<li>Use minimal scopes needed</li>
+<li>Never commit keys to version control</li>
+<li>Don't share keys in Slack or email</li>
 </ul>
 <h3 id="what-data-is-sent-to-ai-providers">What data is sent to AI providers?</h3>
 <p>Only commit messages and metadata:</p>
@@ -2696,7 +2695,7 @@
 </ol>
 <h2 id="maintenance-questions">Maintenance Questions</h2>
 <h3 id="do-i-need-to-update-prompts-regularly">Do I need to update prompts regularly?</h3>
-<p>Not usually! Once refined, prompts remain stable. Update when:</p>
+<p>Not usually. Once refined, prompts remain stable. Update when:</p>
 <ul>
 <li>Team's commit message style changes</li>
 <li>New categories needed</li>
@@ -2723,7 +2722,7 @@
 <p>The <a href="../tutorial/">Tutorial</a> is designed for onboarding.</p>
 <h2 id="advanced-questions">Advanced Questions</h2>
 <h3 id="can-i-use-this-for-other-documentation-tasks">Can I use this for other documentation tasks?</h3>
-<p>Absolutely! The same pattern applies to:</p>
+<p>Yes. The same pattern applies to:</p>
 <ul>
 <li>Translation status tracking</li>
 <li>Broken link checking</li>
@@ -2733,7 +2732,7 @@
 </ul>
 <p><strong>The approach:</strong> Document manual process → Convert to automation prompt → Iterate</p>
 <h3 id="can-i-contribute-improvements">Can I contribute improvements?</h3>
-<p>Yes! See <a href="https://github.com/rebeja/docs-automation-examples/blob/main/CONTRIBUTING.md">Contributing Guidelines</a>.</p>
+<p>Yes. See <a href="https://github.com/rebeja/docs-automation-examples/blob/main/CONTRIBUTING.md">Contributing Guidelines</a>.</p>
 <p>Ways to contribute:</p>
 <ul>
 <li>Improve documentation</li>
@@ -2756,7 +2755,7 @@
 <li>r/technicalwriting</li>
 </ul>
 <hr />
-<p><strong>Have a question not answered here?</strong> <a class="md-button" href="https://github.com/rebeja/docs-automation-examples/issues">Open an issue</a></p>
+<p><strong>Have a question not answered here?</strong> <a href="https://github.com/rebeja/docs-automation-examples/issues">Open an issue</a></p>
 
 
 

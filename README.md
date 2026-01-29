@@ -2,17 +2,15 @@
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-> AI-assisted release notes generation for technical writers
-
-Automate release notes creation from GitHub commits using AI coding agents. This starter project demonstrates practical automation patterns for docs-as-code workflows—no programming experience required.
+This project demonstrates how to automate release notes creation from GitHub commits using AI. It provides practical automation patterns for docs-as-code workflows.
 
 ---
 
-## 📚 Documentation Site
+## Documentation
 
-**👉 [View Full Documentation →](https://rebeja.github.io/docs-automation-examples/)**
+Complete documentation is available at [rebeja.github.io/docs-automation-examples](https://rebeja.github.io/docs-automation-examples/)
 
-Complete documentation includes:
+Documentation includes:
 
 - Step-by-step tutorial (2-3 hours)
 - Prompt engineering examples with evolution
@@ -22,17 +20,17 @@ Complete documentation includes:
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
-- **Python 3.8+** - Check with `python --version`
-- **Git** - For cloning repository
-- **AI API access** - Anthropic (Claude) or OpenAI account
-- **GitHub token** - For accessing repositories
-- **Command line comfort** - Basic terminal usage
+- Python 3.8+ (check with `python --version`)
+- Git
+- AI API access (Anthropic Claude or OpenAI account)
+- GitHub personal access token
+- Basic terminal usage
 
-**No programming experience required!**
+No programming experience is required.
 
 ### Installation
 
@@ -64,11 +62,9 @@ cp config.example.yaml config.yaml
 
 **5. Add your API keys:**
 
-Edit `config.yaml` and add your API keys. See the [documentation](https://rebeja.github.io/docs-automation-examples/getting-started/) for getting API keys.
+Edit `config.yaml` and add your API keys. See the [documentation](https://rebeja.github.io/docs-automation-examples/getting-started/) for instructions on obtaining API keys.
 
-### First Run
-
-Generate release notes:
+### Generate Your First Release Notes
 
 ```bash
 cd 01-release-notes-automation
@@ -79,49 +75,55 @@ python generate_release_notes.py \
 
 Review the generated `release_notes.md` file.
 
-**📖 [Read the full tutorial →](https://rebeja.github.io/docs-automation-examples/tutorial/)**
+See the [full tutorial](https://rebeja.github.io/docs-automation-examples/tutorial/) for detailed instructions.
 
 ---
 
-## 🎯 What You'll Learn
+## What You'll Learn
 
-1. **Document process first** - How to capture your manual workflow
-2. **Prompt engineering** - Teaching AI your categorization standards
-3. **Iterative refinement** - Improving automation based on results
+This project demonstrates:
+
+1. **Process documentation** - Capturing your manual workflow as the foundation for automation
+2. **Prompt engineering** - Teaching AI to apply your categorization standards
+3. **Iterative refinement** - Improving automation based on actual results
 4. **API integration** - Connecting to GitHub and AI providers
-5. **Human-in-the-loop** - Balancing automation with quality control
+5. **Human-in-the-loop workflows** - Balancing automation with quality control
 
 ---
 
-## 📂 What's Included
+## What's Included
 
-- **Working Python script** - Actual GitHub API integration
-- **Tutorial (2-3 hours)** - Complete step-by-step guide
-- **Prompt evolution** - Shows iteration from simple to refined (65% → 91% accuracy)
-- **Sample outputs** - Real examples with metrics
-- **Troubleshooting guide** - Solutions to common issues
-- **FAQ** - Answers to frequent questions
-- **Configuration templates** - Easy setup
+- Working Python script with GitHub API integration
+- Complete tutorial (2-3 hours)
+- Prompt evolution examples showing iteration from simple to refined (65% to 91% accuracy)
+- Sample outputs with metrics
+- Troubleshooting guide
+- FAQ
+- Configuration templates
 
 ---
 
-## 🔑 Key Principles
+## Key Principles
 
-### ✅ Document Your Process First
+### Document Your Process First
+
 Before automating anything, write down your manual workflow. Your documented process becomes the foundation for your automation prompt.
 
-### ✅ Plan Before Code
+### Plan Before Code
+
 Ask AI to write a plan first, then implement. Plans are faster to iterate than code.
 
-### ✅ Human-in-the-Loop
-Automation generates drafts; humans provide final review and context. This maintains quality while saving time.
+### Human-in-the-Loop
 
-### ✅ Iterate Based on Results
+Automation generates drafts. Humans provide final review and context. This maintains quality while saving time.
+
+### Iterate Based on Results
+
 Your first prompt won't be perfect. Test, refine, and improve based on real outputs.
 
 ---
 
-## 🛠️ Architecture
+## Architecture
 
 ```
 GitHub API → Fetch Commits → Filter → AI Categorization → Format → Human Review → Publish
@@ -140,9 +142,9 @@ GitHub API → Fetch Commits → Filter → AI Categorization → Format → Hum
 
 ---
 
-## 🔒 Security Best Practices
+## Security Best Practices
 
-### DO ✅
+### Do
 
 - Use `config.yaml` (already in `.gitignore`)
 - Use environment variables for production
@@ -150,21 +152,21 @@ GitHub API → Fetch Commits → Filter → AI Categorization → Format → Hum
 - Use minimal GitHub token scopes
 - Set token expiration dates
 
-### DON'T ❌
+### Don't
 
 - Never commit `config.yaml` with real keys
-- Don't share keys via Slack/email
+- Don't share keys via Slack or email
 - Don't use production keys for testing
 - Don't grant unnecessary permissions
 - Don't hardcode keys in scripts
 
 ---
 
-## 📚 Resources
+## Resources
 
 ### Documentation
 
-- **[Full Documentation Site →](https://rebeja.github.io/docs-automation-examples/)**
+- [Full Documentation Site](https://rebeja.github.io/docs-automation-examples/)
 - [Tutorial](https://rebeja.github.io/docs-automation-examples/tutorial/)
 - [FAQ](https://rebeja.github.io/docs-automation-examples/faq/)
 - [Troubleshooting](https://rebeja.github.io/docs-automation-examples/troubleshooting/)
@@ -183,45 +185,26 @@ GitHub API → Fetch Commits → Filter → AI Categorization → Format → Hum
 
 ---
 
-## 📝 License
+## License
 
-[![CC BY 4.0][cc-by-shield]][cc-by]
-
-This work is licensed under a [Creative Commons Attribution 4.0 International License][cc-by].
+This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
 
 You are free to share and adapt this material for any purpose, even commercially, as long as you give appropriate credit.
 
-[cc-by]: http://creativecommons.org/licenses/by/4.0/
-[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
+---
+
+## Support
+
+- **Documentation:** [rebeja.github.io/docs-automation-examples](https://rebeja.github.io/docs-automation-examples/)
+- **Found a bug?** [Open an issue](https://github.com/rebeja/docs-automation-examples/issues)
+- **Have a question?** Check the [FAQ](https://rebeja.github.io/docs-automation-examples/faq/) first
+- **Want to contribute?** See [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ---
 
-## 💬 Support
+## Project Resources
 
-- **📖 Documentation:** [rebeja.github.io/docs-automation-examples](https://rebeja.github.io/docs-automation-examples/)
-- **🐛 Found a bug?** [Open an issue](https://github.com/rebeja/docs-automation-examples/issues)
-- **💡 Have a question?** Check the [FAQ](https://rebeja.github.io/docs-automation-examples/faq/) first
-- **🤝 Want to contribute?** See [CONTRIBUTING.md](./CONTRIBUTING.md) - all contributions welcome!
-
----
-
-## 🙏 Acknowledgments
-
-Created for the technical writing community to demonstrate practical AI-assisted automation patterns.
-
-**Special thanks to:**
-
-- Write the Docs community
-- AI tool developers (Anthropic, Cursor, OpenAI)
-- Everyone exploring AI-assisted automation
-
-## 📋 Project Resources
-
-- [Contributing Guidelines](./CONTRIBUTING.md) - How to contribute
-- [Code of Conduct](./CODE_OF_CONDUCT.md) - Community standards
-- [Changelog](./CHANGELOG.md) - Version history
-- [License](./LICENSE) - CC BY 4.0 License
-
----
-
-**Ready to automate your release notes?** [Get Started →](https://rebeja.github.io/docs-automation-examples/getting-started/){ .md-button .md-button--primary }
+- [Contributing Guidelines](./CONTRIBUTING.md)
+- [Code of Conduct](./CODE_OF_CONDUCT.md)
+- [Changelog](./CHANGELOG.md)
+- [License](./LICENSE)

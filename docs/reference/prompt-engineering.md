@@ -34,11 +34,11 @@ Define each category with:
 **New Features** - Wholly new capabilities that didn't exist before
 
 Examples:
-- "Add user authentication system" ✅
-- "Create new dashboard view" ✅
+- "Add user authentication system" (Correct)
+- "Create new dashboard view" (Correct)
 
 NOT examples:
-- "Improve existing search" ❌ (this is an enhancement)
+- "Improve existing search" (This is an enhancement)
 
 Keywords: "add", "new", "create", "introduce"
 ```
@@ -152,8 +152,8 @@ After first test run, add specific examples:
 ```
 **Features**
 Examples:
-- "Add user login" ✅
-- "Create API endpoint" ✅
+- "Add user login" (Correct)
+- "Create API endpoint" (Correct)
 ```
 
 ### Refine Based on Errors
@@ -163,7 +163,7 @@ For each miscategorization, add counter-examples:
 ```
 **Features**
 NOT Examples:
-- "Improve login performance" ❌ (enhancement)
+- "Improve login performance" (Enhancement)
 ```
 
 ### Add Keywords
@@ -223,12 +223,12 @@ Accuracy = Correct / Total × 100%
 **Solution:**
 ```
 **New Features** - Must be COMPLETELY new
-Examples: "Add authentication" ✅
-NOT: "Add better error messages" ❌ (enhancement)
+Examples: "Add authentication" (Correct)
+NOT: "Add better error messages" (Enhancement)
 
 **Enhancements** - Improvements to EXISTING
-Examples: "Improve search performance" ✅
-NOT: "Add search feature" ❌ (new feature)
+Examples: "Improve search performance" (Correct)
+NOT: "Add search feature" (New feature)
 ```
 
 ### Issue: Internal Changes Appearing
@@ -258,15 +258,15 @@ From YOUR repository:
 
 ## Best Practices
 
-### DO ✅
+### Do
 
 - **Use examples from your repository** - Domain-specific examples work best
 - **Test iteratively** - Measure improvement after each change
-- **Be specific** - "Add new capability" > "Add something"
+- **Be specific** - "Add new capability" is clearer than "Add something"
 - **Include counter-examples** - "NOT this" clarifies boundaries
 - **Document your decisions** - Keep notes on why you categorized things
 
-### DON'T ❌
+### Don't
 
 - **Don't make prompts too long** - Over 1500 words has diminishing returns
 - **Don't use vague language** - "Generally", "usually", "often" are unclear

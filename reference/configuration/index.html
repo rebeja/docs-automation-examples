@@ -1080,7 +1080,7 @@
   <a href="#do" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DO ✅
+        Do
       
     </span>
   </a>
@@ -1091,7 +1091,7 @@
   <a href="#dont" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DON'T ❌
+        Don't
       
     </span>
   </a>
@@ -1810,7 +1810,7 @@
   <a href="#do" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DO ✅
+        Do
       
     </span>
   </a>
@@ -1821,7 +1821,7 @@
   <a href="#dont" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DON'T ❌
+        Don't
       
     </span>
   </a>
@@ -1979,9 +1979,9 @@
 </code></pre></div>
 <p><strong>Security:</strong></p>
 <ul>
-<li>⚠️ Never commit this file with real keys</li>
-<li>⚠️ Already in <code>.gitignore</code></li>
-<li>✅ Use environment variables for production</li>
+<li>Never commit this file with real keys</li>
+<li>Already in <code>.gitignore</code></li>
+<li>Use environment variables for production</li>
 </ul>
 <p><strong>Getting keys:</strong></p>
 <ul>
@@ -2054,10 +2054,10 @@
 </code></pre></div>
 <p><strong>Required scopes:</strong></p>
 <p>For public repositories:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>✅ public_repo
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>public_repo
 </code></pre></div></p>
 <p>For private repositories:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>✅ repo (full control)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>repo (full control)
 </code></pre></div></p>
 <p><strong>Creating a token:</strong></p>
 <ol>
@@ -2188,9 +2188,9 @@
 <a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="s2">required = [&#39;ai_provider&#39;, &#39;ai_api_key&#39;, &#39;model&#39;, &#39;github_token&#39;]</span>
 <a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="s2">missing = [f for f in required if f not in config]</span>
 <a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="s2">if missing:</span>
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="s2">    print(f&#39;❌ Missing: {missing}&#39;)</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="s2">    print(f&#39;Missing: {missing}&#39;)</span>
 <a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="s2">else:</span>
-<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="s2">    print(&#39;✅ All required fields present&#39;)</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="s2">    print(&#39;All required fields present&#39;)</span>
 <a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="s2">&quot;</span>
 </code></pre></div>
 <h3 id="test-api-connections">Test API Connections</h3>
@@ -2202,7 +2202,7 @@
 <a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="s2">config = yaml.safe_load(open(&#39;../config.yaml&#39;))</span>
 <a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="s2">g = Github(config[&#39;github_token&#39;])</span>
 <a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="s2">user = g.get_user()</span>
-<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="s2">print(f&#39;✅ GitHub: Connected as {user.login}&#39;)</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="s2">print(f&#39;GitHub: Connected as {user.login}&#39;)</span>
 <a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>
 <a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="s2">import anthropic</span>
 <a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="s2">client = anthropic.Anthropic(api_key=config[&#39;ai_api_key&#39;])</span>
@@ -2211,7 +2211,7 @@
 <a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="s2">    max_tokens=10,</span>
 <a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="s2">    messages=[{&#39;role&#39;: &#39;user&#39;, &#39;content&#39;: &#39;Hi&#39;}]</span>
 <a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="s2">)</span>
-<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="s2">print(&#39;✅ AI Provider: Connected&#39;)</span>
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="s2">print(&#39;AI Provider: Connected&#39;)</span>
 <a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="s2">&quot;</span>
 </code></pre></div>
 <h2 id="multiple-configurations">Multiple Configurations</h2>
@@ -2232,7 +2232,7 @@
 <a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">  </span>--since<span class="w"> </span><span class="m">2024</span>-01-01
 </code></pre></div>
 <h2 id="security-best-practices">Security Best Practices</h2>
-<h3 id="do">DO ✅</h3>
+<h3 id="do">Do</h3>
 <ul>
 <li>Keep <code>config.yaml</code> in <code>.gitignore</code></li>
 <li>Use environment variables for CI/CD</li>
@@ -2240,7 +2240,7 @@
 <li>Use minimal GitHub token scopes</li>
 <li>Set token expiration dates</li>
 </ul>
-<h3 id="dont">DON'T ❌</h3>
+<h3 id="dont">Don't</h3>
 <ul>
 <li>Commit <code>config.yaml</code> with real keys</li>
 <li>Share keys via Slack/email</li>
@@ -2270,7 +2270,7 @@
 <h3 id="api-keys-not-working">API Keys Not Working</h3>
 <p>See <a href="../../troubleshooting/#configuration-issues">Troubleshooting Guide</a>.</p>
 <hr />
-<p><strong>Next:</strong> <a class="md-button" href="../prompt-engineering/">Prompt Engineering →</a></p>
+<p><strong>Next:</strong> <a href="../prompt-engineering/">Prompt Engineering</a></p>
 
 
 

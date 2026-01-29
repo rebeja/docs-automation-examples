@@ -1,5 +1,5 @@
-site_name: Release Notes Automation Starter
-site_description: AI-assisted documentation automation for technical writers 
+site_name: Documentation Automation Examples
+site_description: AI-assisted documentation projects for technical writers
 site_author: Rebecca Alves
 site_url: https://rebeja.github.io/docs-automation-examples/
 
@@ -90,25 +90,44 @@ extra:
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
-  - Tutorial:
-    - Overview: tutorial/index.md
-    - 'Step 1: Setup Environment': tutorial/step-1-setup.md
-    - 'Step 2: Document Your Process': tutorial/step-2-document-process.md
-    - 'Step 3: Configure APIs': tutorial/step-3-configure.md
-    - 'Step 4: First Run': tutorial/step-4-run-first-time.md
-    - 'Step 5: Iterate Prompts': tutorial/step-5-iterate-prompts.md
-  - Reference:
-    - Configuration: reference/configuration.md
-    - Prompt Engineering: reference/prompt-engineering.md
-    - API Integration: reference/api-integration.md
-  - Examples:
-    - Prompt Evolution: examples/prompt-evolution.md
-    - Sample Outputs: examples/sample-outputs.md
-  - Troubleshooting: troubleshooting.md
-  - FAQ: faq.md
+  - Release Notes Automation:
+    - Overview: release-notes/tutorial/index.md
+    - Tutorial:
+      - 'Step 1: Setup Environment': release-notes/tutorial/step-1-setup.md
+      - 'Step 2: Document Your Process': release-notes/tutorial/step-2-document-process.md
+      - 'Step 3: Configure APIs': release-notes/tutorial/step-3-configure.md
+      - 'Step 4: First Run': release-notes/tutorial/step-4-run-first-time.md
+      - 'Step 5: Iterate Prompts': release-notes/tutorial/step-5-iterate-prompts.md
+    - Reference:
+      - Configuration: release-notes/reference/configuration.md
+      - Prompt Engineering: release-notes/reference/prompt-engineering.md
+      - API Integration: release-notes/reference/api-integration.md
+    - Examples:
+      - Prompt Evolution: release-notes/examples/prompt-evolution.md
+      - Sample Outputs: release-notes/examples/sample-outputs.md
+    - Troubleshooting: release-notes/troubleshooting.md
+    - FAQ: release-notes/faq.md
+  - Doc Site Portfolio:
+    - Overview: doc-site/tutorial/index.md
+    - Tutorial:
+      - 'Step 1: Setup Environment': doc-site/tutorial/step-1-setup.md
+      - 'Step 2: Plan Your Site': doc-site/tutorial/step-2-plan-site.md
+      - 'Step 3: Generate Structure': doc-site/tutorial/step-3-generate-structure.md
+      - 'Step 4: Write Content': doc-site/tutorial/step-4-write-content.md
+      - 'Step 5: Refine with AI': doc-site/tutorial/step-5-refine-with-ai.md
+      - 'Step 6: Deploy': doc-site/tutorial/step-6-deploy.md
+    - Reference:
+      - Site Structure: doc-site/reference/site-structure.md
+      - Content Types: doc-site/reference/content-types.md
+      - AI Collaboration: doc-site/reference/ai-collaboration.md
+    - Examples:
+      - Portfolio Examples: doc-site/examples/portfolio-examples.md
+      - Prompt Templates: doc-site/examples/prompt-templates.md
+    - Troubleshooting: doc-site/troubleshooting.md
+    - FAQ: doc-site/faq.md
   - Community:
     - Contributing: https://github.com/rebeja/docs-automation-examples/blob/main/CONTRIBUTING.md
     - Code of Conduct: https://github.com/rebeja/docs-automation-examples/blob/main/CODE_OF_CONDUCT.md
     - Changelog: https://github.com/rebeja/docs-automation-examples/blob/main/CHANGELOG.md
 
-copyright: Built with ❤️ for technical writers exploring AI-assisted automation
+copyright: Built for technical writers exploring AI-assisted documentation automation

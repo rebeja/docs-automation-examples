@@ -181,13 +181,13 @@ export AI_MODEL="claude-3-sonnet-20240229"
 
 ### Security
 
-**DO ✅:**
+**Do:**
 - Use environment variables in CI/CD
 - Rotate tokens every 90 days
 - Use minimal GitHub token scopes
 - Store tokens in password manager
 
-**DON'T ❌:**
+**Don't:**
 - Commit config.yaml with real keys
 - Share tokens in Slack/email
 - Use production keys for testing

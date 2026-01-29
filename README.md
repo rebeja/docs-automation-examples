@@ -109,17 +109,17 @@ Review the generated `release_notes.md` file.
 
 ## 🔑 Key Principles
 
-!!! success "Document Your Process First"
-    Before automating anything, write down your manual workflow. Your documented process becomes the foundation for your automation prompt.
+### ✅ Document Your Process First
+Before automating anything, write down your manual workflow. Your documented process becomes the foundation for your automation prompt.
 
-!!! success "Plan Before Code"
-    Ask AI to write a plan first, then implement. Plans are faster to iterate than code.
+### ✅ Plan Before Code
+Ask AI to write a plan first, then implement. Plans are faster to iterate than code.
 
-!!! success "Human-in-the-Loop"
-    Automation generates drafts; humans provide final review and context. This maintains quality while saving time.
+### ✅ Human-in-the-Loop
+Automation generates drafts; humans provide final review and context. This maintains quality while saving time.
 
-!!! success "Iterate Based on Results"
-    Your first prompt won't be perfect. Test, refine, and improve based on real outputs.
+### ✅ Iterate Based on Results
+Your first prompt won't be perfect. Test, refine, and improve based on real outputs.
 
 ---
 

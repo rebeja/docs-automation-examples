@@ -16,15 +16,15 @@ Technical writers and documentation teams who:
 - Are exploring AI-assisted automation
 - Have basic command line and Git knowledge
 
-**No programming experience required!**
+No programming experience is required.
 
 ### Do I need to know how to code?
 
-No! This project teaches you how to work with AI coding agents to build automation. You'll learn:
+No. This project teaches you how to work with AI coding agents to build automation. You'll learn:
 
-- How to document workflows (you already do this!)
-- How to write clear instructions for AI (like writing documentation!)
-- How to iterate based on results (like editing!)
+- How to document workflows (you already do this)
+- How to write clear instructions for AI (like writing documentation)
+- How to iterate based on results (like editing)
 
 Your technical writing skills are exactly what you need.
 
@@ -61,7 +61,7 @@ The same automation pattern applies—just different API calls.
 
 **Total: 2-3 hours** for complete tutorial
 
-**Worth it?** You'll save 4-8 hours per release cycle going forward.
+This investment can save 4-8 hours per release cycle going forward.
 
 ### What if I don't have API keys?
 
@@ -83,13 +83,11 @@ Free tier available for both Anthropic and OpenAI.
 
 **For typical biweekly releases:**
 
-- **~$0.50 - $1.00 per month**
-
-Compare to hours of manual work saved!
+- Approximately $0.50 - $1.00 per month
 
 ### Can I use this with private repositories?
 
-Yes! Just ensure:
+Yes. Just ensure:
 
 1. Your GitHub token has `repo` scope (not just `public_repo`)
 2. You have access to the private repositories
@@ -106,22 +104,22 @@ Depends on prompt refinement:
 - Initial run: 60-70%
 - After iteration: 85-95%
 
-**Remember:** 90% accuracy with 10 minutes of human review beats 100% manual work taking 90 minutes.
+Remember: 90% accuracy with 10 minutes of human review beats 100% manual work taking 90 minutes.
 
 ### What if the AI miscategorizes commits?
 
-This is expected and normal! That's why human review is part of the workflow:
+This is expected and normal. That's why human review is part of the workflow:
 
-1. AI generates draft (accurate ~90%)
-2. Human reviews and corrects (~10 minutes)
+1. AI generates draft (accurate approximately 90%)
+2. Human reviews and corrects (approximately 10 minutes)
 3. Human adds business context
 4. Publish
 
-Still **80%+ time savings** over fully manual process.
+Still 80%+ time savings over fully manual process.
 
 ### Can I customize categories?
 
-Yes! You can:
+Yes. You can:
 
 - Change category names
 - Add new categories
@@ -159,7 +157,7 @@ Not in the current version, but you could:
 2. Use your AI coding tool to add this feature
 3. Ask: "How can I filter commits by file path?"
 
-This is a great example of extending the automation!
+This is a great example of extending the automation.
 
 ## Prompt Engineering Questions
 
@@ -178,25 +176,25 @@ Follow the iteration process in [Tutorial Step 5](tutorial/step-5-iterate-prompt
 
 Key elements:
 
-- ✅ Clear category definitions
-- ✅ Concrete examples (positive and negative)
-- ✅ Keyword indicators
-- ✅ Comprehensive exclusion rules
-- ✅ Decision rules for edge cases
+- Clear category definitions
+- Concrete examples (positive and negative)
+- Keyword indicators
+- Comprehensive exclusion rules
+- Decision rules for edge cases
 
 See [Prompt Evolution Example](examples/prompt-evolution.md).
 
 ### Should I use examples from my actual commits?
 
-Yes! The more domain-specific your examples, the better. Generic examples work OK, but examples from your actual repository work better.
+Yes. The more domain-specific your examples, the better. Generic examples work OK, but examples from your actual repository work better.
 
 ### How long should my prompt be?
 
 **Sweet spot: 500-1000 words**
 
-- Too short (<300 words): Vague, inconsistent results
+- Too short (less than 300 words): Vague, inconsistent results
 - Just right (500-1000 words): Clear, consistent, maintainable
-- Too long (>1500 words): Diminishing returns, hard to maintain
+- Too long (more than 1500 words): Diminishing returns, hard to maintain
 
 Focus on quality over quantity.
 
@@ -230,7 +228,7 @@ Clone and customize rather than using one prompt for all.
 
 ### Can I integrate this into CI/CD?
 
-Yes! You could:
+Yes. You could:
 
 1. Run automatically on release branch
 2. Create pull request with draft notes
@@ -303,7 +301,7 @@ webhook_url = "your-slack-webhook"
 requests.post(webhook_url, json={"text": notes})
 ```
 
-These are great examples of extending the automation!
+These are great examples of extending the automation.
 
 ### Does this work with Jira or other issue trackers?
 
@@ -321,12 +319,12 @@ This requires additional API integration.
 
 Yes, if you follow best practices:
 
-- ✅ Use `config.yaml` (in `.gitignore`)
-- ✅ Use environment variables for production
-- ✅ Rotate keys regularly (every 90 days)
-- ✅ Use minimal scopes needed
-- ❌ Never commit keys to version control
-- ❌ Don't share keys in Slack/email
+- Use `config.yaml` (in `.gitignore`)
+- Use environment variables for production
+- Rotate keys regularly (every 90 days)
+- Use minimal scopes needed
+- Never commit keys to version control
+- Don't share keys in Slack or email
 
 ### What data is sent to AI providers?
 
@@ -367,7 +365,7 @@ For sensitive code:
 
 ### Do I need to update prompts regularly?
 
-Not usually! Once refined, prompts remain stable. Update when:
+Not usually. Once refined, prompts remain stable. Update when:
 
 - Team's commit message style changes
 - New categories needed
@@ -400,7 +398,7 @@ The [Tutorial](tutorial/index.md) is designed for onboarding.
 
 ### Can I use this for other documentation tasks?
 
-Absolutely! The same pattern applies to:
+Yes. The same pattern applies to:
 
 - Translation status tracking
 - Broken link checking
@@ -412,7 +410,7 @@ Absolutely! The same pattern applies to:
 
 ### Can I contribute improvements?
 
-Yes! See [Contributing Guidelines](https://github.com/rebeja/docs-automation-examples/blob/main/CONTRIBUTING.md).
+Yes. See [Contributing Guidelines](https://github.com/rebeja/docs-automation-examples/blob/main/CONTRIBUTING.md).
 
 Ways to contribute:
 
@@ -438,4 +436,4 @@ Ways to contribute:
 
 ---
 
-**Have a question not answered here?** [Open an issue](https://github.com/rebeja/docs-automation-examples/issues){ .md-button }
+**Have a question not answered here?** [Open an issue](https://github.com/rebeja/docs-automation-examples/issues)

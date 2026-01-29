@@ -1548,16 +1548,9 @@
 
 
 <h1 id="step-2-document-your-process">Step 2: Document Your Process</h1>
-<p>This is the <strong>most important step</strong> in the entire tutorial. Before automating anything, you need to clearly document your manual workflow.</p>
-<div class="admonition info">
-<p class="admonition-title">Time Estimate</p>
-<p>30-45 minutes</p>
-</div>
-<div class="admonition success">
-<p class="admonition-title">Key Principle</p>
-<p><strong>"Before automating, write down your actual manual process—automation replicates your workflow."</strong></p>
-<p>If your manual process is poorly defined, your automation will be poorly defined too.</p>
-</div>
+<p>This is the most important step in the entire tutorial. Before automating anything, you need to clearly document your manual workflow.</p>
+<p><strong>Time Estimate:</strong> 30-45 minutes</p>
+<p><strong>Key Principle:</strong> Before automating, write down your actual manual process—automation replicates your workflow. If your manual process is poorly defined, your automation will be poorly defined too.</p>
 <h2 id="why-this-matters">Why This Matters</h2>
 <p>Your documented manual process becomes:</p>
 <ol>
@@ -1569,11 +1562,11 @@
 <h2 id="what-youll-accomplish">What You'll Accomplish</h2>
 <p>By the end of this step:</p>
 <ul>
-<li>✅ Complete workflow documentation</li>
-<li>✅ Clear categorization standards</li>
-<li>✅ Defined exclusion rules</li>
-<li>✅ Output format specification</li>
-<li>✅ Ready-to-use automation prompt</li>
+<li>Complete workflow documentation</li>
+<li>Clear categorization standards</li>
+<li>Defined exclusion rules</li>
+<li>Output format specification</li>
+<li>Ready-to-use automation prompt</li>
 </ul>
 <h2 id="the-workflow-worksheet">The Workflow Worksheet</h2>
 <p>Complete this worksheet by answering each question based on YOUR current manual process.</p>
@@ -1633,10 +1626,7 @@
 </code></pre></div>
 <h3 id="part-2-categorization-standards">Part 2: Categorization Standards</h3>
 <p><strong>How do you decide which category each change belongs to?</strong></p>
-<div class="admonition tip">
-<p class="admonition-title">Be Specific</p>
-<p>Instead of "I know a bug fix when I see one," write: "Bug fixes contain words like 'fix', 'bug', 'issue', 'resolve' and describe correcting existing functionality."</p>
-</div>
+<p><strong>Be Specific:</strong> Instead of "I know a bug fix when I see one," write: "Bug fixes contain words like 'fix', 'bug', 'issue', 'resolve' and describe correcting existing functionality."</p>
 <p>Complete this table:</p>
 <table>
 <thead>
@@ -1720,14 +1710,14 @@
 <h3 id="part-3-exclusion-rules">Part 3: Exclusion Rules</h3>
 <p><strong>What types of commits should NOT appear in release notes?</strong></p>
 <p>Check all that apply and add specifics:</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Merge commits without meaningful changes</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Work-in-progress commits (WIP, temp, test)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Internal tooling changes</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Code formatting/style changes</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Test file updates (unless new features)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Dependency updates (unless user-facing)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Other: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+<ul>
+<li>Merge commits without meaningful changes</li>
+<li>Work-in-progress commits (WIP, temp, test)</li>
+<li>Internal tooling changes</li>
+<li>Code formatting/style changes</li>
+<li>Test file updates (unless new features)</li>
+<li>Dependency updates (unless user-facing)</li>
+<li>Other: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
 </ul>
 <p><strong>Write specific exclusion criteria:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gu">## What to Exclude</span>
@@ -1776,10 +1766,10 @@
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">-</span><span class="w"> </span>Format: &quot;Release Notes - MM/DD/YYYY (covering commits since MM/DD/YYYY)&quot;
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
 <a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="gu">### Category Order</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="k">1.</span> 🎉 New Features (most exciting first)
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">2.</span> ✨ Enhancements
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="k">3.</span> 🐛 Bug Fixes
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="k">4.</span> 📝 Documentation
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="k">1.</span> New Features (most exciting first)
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">2.</span> Enhancements
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="k">3.</span> Bug Fixes
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="k">4.</span> Documentation
 <a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
 <a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="gu">### Entry Format</span>
 <a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="k">-</span><span class="w"> </span>Commit description format: &quot;- Description ([commit-hash](link))&quot;
@@ -1791,13 +1781,13 @@
 </code></pre></div>
 <h3 id="part-5-audience-considerations">Part 5: Audience Considerations</h3>
 <p><strong>Who reads your release notes?</strong></p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Internal engineering team</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> External customers</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Product managers</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Support team</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Sales/Marketing</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Other: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
+<ul>
+<li>Internal engineering team</li>
+<li>External customers</li>
+<li>Product managers</li>
+<li>Support team</li>
+<li>Sales/Marketing</li>
+<li>Other: <strong><em>_</em></strong><strong><em>_</em></strong>_</li>
 </ul>
 <p><strong>How should language be adjusted for this audience?</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="gu">## Audience Guidance</span>
@@ -1857,26 +1847,17 @@
 <h2 id="what-youve-learned">What You've Learned</h2>
 <p>In this step, you:</p>
 <ul>
-<li>✅ Documented your complete manual workflow</li>
-<li>✅ Defined clear categorization standards</li>
-<li>✅ Specified exclusion rules</li>
-<li>✅ Created output format template</li>
-<li>✅ Considered audience needs</li>
+<li>Documented your complete manual workflow</li>
+<li>Defined clear categorization standards</li>
+<li>Specified exclusion rules</li>
+<li>Created output format template</li>
+<li>Considered audience needs</li>
 </ul>
 <h2 id="next-step">Next Step</h2>
 <p>With your process documented, you're ready to set up API access.</p>
-<p><a class="md-button md-button--primary" href="../step-3-configure/">Next: Step 3 - Configure APIs →</a></p>
+<p><a href="../step-3-configure/">Next: Step 3 - Configure APIs</a></p>
 <hr />
-<div class="admonition tip">
-<p class="admonition-title">Save Your Worksheet</p>
-<p>Keep this documentation! You'll reference it when:</p>
-<ul>
-<li>Writing your first prompt (Step 5)</li>
-<li>Troubleshooting categorization errors</li>
-<li>Training new team members</li>
-<li>Building other automation projects</li>
-</ul>
-</div>
+<p><strong>Save Your Worksheet:</strong> Keep this documentation. You'll reference it when writing your first prompt (Step 5), troubleshooting categorization errors, training new team members, and building other automation projects.</p>
 
 
 

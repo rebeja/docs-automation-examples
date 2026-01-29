@@ -2,17 +2,16 @@
 
 Now that your environment is set up and process is documented, you'll configure API access for GitHub and your AI provider.
 
-!!! info "Time Estimate"
-    10-15 minutes
+**Time Estimate:** 10-15 minutes
 
 ## What You'll Accomplish
 
 By the end of this step:
 
-- ✅ GitHub API token created and tested
-- ✅ AI provider API key obtained and configured
-- ✅ Security best practices understood
-- ✅ API connections verified
+- GitHub API token created and tested
+- AI provider API key obtained and configured
+- Security best practices understood
+- API connections verified
 
 ## API Keys You'll Need
 
@@ -30,64 +29,61 @@ By the end of this step:
 
 2. **Click "Generate new token"**
    
-   Choose **"Generate new token (classic)"**
+   Choose "Generate new token (classic)"
 
 3. **Configure Token**
    
    - **Note:** "Release Notes Automation" (describes purpose)
    - **Expiration:** Choose based on your security policy (90 days recommended)
    - **Scopes:** Select the minimum needed:
-     - For public repos only: ✅ `public_repo`
-     - For private repos: ✅ `repo` (full control)
+     - For public repos only: `public_repo`
+     - For private repos: `repo` (full control)
 
 4. **Generate and Copy**
    
-   Click "Generate token" and **copy it immediately** - you won't see it again!
+   Click "Generate token" and copy it immediately - you won't see it again.
    
    Format: `ghp_xxxxxxxxxxxxxxxxxxxx`
 
-!!! warning "Save Your Token"
-    Store the token in your password manager immediately. If you lose it, you'll need to generate a new one.
+**Save Your Token:** Store the token in your password manager immediately. If you lose it, you'll need to generate a new one.
 
 ### 2. AI Provider API Key (Required)
 
-Choose **one** of these providers:
+Choose one of these providers:
 
-=== "Anthropic (Claude)"
-    **Recommended for this tutorial**
+#### Option A: Anthropic (Claude) - Recommended
 
-    **Why Claude?** Excellent at following detailed instructions and explaining reasoning
+**Why Claude:** Excellent at following detailed instructions and explaining reasoning
 
-    #### Getting an Anthropic API Key
+**Getting an Anthropic API Key:**
 
-    1. Go to [console.anthropic.com](https://console.anthropic.com/)
-    2. Sign up or log in
-    3. Click "Get API Keys" in the navigation
-    4. Click "Create Key"
-    5. Give it a name: "Release Notes Automation"
-    6. Copy the key (starts with `sk-ant-`)
+1. Go to [console.anthropic.com](https://console.anthropic.com/)
+2. Sign up or log in
+3. Click "Get API Keys" in the navigation
+4. Click "Create Key"
+5. Give it a name: "Release Notes Automation"
+6. Copy the key (starts with `sk-ant-`)
 
-    **Pricing:** Pay-as-you-go, ~$0.01-0.03 per release notes generation
-    
-    **Free tier:** $5 credit for new accounts
+**Pricing:** Pay-as-you-go, approximately $0.01-0.03 per release notes generation
 
-=== "OpenAI (GPT)"
-    **Alternative option**
+**Free tier:** $5 credit for new accounts
 
-    **Why GPT?** Widely available, fast, good general performance
+#### Option B: OpenAI (GPT)
 
-    #### Getting an OpenAI API Key
+**Why GPT:** Widely available, fast, good general performance
 
-    1. Go to [platform.openai.com](https://platform.openai.com/)
-    2. Sign up or log in
-    3. Click your profile → "View API Keys"
-    4. Click "Create new secret key"
-    5. Give it a name: "Release Notes Automation"
-    6. Copy the key (starts with `sk-`)
+**Getting an OpenAI API Key:**
 
-    **Pricing:** Pay-as-you-go, ~$0.02-0.05 per release notes generation
-    
-    **Free tier:** $5 credit for new accounts (first 3 months)
+1. Go to [platform.openai.com](https://platform.openai.com/)
+2. Sign up or log in
+3. Click your profile then "View API Keys"
+4. Click "Create new secret key"
+5. Give it a name: "Release Notes Automation"
+6. Copy the key (starts with `sk-`)
+
+**Pricing:** Pay-as-you-go, approximately $0.02-0.05 per release notes generation
+
+**Free tier:** $5 credit for new accounts (first 3 months)
 
 ## Configuring Your Keys
 
@@ -115,47 +111,48 @@ nano config.yaml
 
 ### 2. Add Your Keys
 
-=== "Using Anthropic (Claude)"
-    ```yaml
-    # AI Provider
-    ai_provider: "anthropic"
-    ai_api_key: "sk-ant-your-actual-key-here"
-    model: "claude-3-sonnet-20240229"
+**If using Anthropic (Claude):**
 
-    # GitHub
-    github_token: "ghp_your-actual-token-here"
+```yaml
+# AI Provider
+ai_provider: "anthropic"
+ai_api_key: "sk-ant-your-actual-key-here"
+model: "claude-3-sonnet-20240229"
 
-    # Optional: Set a default repository
-    default_repo: "your-username/your-repo"
-    output_file: "release_notes.md"
-    ```
+# GitHub
+github_token: "ghp_your-actual-token-here"
 
-=== "Using OpenAI (GPT)"
-    ```yaml
-    # AI Provider
-    ai_provider: "openai"
-    ai_api_key: "sk-your-actual-key-here"
-    model: "gpt-4"
+# Optional: Set a default repository
+default_repo: "your-username/your-repo"
+output_file: "release_notes.md"
+```
 
-    # GitHub
-    github_token: "ghp_your-actual-token-here"
+**If using OpenAI (GPT):**
 
-    # Optional: Set a default repository
-    default_repo: "your-username/your-repo"
-    output_file: "release_notes.md"
-    ```
+```yaml
+# AI Provider
+ai_provider: "openai"
+ai_api_key: "sk-your-actual-key-here"
+model: "gpt-4"
+
+# GitHub
+github_token: "ghp_your-actual-token-here"
+
+# Optional: Set a default repository
+default_repo: "your-username/your-repo"
+output_file: "release_notes.md"
+```
 
 ### 3. Save the File
 
 Save and close your editor.
 
-!!! danger "Never Commit This File"
-    The `config.yaml` file is in `.gitignore` to prevent accidental commits. Double-check:
-    
-    ```bash
-    git status
-    # Should NOT show config.yaml as modified
-    ```
+**Never Commit This File:** The `config.yaml` file is in `.gitignore` to prevent accidental commits. Double-check:
+
+```bash
+git status
+# Should NOT show config.yaml as modified
+```
 
 ## Testing Your Configuration
 
@@ -163,10 +160,10 @@ Save and close your editor.
 
 ```bash
 cd 01-release-notes-automation
-python -c "import yaml; config = yaml.safe_load(open('../config.yaml')); print('✓ Configuration loaded')"
+python -c "import yaml; config = yaml.safe_load(open('../config.yaml')); print('Configuration loaded')"
 ```
 
-**Expected:** `✓ Configuration loaded`
+**Expected:** `Configuration loaded`
 
 ### Test 2: GitHub API Access
 
@@ -179,75 +176,77 @@ import yaml
 config = yaml.safe_load(open('../config.yaml'))
 g = Github(config['github_token'])
 user = g.get_user()
-print(f'✓ GitHub API working. Connected as: {user.login}')
+print(f'GitHub API working. Connected as: {user.login}')
 "
 ```
 
-**Expected:** `✓ GitHub API working. Connected as: your-username`
+**Expected:** `GitHub API working. Connected as: your-username`
 
 ### Test 3: AI API Access
 
-=== "Test Anthropic"
-    ```bash
-    python -c "
-    import anthropic
-    import yaml
-    config = yaml.safe_load(open('../config.yaml'))
-    client = anthropic.Anthropic(api_key=config['ai_api_key'])
-    message = client.messages.create(
-        model='claude-3-sonnet-20240229',
-        max_tokens=10,
-        messages=[{'role': 'user', 'content': 'Say hello'}]
-    )
-    print('✓ Anthropic API working')
-    print(f'Response: {message.content[0].text}')
-    "
-    ```
+**Test Anthropic:**
 
-=== "Test OpenAI"
-    ```bash
-    python -c "
-    from openai import OpenAI
-    import yaml
-    config = yaml.safe_load(open('../config.yaml'))
-    client = OpenAI(api_key=config['ai_api_key'])
-    response = client.chat.completions.create(
-        model='gpt-4',
-        messages=[{'role': 'user', 'content': 'Say hello'}],
-        max_tokens=10
-    )
-    print('✓ OpenAI API working')
-    print(f'Response: {response.choices[0].message.content}')
-    "
-    ```
+```bash
+python -c "
+import anthropic
+import yaml
+config = yaml.safe_load(open('../config.yaml'))
+client = anthropic.Anthropic(api_key=config['ai_api_key'])
+message = client.messages.create(
+    model='claude-3-sonnet-20240229',
+    max_tokens=10,
+    messages=[{'role': 'user', 'content': 'Say hello'}]
+)
+print('Anthropic API working')
+print(f'Response: {message.content[0].text}')
+"
+```
+
+**Test OpenAI:**
+
+```bash
+python -c "
+from openai import OpenAI
+import yaml
+config = yaml.safe_load(open('../config.yaml'))
+client = OpenAI(api_key=config['ai_api_key'])
+response = client.chat.completions.create(
+    model='gpt-4',
+    messages=[{'role': 'user', 'content': 'Say hello'}],
+    max_tokens=10
+)
+print('OpenAI API working')
+print(f'Response: {response.choices[0].message.content}')
+"
+```
 
 **Expected:** Success message with a response
 
 ## Security Best Practices
 
-### DO ✅
+### Do
 
-- **Use environment variables** for production:
+- Use environment variables for production:
   ```bash
   export GITHUB_TOKEN="your-token"
   export AI_API_KEY="your-key"
   ```
 
-- **Add config.yaml to .gitignore** (already done)
+- Add config.yaml to .gitignore (already done)
 
-- **Rotate keys regularly** (every 90 days)
+- Rotate keys regularly (every 90 days)
 
-- **Use minimal scopes** (only `public_repo` if possible)
+- Use minimal scopes (only `public_repo` if possible)
 
-- **Store in password manager** for backup
+- Store in password manager for backup
 
-### DON'T ❌
+### Don't
 
-- **Never commit** `config.yaml` with real keys
-- **Don't share** API keys in Slack/email
-- **Don't use** production tokens for testing
-- **Don't hardcode** keys in scripts
-- **Don't push** to public repositories with keys
+- Never commit `config.yaml` with real keys
+- Don't share API keys in Slack or email
+- Don't use production tokens for testing
+- Don't hardcode keys in scripts
+- Don't push to public repositories with keys
 
 ## Troubleshooting
 
@@ -297,23 +296,18 @@ print(f'✓ GitHub API working. Connected as: {user.login}')
 
 In this step, you:
 
-- ✅ Created GitHub API token with appropriate scopes
-- ✅ Obtained AI provider API key
-- ✅ Configured both keys securely
-- ✅ Verified API connections work
-- ✅ Learned security best practices
+- Created GitHub API token with appropriate scopes
+- Obtained AI provider API key
+- Configured both keys securely
+- Verified API connections work
+- Learned security best practices
 
 ## Next Step
 
-With APIs configured, you're ready to run your first automation!
+With APIs configured, you're ready to run your first automation.
 
-[Next: Step 4 - First Run →](step-4-run-first-time.md){ .md-button .md-button--primary }
+[Next: Step 4 - First Run](step-4-run-first-time.md)
 
 ---
 
-!!! tip "API Costs"
-    **Estimated cost per run:**
-    - GitHub API: Free (rate limited to 5,000 requests/hour)
-    - AI API: $0.01-0.05 per release notes generation
-    
-    For typical biweekly releases: **~$0.50-1.00 per month**
+**API Costs:** Estimated cost per run - GitHub API: Free (rate limited to 5,000 requests/hour), AI API: $0.01-0.05 per release notes generation. For typical biweekly releases: approximately $0.50-1.00 per month.

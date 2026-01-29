@@ -2751,23 +2751,34 @@
 - Sphinx (Python ecosystem standard)</p>
 <p>Choose MkDocs for simplicity and documentation focus.</p>
 <h3 id="can-i-customize-the-theme">Can I customize the theme?</h3>
-<p>Yes. Material for MkDocs supports extensive customization:</p>
-<ul>
-<li>Colors and fonts</li>
-<li>Navigation structure</li>
-<li>Feature toggles</li>
-<li>Custom CSS</li>
-<li>Logo and favicon</li>
-<li>Social links</li>
-</ul>
-<p>See <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs documentation</a> for customization options.</p>
+<p>Yes. Material for MkDocs supports extensive customization without requiring custom code:</p>
+<p><strong>Basic customization</strong> (no code required):
+- Color schemes (light and dark mode)
+- Primary and accent colors
+- Fonts (text and code)
+- Logo and favicon
+- Navigation features
+- Social links</p>
+<p><strong>Advanced customization</strong>:
+- Custom CSS
+- Custom templates
+- JavaScript enhancements
+- Homepage layouts</p>
+<p><strong>Quick example</strong> - Change colors:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">theme</span><span class="p">:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">palette</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">primary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">teal</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">accent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">green</span>
+</code></pre></div></p>
+<p>See <a href="../reference/theme-customization/">Theme customization reference</a> for complete guide.</p>
 <h3 id="how-do-i-add-a-resume-or-pdf">How do I add a resume or PDF?</h3>
 <p>Create a <code>files/</code> directory and add your resume:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>docs/files
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cp<span class="w"> </span>~/Documents/resume.pdf<span class="w"> </span>docs/files/
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mkdir<span class="w"> </span>docs/files
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>cp<span class="w"> </span>~/Documents/resume.pdf<span class="w"> </span>docs/files/
 </code></pre></div>
 <p>Link from your about page:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[<span class="nt">Download my resume (PDF)</span>](<span class="na">files/resume.pdf</span>)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[<span class="nt">Download my resume (PDF)</span>](<span class="na">files/resume.pdf</span>)
 </code></pre></div>
 <p>The file deploys with your site.</p>
 <h3 id="can-i-use-my-own-domain">Can I use my own domain?</h3>
@@ -2781,11 +2792,11 @@
 <p>Your portfolio appears at <code>yourname.dev</code> instead of <code>username.github.io</code>.</p>
 <h3 id="how-do-i-update-my-portfolio-after-deploying">How do I update my portfolio after deploying?</h3>
 <p>Simple workflow:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Edit files locally</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c1"># Test with: mkdocs serve</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Deploy changes</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>mkdocs<span class="w"> </span>gh-deploy
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Edit files locally</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1"># Test with: mkdocs serve</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># Deploy changes</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>mkdocs<span class="w"> </span>gh-deploy
 </code></pre></div>
 <p>Changes appear live within 1-3 minutes.</p>
 <h3 id="what-if-my-site-does-not-deploy">What if my site does not deploy?</h3>

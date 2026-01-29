@@ -23,11 +23,11 @@ Commits:
 
 **Results:**
 
-- ✅ Basic categorization working
-- ❌ 35% of commits miscategorized
-- ❌ Internal changes included
-- ❌ Feature vs Enhancement boundary unclear
-- ❌ No exclusion logic
+- Basic categorization working
+- 35% of commits miscategorized
+- Internal changes included
+- Feature vs Enhancement boundary unclear
+- No exclusion logic
 
 **Accuracy: 65%** - Not usable
 
@@ -59,11 +59,11 @@ Commits:
 
 **Results:**
 
-- ✅ Better feature/enhancement distinction
-- ✅ Some internal changes filtered
-- ❌ Still many edge case confusions
-- ❌ "Wholly new" vs "existing" ambiguous
-- ❌ Exclusions too vague
+- Better feature/enhancement distinction
+- Some internal changes filtered
+- Still many edge case confusions
+- "Wholly new" vs "existing" ambiguous
+- Exclusions too vague
 
 **Accuracy: 72%** - Improved but not production-ready
 
@@ -119,13 +119,13 @@ Format:
 
 **Results:**
 
-- ✅ Feature vs Enhancement much clearer
-- ✅ Better exclusion of WIP commits
-- ✅ More consistent categorization
-- ❌ Still some internal changes leaking
-- ❌ Test-related commits sometimes included
+- Feature vs Enhancement much clearer
+- Better exclusion of WIP commits
+- More consistent categorization
+- Still some internal changes leaking
+- Test-related commits sometimes included
 
-**Accuracy: 83%** - Getting close!
+**Accuracy: 83%** - Getting close
 
 ---
 
@@ -146,13 +146,13 @@ Review the following commits and categorize each one according to these standard
 **Definition:** Wholly new capabilities that didn't exist before
 
 **Examples:**
-- "Add user authentication system" ✅
-- "Create new dashboard view" ✅
-- "Introduce webhook support" ✅
+- "Add user authentication system" (Correct)
+- "Create new dashboard view" (Correct)
+- "Introduce webhook support" (Correct)
 
 **NOT Examples:**
-- "Improve existing search" ❌ (this is an enhancement)
-- "Update authentication flow" ❌ (enhancement to existing)
+- "Improve existing search" (This is an enhancement)
+- "Update authentication flow" (Enhancement to existing)
 
 **Keywords:** "add", "new", "create", "introduce", "implement"
 (Only if describing wholly new functionality)
@@ -161,13 +161,13 @@ Review the following commits and categorize each one according to these standard
 **Definition:** Improvements to existing features or functionality
 
 **Examples:**
-- "Improve search performance by 50%" ✅
-- "Update API response format" ✅
-- "Optimize database queries" ✅
+- "Improve search performance by 50%" (Correct)
+- "Update API response format" (Correct)
+- "Optimize database queries" (Correct)
 
 **NOT Examples:**
-- "Add search feature" ❌ (new feature)
-- "Fix search bug" ❌ (bug fix)
+- "Add search feature" (New feature)
+- "Fix search bug" (Bug fix)
 
 **Keywords:** "improve", "update", "enhance", "optimize", "increase", "better", "refactor"
 
@@ -175,13 +175,13 @@ Review the following commits and categorize each one according to these standard
 **Definition:** Corrections to existing functionality that wasn't working as intended
 
 **Examples:**
-- "Fix memory leak in parser" ✅
-- "Resolve login timeout issue" ✅
-- "Correct validation logic error" ✅
+- "Fix memory leak in parser" (Correct)
+- "Resolve login timeout issue" (Correct)
+- "Correct validation logic error" (Correct)
 
 **NOT Examples:**
-- "Improve validation performance" ❌ (enhancement)
-- "Add validation to new field" ❌ (part of new feature)
+- "Improve validation performance" (Enhancement)
+- "Add validation to new field" (Part of new feature)
 
 **Keywords:** "fix", "bug", "resolve", "issue", "correct", "repair", "hotfix", "patch"
 
@@ -189,9 +189,9 @@ Review the following commits and categorize each one according to these standard
 **Definition:** Updates to documentation, guides, or API docs
 
 **Examples:**
-- "Update API documentation" ✅
-- "Fix typo in README" ✅
-- "Add usage examples to guide" ✅
+- "Update API documentation" (Correct)
+- "Fix typo in README" (Correct)
+- "Add usage examples to guide" (Correct)
 
 **Keywords:** "docs", "documentation", "readme", "guide", "typo" (in docs)
 
@@ -261,13 +261,13 @@ Format your response exactly as:
 
 **Results:**
 
-- ✅ Consistent categorization across different repositories
-- ✅ Effective filtering of internal changes
-- ✅ Clear decision rules for edge cases
-- ✅ Appropriate format and context
-- ✅ Minimal manual cleanup needed
+- Consistent categorization across different repositories
+- Effective filtering of internal changes
+- Clear decision rules for edge cases
+- Appropriate format and context
+- Minimal manual cleanup needed
 
-**Accuracy: 91%** - Production ready! 🎉
+**Accuracy: 91%** - Production ready
 
 ---
 
@@ -332,7 +332,7 @@ Format your response exactly as:
 
 ### What Didn't Work
 
-1. **Overly complex prompts** (>2000 words) - diminishing returns
+1. **Overly complex prompts** (more than 2000 words) - diminishing returns
 2. **Too many categories** (7+ categories became confusing)
 3. **Vague language** like "generally" or "usually"
 4. **Assuming context** the AI couldn't have
@@ -343,14 +343,14 @@ Format your response exactly as:
 1. **Test with same dataset** to compare versions fairly
 2. **Track metrics** systematically (don't rely on gut feel)
 3. **Focus on patterns** not individual failures
-4. **Stop iterating** when improvements are <3 percentage points
+4. **Stop iterating** when improvements are less than 3 percentage points
 5. **Version control prompts** to enable rollback
 
 ## Adapting This for Your Workflow
 
 ### Start with Version 3
 
-Don't start from scratch! Begin with v3 structure and customize:
+Don't start from scratch. Begin with v3 structure and customize:
 
 1. Update category definitions to match your standards
 2. Add examples from your actual commits
@@ -400,4 +400,4 @@ Use this prompt as your starting point:
 
 ---
 
-**Ready to use this?** [Go to Tutorial →](../tutorial/index.md){ .md-button .md-button--primary }
+**Ready to use this?** [Go to Tutorial](../tutorial/index.md)

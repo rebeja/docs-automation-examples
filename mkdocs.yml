@@ -30,8 +30,8 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
-    - navigation.expand
     - navigation.top
     - search.suggest
     - search.highlight
@@ -125,9 +125,5 @@ nav:
       - Prompt Templates: doc-site/examples/prompt-templates.md
     - Troubleshooting: doc-site/troubleshooting.md
     - FAQ: doc-site/faq.md
-  - Community:
-    - Contributing: https://github.com/rebeja/docs-automation-examples/blob/main/CONTRIBUTING.md
-    - Code of Conduct: https://github.com/rebeja/docs-automation-examples/blob/main/CODE_OF_CONDUCT.md
-    - Changelog: https://github.com/rebeja/docs-automation-examples/blob/main/CHANGELOG.md
 
 copyright: Built for technical writers exploring AI-assisted documentation automation

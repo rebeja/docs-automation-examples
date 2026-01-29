@@ -548,10 +548,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#nice-to-have" class="md-nav__link">
+  <a href="#recommended" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Nice to Have
+        Recommended
       
     </span>
   </a>
@@ -1561,10 +1561,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#nice-to-have" class="md-nav__link">
+  <a href="#recommended" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Nice to Have
+        Recommended
       
     </span>
   </a>
@@ -1851,19 +1851,19 @@
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Before starting, make sure you have:</p>
 <h3 id="required">Required</h3>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Python 3.8 or higher</strong> - Check with <code>python --version</code> or <code>python3 --version</code></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Git installed</strong> - Check with <code>git --version</code></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>GitHub account</strong> - For API access (or GitLab/Bitbucket equivalent)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>AI API access</strong> - Anthropic (Claude) or OpenAI account</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Command line comfort</strong> - Ability to run terminal commands</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> <strong>Text editor</strong> - VS Code, Cursor, Sublime Text, or similar</li>
+<ul>
+<li>Python 3.8 or higher (check with <code>python --version</code> or <code>python3 --version</code>)</li>
+<li>Git installed (check with <code>git --version</code>)</li>
+<li>GitHub account for API access (or GitLab/Bitbucket equivalent)</li>
+<li>AI API access (Anthropic Claude or OpenAI account)</li>
+<li>Command line comfort (ability to run terminal commands)</li>
+<li>Text editor (VS Code, Cursor, Sublime Text, or similar)</li>
 </ul>
-<h3 id="nice-to-have">Nice to Have</h3>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Cursor or AI coding tool</strong> - For asking questions and iterating</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Existing docs-as-code workflow</strong> - Makes adaptation easier</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <strong>Write the Docs community membership</strong> - For sharing and learning</li>
+<h3 id="recommended">Recommended</h3>
+<ul>
+<li>Cursor or AI coding tool for asking questions and iterating</li>
+<li>Existing docs-as-code workflow (makes adaptation easier)</li>
+<li>Write the Docs community membership for sharing and learning</li>
 </ul>
 <h2 id="installation">Installation</h2>
 <h3 id="1-clone-the-repository">1. Clone the Repository</h3>
@@ -1871,21 +1871,15 @@
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>docs-automation-examples
 </code></pre></div>
 <h3 id="2-create-virtual-environment">2. Create Virtual Environment</h3>
-<p>Using a virtual environment keeps dependencies isolated:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">macOS/Linux</label><label for="__tabbed_1_2">Windows</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<p>Using a virtual environment keeps dependencies isolated.</p>
+<p><strong>On macOS/Linux:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">source</span><span class="w"> </span>venv/bin/activate
 </code></pre></div>
-</div>
-<div class="tabbed-block">
+<p><strong>On Windows:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
 </code></pre></div>
-</div>
-</div>
-</div>
 <p>You should see <code>(venv)</code> in your terminal prompt.</p>
 <h3 id="3-install-dependencies">3. Install Dependencies</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
@@ -1899,22 +1893,19 @@
 <li>Other utilities</li>
 </ul>
 <h3 id="4-verify-installation">4. Verify Installation</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import anthropic; import github; print(&#39;✓ Dependencies installed&#39;)&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import anthropic; import github; print(&#39;Dependencies installed&#39;)&quot;</span>
 </code></pre></div>
-<p>If you see <code>✓ Dependencies installed</code>, you're ready!</p>
+<p>If you see <code>Dependencies installed</code>, the setup is complete.</p>
 <h2 id="configuration">Configuration</h2>
 <h3 id="1-create-configuration-file">1. Create Configuration File</h3>
 <p>Copy the example configuration:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>cp<span class="w"> </span>config.example.yaml<span class="w"> </span>config.yaml
 </code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Security Note</p>
-<p>Never commit <code>config.yaml</code> with real API keys. It's already in <code>.gitignore</code>.</p>
-</div>
+<p><strong>Security Note:</strong> Never commit <code>config.yaml</code> with real API keys. It's already in <code>.gitignore</code>.</p>
 <h3 id="2-get-api-keys">2. Get API Keys</h3>
 <p>You'll need two types of API keys:</p>
 <h4 id="ai-provider-required">AI Provider (Required)</h4>
-<p>Choose <strong>either</strong> Anthropic or OpenAI:</p>
+<p>Choose either Anthropic or OpenAI.</p>
 <p><strong>Option A: Anthropic (Claude)</strong></p>
 <ol>
 <li>Go to <a href="https://console.anthropic.com/">console.anthropic.com</a></li>
@@ -1934,15 +1925,15 @@
 <h4 id="github-token-required">GitHub Token (Required)</h4>
 <ol>
 <li>Go to <a href="https://github.com/settings/tokens">github.com/settings/tokens</a></li>
-<li>Click "Generate new token" → "Generate new token (classic)"</li>
+<li>Click "Generate new token" then "Generate new token (classic)"</li>
 <li>Give it a name like "Release Notes Automation"</li>
 <li>Select scopes:<ul>
-<li>✅ <code>repo</code> (Full control of private repositories)</li>
+<li><code>repo</code> (Full control of private repositories)</li>
 <li>Or just <code>public_repo</code> if only accessing public repos</li>
 </ul>
 </li>
 <li>Click "Generate token"</li>
-<li>Copy the token immediately (you won't see it again!)</li>
+<li>Copy the token immediately (you won't see it again)</li>
 </ol>
 <h3 id="3-edit-configuration-file">3. Edit Configuration File</h3>
 <p>Open <code>config.yaml</code> in your text editor and add your keys:</p>
@@ -2011,39 +2002,39 @@
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="gs">**Date:**</span> 2024-01-20
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="gs">**Period:**</span> Since 2024-01-01
 <a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="gu">## 🎉 New Features</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="gu">## New Features</span>
 <a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>
 <a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="k">-</span><span class="w"> </span>Add user authentication feature ([abc123](link))
 <a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="gu">## ✨ Enhancements</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="gu">## Enhancements</span>
 <a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
 <a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="k">-</span><span class="w"> </span>Improve search performance by 50% ([def456](link))
 <a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>
-<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="gu">## 🐛 Bug Fixes</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="gu">## Bug Fixes</span>
 <a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>
 <a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="k">-</span><span class="w"> </span>Fix memory leak in parser ([ghi789](link))
 <a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>
-<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="gu">## 📝 Documentation</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="gu">## Documentation</span>
 <a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>
 <a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a><span class="k">-</span><span class="w"> </span>Update API documentation ([jkl012](link))
 </code></pre></div>
-<p><strong>This is a draft</strong> - Always review before publishing:</p>
+<p><strong>This is a draft.</strong> Always review before publishing:</p>
 <ul>
-<li>✓ Check categorization accuracy</li>
-<li>✓ Add context for major changes</li>
-<li>✓ Remove internal-only items that slipped through</li>
-<li>✓ Adjust wording for your audience</li>
-<li>✓ Add links to related documentation</li>
+<li>Check categorization accuracy</li>
+<li>Add context for major changes</li>
+<li>Remove internal-only items that slipped through</li>
+<li>Adjust wording for your audience</li>
+<li>Add links to related documentation</li>
 </ul>
 <h2 id="next-steps">Next Steps</h2>
 <p>Now that you have the basics working:</p>
 <ol>
-<li><strong><a href="../tutorial/step-2-document-process/">Document your process</a></strong> - Write down your manual release notes workflow</li>
-<li><strong><a href="../tutorial/step-5-iterate-prompts/">Iterate on prompts</a></strong> - Refine categorization for your needs</li>
-<li><strong><a href="../examples/prompt-evolution/">Explore examples</a></strong> - See how others refined their prompts</li>
+<li><a href="../tutorial/step-2-document-process/">Document your process</a> - Write down your manual release notes workflow</li>
+<li><a href="../tutorial/step-5-iterate-prompts/">Iterate on prompts</a> - Refine categorization for your needs</li>
+<li><a href="../examples/prompt-evolution/">Explore examples</a> - See how others refined their prompts</li>
 </ol>
 <hr />
-<p><strong>Ready to customize?</strong> <a class="md-button md-button--primary" href="../tutorial/">Start the Tutorial →</a></p>
+<p><a href="../tutorial/">Start the Tutorial</a></p>
 
 
 

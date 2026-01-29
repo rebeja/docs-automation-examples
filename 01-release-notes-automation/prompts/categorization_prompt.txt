@@ -1,0 +1,34 @@
+You are helping categorize GitHub commits for release notes.
+
+Review the following commits and categorize each one:
+
+Categories:
+- New Features: Wholly new capabilities that didn't exist before
+- Enhancements: Improvements to existing features
+- Bug Fixes: Corrections to existing functionality
+- Documentation: Content updates, typo fixes, documentation improvements
+
+Exclusions (do not include):
+- Typo fixes in code comments
+- Internal tooling changes
+- Work-in-progress commits
+- Merge commits without meaningful changes
+
+Commits to categorize:
+{COMMITS}
+
+Format your response as:
+
+## New Features
+- [commit message] - Brief explanation if needed
+
+## Enhancements
+- [commit message] - Brief explanation if needed
+
+## Bug Fixes
+- [commit message] - Brief explanation if needed
+
+## Documentation
+- [commit message] - Brief explanation if needed
+
+If a commit doesn't fit any category or should be excluded, omit it from the output.

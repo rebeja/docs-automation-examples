@@ -1,0 +1,39 @@
+# Core Dependencies
+anthropic>=0.18.0  # Claude API client
+openai>=1.12.0  # OpenAI API client (alternative to Anthropic)
+pyyaml>=6.0  # YAML configuration parsing
+requests>=2.31.0  # HTTP client for API calls
+
+# GitHub/GitLab Integration
+PyGithub>=2.1.1  # GitHub API wrapper
+python-gitlab>=4.4.0  # GitLab API wrapper
+
+# Jira Integration
+jira>=3.5.2  # Jira API client
+
+# Markdown Processing
+markdown>=3.5.2  # Markdown parsing and generation
+markdown-it-py>=3.0.0  # Markdown parsing alternative
+python-frontmatter>=1.1.0  # Parse markdown frontmatter
+
+# Web/HTML
+beautifulsoup4>=4.12.3  # HTML parsing
+lxml>=5.1.0  # XML/HTML processing
+
+# Testing
+pytest>=8.0.0  # Testing framework
+pytest-cov>=4.1.0  # Code coverage
+pytest-mock>=3.12.0  # Mocking for tests
+
+# Development
+black>=24.1.1  # Code formatting
+flake8>=7.0.0  # Linting
+mypy>=1.8.0  # Type checking
+
+# Utilities
+python-dotenv>=1.0.1  # Environment variable management
+click>=8.1.7  # CLI argument parsing
+rich>=13.7.0  # Terminal formatting
+
+# Documentation Site
+mkdocs-material>=9.5.0  # Documentation site generator

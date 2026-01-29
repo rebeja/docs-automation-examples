@@ -1,0 +1,58 @@
+[
+  {
+    "sha": "abc123",
+    "message": "Add user authentication feature with OAuth2 support",
+    "author": "developer@example.com",
+    "date": "2024-01-15",
+    "url": "https://github.com/sample/repo/commit/abc123"
+  },
+  {
+    "sha": "def456",
+    "message": "Fix memory leak in parser that caused high RAM usage",
+    "author": "developer@example.com",
+    "date": "2024-01-16",
+    "url": "https://github.com/sample/repo/commit/def456"
+  },
+  {
+    "sha": "ghi789",
+    "message": "Update API documentation with new authentication endpoints",
+    "author": "writer@example.com",
+    "date": "2024-01-17",
+    "url": "https://github.com/sample/repo/commit/ghi789"
+  },
+  {
+    "sha": "jkl012",
+    "message": "Improve search performance by 50% through better indexing",
+    "author": "developer@example.com",
+    "date": "2024-01-18",
+    "url": "https://github.com/sample/repo/commit/jkl012"
+  },
+  {
+    "sha": "mno345",
+    "message": "Update CI/CD pipeline configuration",
+    "author": "devops@example.com",
+    "date": "2024-01-19",
+    "url": "https://github.com/sample/repo/commit/mno345"
+  },
+  {
+    "sha": "pqr678",
+    "message": "Resolve login timeout issue affecting mobile users",
+    "author": "developer@example.com",
+    "date": "2024-01-20",
+    "url": "https://github.com/sample/repo/commit/pqr678"
+  },
+  {
+    "sha": "stu901",
+    "message": "Create new dashboard analytics view",
+    "author": "developer@example.com",
+    "date": "2024-01-21",
+    "url": "https://github.com/sample/repo/commit/stu901"
+  },
+  {
+    "sha": "vwx234",
+    "message": "Introduce webhook support for third-party integrations",
+    "author": "developer@example.com",
+    "date": "2024-01-22",
+    "url": "https://github.com/sample/repo/commit/vwx234"
+  }
+]

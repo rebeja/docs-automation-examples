@@ -1,19 +1,18 @@
 # Step 4: First Run
 
-Time to generate your first automated release notes! In this step, you'll run the script with sample data, then with a real repository, and learn how to evaluate the results.
+Time to generate your first automated release notes. In this step, you'll run the script with sample data, then with a real repository, and learn how to evaluate the results.
 
-!!! info "Time Estimate"
-    20-30 minutes
+**Time Estimate:** 20-30 minutes
 
 ## What You'll Accomplish
 
 By the end of this step:
 
-- ✅ First successful run with sample data
-- ✅ Release notes generated from real repository
-- ✅ Understanding of what to review
-- ✅ List of improvements needed
-- ✅ Confidence to iterate
+- First successful run with sample data
+- Release notes generated from real repository
+- Understanding of what to review
+- List of improvements needed
+- Confidence to iterate
 
 ## Running with Sample Data
 
@@ -62,28 +61,27 @@ cat release_notes.md
 **Date:** 2024-01-28
 **Period:** Since 2024-01-01
 
-## 🎉 New Features
+## New Features
 
 - Add user authentication feature ([abc123](https://github.com/sample/repo/commit/abc123))
 - Create dashboard view for analytics ([xyz789](https://github.com/sample/repo/commit/xyz789))
 
-## ✨ Enhancements
+## Enhancements
 
 - Improve search performance by 50% ([def456](https://github.com/sample/repo/commit/def456))
 - Update API response format ([mno345](https://github.com/sample/repo/commit/mno345))
 
-## 🐛 Bug Fixes
+## Bug Fixes
 
 - Fix memory leak in parser ([ghi789](https://github.com/sample/repo/commit/ghi789))
 - Resolve login timeout issue ([pqr678](https://github.com/sample/repo/commit/pqr678))
 
-## 📝 Documentation
+## Documentation
 
 - Update API documentation with new endpoints ([jkl012](https://github.com/sample/repo/commit/jkl012))
 ```
 
-!!! success "Success!"
-    If you see categorized release notes, the automation is working! 🎉
+If you see categorized release notes, the automation is working.
 
 ## Running with Real Repository
 
@@ -166,40 +164,40 @@ Now comes the important part: reviewing the output for quality and identifying i
 
 Use this checklist:
 
-#### ✅ Categorization Accuracy
+#### Categorization Accuracy
 
-- [ ] Are features actually new features (not enhancements)?
-- [ ] Are bug fixes correctly identified?
-- [ ] Are enhancements truly improvements (not new features)?
-- [ ] Is documentation correctly separated?
+- Are features actually new features (not enhancements)?
+- Are bug fixes correctly identified?
+- Are enhancements truly improvements (not new features)?
+- Is documentation correctly separated?
 
-#### ✅ Exclusions
+#### Exclusions
 
-- [ ] Were internal-only changes excluded?
-- [ ] Were WIP/temp commits filtered out?
-- [ ] Were merge commits without substance removed?
-- [ ] Were test-only changes excluded?
+- Were internal-only changes excluded?
+- Were WIP/temp commits filtered out?
+- Were merge commits without substance removed?
+- Were test-only changes excluded?
 
-#### ✅ Formatting
+#### Formatting
 
-- [ ] Are commit links working?
-- [ ] Is the format consistent?
-- [ ] Are emoji icons displaying correctly?
-- [ ] Is the date/period information accurate?
+- Are commit links working?
+- Is the format consistent?
+- Are emoji icons displaying correctly?
+- Is the date/period information accurate?
 
-#### ✅ Completeness
+#### Completeness
 
-- [ ] Are all user-facing changes included?
-- [ ] Are major changes properly represented?
-- [ ] Is anything important missing?
+- Are all user-facing changes included?
+- Are major changes properly represented?
+- Is anything important missing?
 
 ### Common Issues
 
 **Issue 1: Enhancements Categorized as Features**
 
 ```markdown
-## 🎉 New Features
-- Improve search performance by 50%  ❌ This is an enhancement!
+## New Features
+- Improve search performance by 50%  [This is an enhancement]
 ```
 
 **Why:** Prompt needs clearer distinction between "new" and "improved"
@@ -211,8 +209,8 @@ Use this checklist:
 **Issue 2: Internal Changes Included**
 
 ```markdown
-## ✨ Enhancements
-- Update CI/CD pipeline configuration  ❌ Internal only!
+## Enhancements
+- Update CI/CD pipeline configuration  [Internal only]
 ```
 
 **Why:** Exclusion rules not specific enough
@@ -224,8 +222,8 @@ Use this checklist:
 **Issue 3: Vague Descriptions**
 
 ```markdown
-## 🐛 Bug Fixes
-- Fix bug  ❌ Too vague!
+## Bug Fixes
+- Fix bug  [Too vague]
 ```
 
 **Why:** Commit message was vague, AI has nothing to work with
@@ -237,8 +235,8 @@ Use this checklist:
 **Issue 4: Missing Context**
 
 ```markdown
-## 🎉 New Features
-- Add webhook support  ℹ️ Needs context about what it enables
+## New Features
+- Add webhook support  [Needs context about what it enables]
 ```
 
 **Why:** Automation can't infer business context
@@ -255,9 +253,9 @@ Create a comparison table:
 
 | Commit | Your Manual Category | AI Category | Match? | Notes |
 |--------|---------------------|-------------|--------|-------|
-| "Add user auth" | New Feature | New Feature | ✅ | Correct |
-| "Improve performance" | Enhancement | New Feature | ❌ | AI needs clarity |
-| "Update CI config" | (Excluded) | Enhancement | ❌ | Missing exclusion rule |
+| "Add user auth" | New Feature | New Feature | Yes | Correct |
+| "Improve performance" | Enhancement | New Feature | No | AI needs clarity |
+| "Update CI config" | (Excluded) | Enhancement | No | Missing exclusion rule |
 
 ### Calculate Accuracy
 
@@ -271,7 +269,7 @@ Accuracy = Correct Categorizations / Total Commits × 100%
 
 - **First run:** 60-70% is normal
 - **After iteration:** Aim for 85-95%
-- **Never perfect:** 100% is unrealistic (and unnecessary!)
+- **Never perfect:** 100% is unrealistic (and unnecessary)
 
 ## Creating Your Improvement List
 
@@ -299,7 +297,7 @@ Minor issues that don't significantly impact workflow:
 
 - Formatting preferences
 - Wording tweaks
-- Edge cases affecting <5% of commits
+- Edge cases affecting less than 5% of commits
 
 ### Example Improvement List
 
@@ -326,24 +324,18 @@ Minor issues that don't significantly impact workflow:
 
 In this step, you:
 
-- ✅ Generated release notes with sample data
-- ✅ Ran automation on a real repository
-- ✅ Evaluated output quality systematically
-- ✅ Created prioritized improvement list
-- ✅ Compared AI output to manual standards
+- Generated release notes with sample data
+- Ran automation on a real repository
+- Evaluated output quality systematically
+- Created prioritized improvement list
+- Compared AI output to manual standards
 
 ## Next Step
 
 Now you're ready for the most rewarding part: iterating on your prompts to dramatically improve quality.
 
-[Next: Step 5 - Iterate Prompts →](step-5-iterate-prompts.md){ .md-button .md-button--primary }
+[Next: Step 5 - Iterate Prompts](step-5-iterate-prompts.md)
 
 ---
 
-!!! tip "Keep Your Notes"
-    Save your:
-    - Generated `release_notes.md` files (rename to `release_notes_v1.md`, etc.)
-    - Improvement list
-    - Accuracy calculations
-    
-    You'll reference these when refining prompts in Step 5.
+**Keep Your Notes:** Save your generated `release_notes.md` files (rename to `release_notes_v1.md`, etc.), improvement list, and accuracy calculations. You'll reference these when refining prompts in Step 5.

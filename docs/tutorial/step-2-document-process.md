@@ -1,14 +1,10 @@
 # Step 2: Document Your Process
 
-This is the **most important step** in the entire tutorial. Before automating anything, you need to clearly document your manual workflow.
+This is the most important step in the entire tutorial. Before automating anything, you need to clearly document your manual workflow.
 
-!!! info "Time Estimate"
-    30-45 minutes
+**Time Estimate:** 30-45 minutes
 
-!!! success "Key Principle"
-    **"Before automating, write down your actual manual process—automation replicates your workflow."**
-    
-    If your manual process is poorly defined, your automation will be poorly defined too.
+**Key Principle:** Before automating, write down your actual manual process—automation replicates your workflow. If your manual process is poorly defined, your automation will be poorly defined too.
 
 ## Why This Matters
 
@@ -23,11 +19,11 @@ Your documented manual process becomes:
 
 By the end of this step:
 
-- ✅ Complete workflow documentation
-- ✅ Clear categorization standards
-- ✅ Defined exclusion rules
-- ✅ Output format specification
-- ✅ Ready-to-use automation prompt
+- Complete workflow documentation
+- Clear categorization standards
+- Defined exclusion rules
+- Output format specification
+- Ready-to-use automation prompt
 
 ## The Workflow Worksheet
 
@@ -99,8 +95,7 @@ Write each step in order:
 
 **How do you decide which category each change belongs to?**
 
-!!! tip "Be Specific"
-    Instead of "I know a bug fix when I see one," write: "Bug fixes contain words like 'fix', 'bug', 'issue', 'resolve' and describe correcting existing functionality."
+**Be Specific:** Instead of "I know a bug fix when I see one," write: "Bug fixes contain words like 'fix', 'bug', 'issue', 'resolve' and describe correcting existing functionality."
 
 Complete this table:
 
@@ -127,13 +122,13 @@ Complete this table:
 
 Check all that apply and add specifics:
 
-- [ ] Merge commits without meaningful changes
-- [ ] Work-in-progress commits (WIP, temp, test)
-- [ ] Internal tooling changes
-- [ ] Code formatting/style changes
-- [ ] Test file updates (unless new features)
-- [ ] Dependency updates (unless user-facing)
-- [ ] Other: _______________
+- Merge commits without meaningful changes
+- Work-in-progress commits (WIP, temp, test)
+- Internal tooling changes
+- Code formatting/style changes
+- Test file updates (unless new features)
+- Dependency updates (unless user-facing)
+- Other: _______________
 
 **Write specific exclusion criteria:**
 
@@ -195,10 +190,10 @@ Provide a template:
 - Format: "Release Notes - MM/DD/YYYY (covering commits since MM/DD/YYYY)"
 
 ### Category Order
-1. 🎉 New Features (most exciting first)
-2. ✨ Enhancements
-3. 🐛 Bug Fixes
-4. 📝 Documentation
+1. New Features (most exciting first)
+2. Enhancements
+3. Bug Fixes
+4. Documentation
 
 ### Entry Format
 - Commit description format: "- Description ([commit-hash](link))"
@@ -213,12 +208,12 @@ Provide a template:
 
 **Who reads your release notes?**
 
-- [ ] Internal engineering team
-- [ ] External customers
-- [ ] Product managers
-- [ ] Support team
-- [ ] Sales/Marketing
-- [ ] Other: _______________
+- Internal engineering team
+- External customers
+- Product managers
+- Support team
+- Sales/Marketing
+- Other: _______________
 
 **How should language be adjusted for this audience?**
 
@@ -265,24 +260,18 @@ Once you've completed the worksheet, you'll convert it into an automation prompt
 
 In this step, you:
 
-- ✅ Documented your complete manual workflow
-- ✅ Defined clear categorization standards
-- ✅ Specified exclusion rules
-- ✅ Created output format template
-- ✅ Considered audience needs
+- Documented your complete manual workflow
+- Defined clear categorization standards
+- Specified exclusion rules
+- Created output format template
+- Considered audience needs
 
 ## Next Step
 
 With your process documented, you're ready to set up API access.
 
-[Next: Step 3 - Configure APIs →](step-3-configure.md){ .md-button .md-button--primary }
+[Next: Step 3 - Configure APIs](step-3-configure.md)
 
 ---
 
-!!! tip "Save Your Worksheet"
-    Keep this documentation! You'll reference it when:
-    
-    - Writing your first prompt (Step 5)
-    - Troubleshooting categorization errors
-    - Training new team members
-    - Building other automation projects
+**Save Your Worksheet:** Keep this documentation. You'll reference it when writing your first prompt (Step 5), troubleshooting categorization errors, training new team members, and building other automation projects.

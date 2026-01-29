@@ -36,24 +36,35 @@ Complete documentation includes:
 
 ### Installation
 
+**1. Clone the repository:**
+
 ```bash
-# 1. Clone repository
 git clone https://github.com/rebeja/docs-automation-examples.git
 cd docs-automation-examples
-
-# 2. Create virtual environment
-python3 -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Create configuration file
-cp config.example.yaml config.yaml
-
-# 5. Add your API keys to config.yaml
-# (See documentation for getting API keys)
 ```
+
+**2. Create a virtual environment:**
+
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+**3. Install dependencies:**
+
+```bash
+pip install -r requirements.txt
+```
+
+**4. Set up configuration:**
+
+```bash
+cp config.example.yaml config.yaml
+```
+
+**5. Add your API keys:**
+
+Edit `config.yaml` and add your API keys. See the [documentation](https://rebeja.github.io/docs-automation-examples/getting-started/) for getting API keys.
 
 ### First Run
 
@@ -69,19 +80,6 @@ python generate_release_notes.py \
 Review the generated `release_notes.md` file.
 
 **📖 [Read the full tutorial →](https://rebeja.github.io/docs-automation-examples/tutorial/)**
-
----
-
-## ⏱️ Time Savings
-
-| Manual Process | With Automation |
-|---------------|----------------|
-| 4-8 hours per release | 15-30 minutes |
-| Review 50+ commits individually | Review AI-generated draft |
-| Manual categorization | AI categorization with your standards |
-| Inconsistent formatting | Consistent, templated output |
-
-**86% time reduction** while maintaining quality through human review.
 
 ---
 

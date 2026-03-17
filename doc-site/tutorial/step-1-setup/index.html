@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
@@ -1443,10 +1443,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#set-up-environment-variable" class="md-nav__link">
+  <a href="#set-up-configyaml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Set up environment variable
+        Set up config.yaml
       
     </span>
   </a>
@@ -2287,10 +2287,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#set-up-environment-variable" class="md-nav__link">
+  <a href="#set-up-configyaml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Set up environment variable
+        Set up config.yaml
       
     </span>
   </a>
@@ -2586,19 +2586,23 @@
 <li>Copy the key (starts with <code>sk-</code>)</li>
 </ol>
 <p>Store the key securely in your password manager.</p>
-<h3 id="set-up-environment-variable">Set up environment variable</h3>
-<p>Create a <code>.env</code> file in your project root (never commit this file):</p>
-<p>For Anthropic:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nv">ANTHROPIC_API_KEY</span><span class="o">=</span>sk-ant-your-key-here
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nv">AI_PROVIDER</span><span class="o">=</span>anthropic
+<h3 id="set-up-configyaml">Set up config.yaml</h3>
+<p>The content generation scripts read credentials from <code>config.yaml</code> at the root of the repository. Copy the example file and fill in your details:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># From the docs-automation-examples/ root directory</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>cp<span class="w"> </span>config.example.yaml<span class="w"> </span>config.yaml
+</code></pre></div>
+<p>Open <code>config.yaml</code> and update these fields:</p>
+<p>For Anthropic (Claude):
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">ai_provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">anthropic</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nt">ai_api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sk-ant-your-key-here</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">claude-3-5-sonnet-20241022</span>
 </code></pre></div></p>
-<p>For OpenAI:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nv">OPENAI_API_KEY</span><span class="o">=</span>sk-your-key-here
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nv">AI_PROVIDER</span><span class="o">=</span>openai
+<p>For OpenAI (GPT):
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">ai_provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nt">ai_api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sk-your-key-here</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpt-4</span>
 </code></pre></div></p>
-<p>Add <code>.env</code> to <code>.gitignore</code>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;.env&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.gitignore
-</code></pre></div></p>
+<p><code>config.yaml</code> is already listed in <code>.gitignore</code> and will not be committed to version control.</p>
 <h2 id="customize-theme-optional">Customize theme (optional)</h2>
 <p>Basic theme customization makes your portfolio unique. These changes are optional but recommended.</p>
 <h3 id="choose-colors">Choose colors</h3>

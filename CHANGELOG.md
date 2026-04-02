@@ -10,11 +10,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Changelog page added to the doc site (`docs/changelog.md`); uses the snippets extension to render `CHANGELOG.md` directly so content stays in one place
 
+### Changed
+- Tutorial steps 1, 3, 4, and 5 updated to add **Path C: Use Claude Code CLI** as a third AI workflow option alongside the existing script-based paths
+  - Step 1: Added Path C to "Choose your path", added a "which path is right for you?" guidance paragraph, added full Path C setup section (install, authenticate, verify), added skip note in "Configure AI access" for Path C users, and added jump-ahead links on all three path names
+  - Step 3: Added "Option C" blocks for generating nav structure, homepage, and about page via Claude Code CLI
+  - Step 4: Added "Option C" block for generating project pages, plus a callout explaining how Path C users can direct Claude to write output to a file
+  - Step 5: Added "Option C" block for content refinement, plus a callout explaining how to reference file paths in prompts
+
 ## [1.1.0] - 2026-04-02
 
 ### Added
 
 **Release notes automation (01-release-notes-automation)**
+
 - GitLab integration via `python-gitlab` — `GitLabProvider` class with support for self-hosted instances via `gitlab_url` config
 - Bitbucket integration via `atlassian-python-api` — `BitbucketProvider` class with app password authentication
 - Azure OpenAI provider — `AzureOpenAIProvider` class using the existing `openai` library's `AzureOpenAI` client; requires `azure_endpoint` and `azure_api_version` config fields
@@ -25,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `vcs_provider` config field and `VCS_PROVIDER` environment variable for selecting GitHub, GitLab, or Bitbucket
 
 ### Changed
+
 - `generate_release_notes()` signature updated: now accepts categorized commit data (`List[Dict]`) instead of a raw AI response string, enabling template rendering
 - `load_config()` no longer requires `github_token` as a universal required field; VCS token validation moved to each provider class to support multiple VCS sources
 - `config.example.yaml` updated with sections for all new providers and batch processing options; model recommendation updated to `claude-sonnet-4-6`
@@ -64,11 +73,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Doc site portfolio tutorial steps 1–5 updated to reference the new scripts alongside the existing manual prompting approach
 - Tutorial step 1 corrected: AI setup now uses `config.yaml` (matching the actual scripts) instead of a `.env` file with wrong variable names
-- Tutorial steps 1, 3, 4, and 5 updated to add **Path C: Use Claude Code CLI** as a third AI workflow option alongside the existing script-based paths
-  - Step 1: Added Path C to "Choose your path", added a "which path is right for you?" guidance paragraph, added full Path C setup section (install, authenticate, verify), added skip note in "Configure AI access" for Path C users, and added jump-ahead links on all three path names
-  - Step 3: Added "Option C" blocks for generating nav structure, homepage, and about page via Claude Code CLI
-  - Step 4: Added "Option C" block for generating project pages, plus a callout explaining how Path C users can direct Claude to write output to a file
-  - Step 5: Added "Option C" block for content refinement, plus a callout explaining how to reference file paths in prompts
 - Tutorial step 2 now includes a profile setup section for `profile.yaml`
 
 ### Documentation
@@ -78,21 +82,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Sample outputs demonstrating categorization quality
 - Getting started guide for first-time users
 - Portfolio examples with five profile patterns
-
-## [1.0.0] - YYYY-MM-DD
-
-### Added
-- Release notes automation script with GitHub API integration and AI-powered categorization
-- Doc site portfolio project with AI content generation and improvement scripts
-- Complete prompt templates for all content types
-- Profile-driven content generation (`profile.example.yaml`)
-- Sample data mode in all scripts for zero-API-cost testing
-- pytest test suite (39 tests) with no external dependencies required
-- Complete MkDocs Material documentation site covering both projects
-- 5-step release notes tutorial and 6-step doc site tutorial
-- Troubleshooting guides, FAQs, reference docs, and portfolio examples
-- Configuration management via `config.yaml` with environment variable overrides
-- Contributing guidelines and Code of Conduct
 
 ---
 
@@ -111,14 +100,6 @@ This changelog uses the following categories:
 ---
 
 ## Future Releases (Planned)
-
-### Version 1.1.0 (Planned)
-- GitLab integration support
-- Bitbucket integration support
-- Additional AI provider support (Azure OpenAI)
-- Enhanced categorization strategies
-- Batch processing for multiple repositories
-- Custom output templates
 
 ### Version 1.2.0 (Planned)
 - Web-based configuration UI

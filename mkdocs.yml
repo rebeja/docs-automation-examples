@@ -108,7 +108,6 @@ nav:
       - Sample Outputs: release-notes/examples/sample-outputs.md
     - Troubleshooting: release-notes/troubleshooting.md
     - FAQ: release-notes/faq.md
-  - Changelog: changelog.md
   - Doc Site Portfolio:
     - Overview: doc-site/tutorial/index.md
     - Tutorial:
@@ -127,6 +126,7 @@ nav:
       - Prompt Templates: doc-site/examples/prompt-templates.md
     - Troubleshooting: doc-site/troubleshooting.md
     - FAQ: doc-site/faq.md
+  - Changelog: changelog.md
 
 extra_css:
   - stylesheets/extra.css

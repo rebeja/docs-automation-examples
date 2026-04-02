@@ -38,6 +38,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Doc site portfolio tutorial steps 1–5 updated to reference the new scripts alongside the existing manual prompting approach
 - Tutorial step 1 corrected: AI setup now uses `config.yaml` (matching the actual scripts) instead of a `.env` file with wrong variable names
+- Tutorial steps 1, 3, 4, and 5 updated to add **Path C: Use Claude Code CLI** as a third AI workflow option alongside the existing script-based paths
+  - Step 1: Added Path C to "Choose your path", added a "which path is right for you?" guidance paragraph, added full Path C setup section (install, authenticate, verify), added skip note in "Configure AI access" for Path C users, and added jump-ahead links on all three path names
+  - Step 3: Added "Option C" blocks for generating nav structure, homepage, and about page via Claude Code CLI
+  - Step 4: Added "Option C" block for generating project pages, plus a callout explaining how Path C users can direct Claude to write output to a file
+  - Step 5: Added "Option C" block for content refinement, plus a callout explaining how to reference file paths in prompts
 - Tutorial step 2 now includes a profile setup section for `profile.yaml`
 
 ### Documentation

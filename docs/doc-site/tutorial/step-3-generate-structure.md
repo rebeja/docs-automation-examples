@@ -36,6 +36,17 @@ python scripts/generate_content.py --page structure --sample
 
 The manual approach below gives you more control over the structure if you prefer to plan it yourself.
 
+### Option C: Use Claude Code CLI
+
+In your terminal Claude Code session, prompt:
+
+```
+Read profile.yaml and suggest a nav structure for my MkDocs portfolio site.
+Format the output as a nav: block I can paste into mkdocs.yml.
+```
+
+Claude will read your profile and generate a nav structure with a short rationale. Copy the `nav:` block into your `mkdocs.yml`.
+
 ## Plan your navigation structure
 
 Good navigation shows information architecture skills. Plan a structure that highlights your documentation samples.
@@ -148,6 +159,19 @@ Review the output and personalize any details that don't sound like you.
 ### Option B: Manual prompt approach
 
 Create a prompt that generates your homepage content. Save this prompt for transparency in your portfolio.
+
+### Option C: Use Claude Code CLI
+
+In your terminal Claude Code session, prompt:
+
+```
+Read profile.yaml and create a homepage for my technical writing portfolio.
+Write the result to docs/index.md.
+Tone: professional but approachable. Include sections for skills, portfolio
+highlights, and a call to action.
+```
+
+Claude writes the file directly. Open it, review, and edit anything that doesn't sound like you.
 
 ### Example prompt
 
@@ -370,6 +394,19 @@ python scripts/generate_content.py \
 ```
 
 ### Option B: Manual prompt approach
+
+### Option C: Use Claude Code CLI
+
+In your terminal Claude Code session, prompt:
+
+```
+Read profile.yaml and create a professional About page for my portfolio.
+Write the result to docs/about.md.
+Include sections for background, specializations, documentation approach,
+and a note about how I use AI in my work.
+```
+
+Claude writes the file directly. Review and personalize any details.
 
 ### Prompt for about page
 

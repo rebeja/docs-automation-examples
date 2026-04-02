@@ -59,7 +59,26 @@ python scripts/improve_content.py --sample --preview
 
 Always review the output before accepting it. Revert anything that doesn't sound like you or loses important detail.
 
-The manual techniques below give you more targeted control when the script's output needs further refinement.
+### Option C: Use Claude Code CLI
+
+In your terminal Claude Code session, prompt:
+
+```
+Review docs/about.md for clarity and conciseness and improve it in place.
+Don't change technical terms or code examples. Flag anything you're unsure about
+rather than changing it.
+```
+
+To target a specific area:
+
+```
+Review docs/projects/developer-portal.md for tone consistency.
+Compare it against docs/about.md and align the voice to match.
+```
+
+Claude edits the file directly. Use `git diff` afterward to review every change before accepting it.
+
+The manual techniques below give you more targeted control when needed.
 
 ## Overview
 
@@ -69,6 +88,8 @@ This step focuses on using AI as an editing partner rather than a content genera
 - Prompt AI for specific enhancements
 - Apply style guides and standards
 - Maintain authentic voice while improving quality
+
+> **Path C users**: The prompts in each technique below work directly in Claude Code CLI. Instead of pasting content into a web interface, reference the file path in your prompt — for example: `"Apply the clarity improvements in this prompt to docs/about.md."` Claude will read the file, apply the changes, and save them without requiring copy-paste.
 
 ## Technique 1: Improve clarity and conciseness
 

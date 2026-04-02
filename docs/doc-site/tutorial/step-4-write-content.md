@@ -38,6 +38,19 @@ python scripts/generate_content.py --page project --project "Developer Portal" -
 
 Review the output carefully. Add specific details the script couldn't know — exact metrics, stakeholder names, tools you used, and anything that reflects your actual contribution.
 
+### Option C: Use Claude Code CLI
+
+In your terminal Claude Code session, prompt:
+
+```
+Read profile.yaml and create a project showcase page for the "Developer Portal" project.
+Write the result to docs/projects/developer-portal.md.
+Include sections for project context, documentation approach, AI collaboration details,
+and skills demonstrated.
+```
+
+Repeat for each project you want to showcase, changing the project name and output file each time.
+
 The sections below cover generating documentation samples (API references, tutorials, CLI docs) using manual prompting, since these require detailed technical content that you define.
 
 ## Overview of AI collaboration approach
@@ -61,6 +74,8 @@ The most effective approach:
 
 Do not: Ask AI to "write complete documentation" without structure.  
 Do: Provide detailed outlines and generate section-by-section.
+
+> **Path C users**: The prompts in the sections below are formatted for any AI interface. To use them with Claude Code CLI, paste the prompt directly into your terminal session and add a line telling Claude where to write the output — for example: `"Write the result to docs/samples/api-reference.md."` Claude will create or update the file directly, so you can skip any copy-paste steps.
 
 ## Documentation type 1: API reference
 

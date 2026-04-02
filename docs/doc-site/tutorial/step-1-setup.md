@@ -6,19 +6,27 @@ Set up your local development environment and choose your starting point.
 
 Select the approach that matches your goals:
 
-**Path A: Use the template** (Recommended for first-time users)
+**[Path A: Use the template](#path-a-use-the-template)** (Recommended for first-time users)
 - Pre-configured MkDocs site with Material theme
 - Basic structure already in place
 - Focus on content creation
 - Estimated time: 30 minutes
 
-**Path B: Build from scratch**
+**[Path B: Build from scratch](#path-b-build-from-scratch)**
 - Learn complete MkDocs configuration
 - Full customization control
 - Understand every component
 - Estimated time: 1-2 hours
 
-This guide covers both paths. Skip to the section that matches your choice.
+**[Path C: Use Claude Code CLI](#path-c-use-claude-code-cli)** (Recommended if you prefer interactive AI)
+- Conversational workflow — no scripts or API keys
+- Claude reads and writes files directly in your terminal
+- Requires a claude.ai Pro or Max subscription
+- Estimated time: 30 minutes setup, then interactive
+
+This guide covers all three paths. Skip to the section that matches your choice.
+
+**Which path is right for you?** If you want a repeatable, automated workflow and are comfortable managing an API key and running Python scripts, choose Path A or B. Path A gets you started faster with a pre-built template; Path B gives you full control by building from scratch. If you'd rather skip API keys and scripts entirely and instead have a back-and-forth conversation with Claude directly in your terminal — where Claude reads and writes files for you — choose Path C. Path C requires a claude.ai Pro or Max subscription but has no additional setup beyond installing the Claude Code CLI.
 
 ## Prerequisites check
 
@@ -99,7 +107,7 @@ cp -r template my-portfolio
 cd my-portfolio
 ```
 
-Now you have your own copy to modify without affecting the template.
+Now you have your own copy to modify without affecting the template. Jump ahead to [Configure AI access](#configure-ai-access) to continue.
 
 ## Path B: Build from scratch
 
@@ -213,9 +221,52 @@ mkdocs serve
 
 Open [http://127.0.0.1:8000](http://127.0.0.1:8000) to see your site.
 
+## Path C: Use Claude Code CLI
+
+Claude Code is Anthropic's CLI that lets you interact with Claude directly in your terminal. Instead of running scripts, you describe what you want and Claude reads, creates, and edits files for you.
+
+### 1. Install Claude Code
+
+```bash
+npm install -g @anthropic-ai/claude-code
+```
+
+Requires Node.js 18 or higher. Verify with `node --version`.
+
+### 2. Authenticate
+
+```bash
+claude
+```
+
+This opens a browser login prompt. Sign in with your Anthropic account. A **claude.ai Pro or Max subscription** is required — no separate API key is needed.
+
+### 3. Open your project directory
+
+```bash
+cd docs-automation-examples/02-doc-site-portfolio/my-portfolio
+claude
+```
+
+Claude Code starts in your project directory and can see all your files.
+
+### 4. Verify it works
+
+Type a quick test prompt:
+
+```
+What files are in this directory?
+```
+
+Claude will list your project files, confirming it has access.
+
+From here, instead of running Python scripts in later steps, you will type prompts directly in this terminal session. Claude will generate content and write it to the correct files.
+
 ## Configure AI access
 
-Both paths require AI provider setup for content generation.
+> **Path C users**: Skip this section. Claude Code handles authentication through your claude.ai account — no API key or `config.yaml` needed. Jump ahead to [Customize theme](#customize-theme-optional).
+
+Paths A and B require AI provider setup for content generation.
 
 ### Option A: Anthropic (Claude)
 

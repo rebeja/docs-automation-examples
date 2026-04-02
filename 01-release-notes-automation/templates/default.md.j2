@@ -1,0 +1,19 @@
+# Release Notes
+
+**Repository:** {{ repo }}
+**Date:** {{ date }}
+**Period:** Since {{ since_date }}
+
+---
+{% for category in categories %}
+{% if category.commits %}
+## {{ category.name }}
+{% for commit in category.commits %}
+- {{ commit.message }} ([{{ commit.sha }}]({{ commit.url }}))
+{% endfor %}
+
+{% endif %}
+{% endfor %}
+---
+
+_Generated using AI-assisted automation. Please review for accuracy before publishing._

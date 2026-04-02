@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-04-02
+
+### Added
+
+**Release notes automation (01-release-notes-automation)**
+- GitLab integration via `python-gitlab` — `GitLabProvider` class with support for self-hosted instances via `gitlab_url` config
+- Bitbucket integration via `atlassian-python-api` — `BitbucketProvider` class with app password authentication
+- Azure OpenAI provider — `AzureOpenAIProvider` class using the existing `openai` library's `AzureOpenAI` client; requires `azure_endpoint` and `azure_api_version` config fields
+- Hybrid categorization pipeline — three-stage strategy: conventional commit prefix parsing → keyword rules → AI fallback; AI only processes commits not matched by earlier stages
+- `categorization_rules.example.yaml` — example keyword rules file with pre-built rule sets for Security, Performance, Database, Infrastructure, and Dependencies categories
+- Batch processing — `--repos` CLI argument and `batch_repos` config field; `--batch-output` controls separate files per repo or a single combined report
+- Custom Jinja2 output templates — `--template` CLI argument accepts any `.j2` file; `templates/default.md.j2` ships as the built-in default and preserves existing output format
+- `vcs_provider` config field and `VCS_PROVIDER` environment variable for selecting GitHub, GitLab, or Bitbucket
+
+### Changed
+- `generate_release_notes()` signature updated: now accepts categorized commit data (`List[Dict]`) instead of a raw AI response string, enabling template rendering
+- `load_config()` no longer requires `github_token` as a universal required field; VCS token validation moved to each provider class to support multiple VCS sources
+- `config.example.yaml` updated with sections for all new providers and batch processing options; model recommendation updated to `claude-sonnet-4-6`
+- `conftest.py` updated with stubs for `gitlab` and `atlassian` so tests run without those packages installed
+- Test suite expanded from 13 to 47 tests, adding `TestParseConventionalCommit`, `TestMatchKeywordRules`, `TestParseAiCategories`, `TestCategorizeCommitsHybrid`, `TestTemplateRendering`, and `TestBatchProcessing`
+
 ## [1.0.0] - 2026-04-02
 
 ### Added

@@ -1,0 +1,37 @@
+# Keyword Categorization Rules
+#
+# Define keyword rules to categorize commits before they are sent to the AI.
+# This reduces API token usage by handling common patterns locally.
+#
+# Format:
+#   rules:
+#     - keywords: [list of words to match]
+#       category: "Category Name"
+#
+# Rules are evaluated in order. The first matching rule wins.
+# Matching is case-insensitive and checks if the keyword appears anywhere
+# in the commit message.
+#
+# Copy this file to categorization_rules.yaml and customize it.
+# Then pass it with: --rules prompts/categorization_rules.yaml
+
+rules:
+  # Security-related changes
+  - keywords: ["auth", "oauth", "token", "permission", "encrypt", "password", "credential", "cve", "vulnerability"]
+    category: "Security"
+
+  # Performance improvements
+  - keywords: ["perf", "performance", "speed", "latency", "cache", "optimize", "slow", "benchmark"]
+    category: "Performance"
+
+  # Database changes
+  - keywords: ["migration", "schema", "database", "db", "index", "query", "sql"]
+    category: "Database"
+
+  # Infrastructure and DevOps
+  - keywords: ["deploy", "docker", "kubernetes", "k8s", "ci", "cd", "pipeline", "infrastructure", "terraform"]
+    category: "Infrastructure"
+
+  # Dependency updates
+  - keywords: ["bump", "upgrade", "dependency", "dependencies", "package", "version"]
+    category: "Dependencies"

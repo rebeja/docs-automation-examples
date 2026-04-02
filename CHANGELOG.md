@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-04-02
+
 ### Added
 
 **Doc site portfolio project (02-doc-site-portfolio)**

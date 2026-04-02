@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -1424,6 +1424,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#path-c-use-claude-code-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path C: Use Claude Code CLI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Path C: Use Claude Code CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-install-claude-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Install Claude Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-authenticate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Authenticate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-open-your-project-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Open your project directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-verify-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Verify it works
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configure-ai-access" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2268,6 +2329,67 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#path-c-use-claude-code-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path C: Use Claude Code CLI
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Path C: Use Claude Code CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-install-claude-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Install Claude Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-authenticate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Authenticate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-open-your-project-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Open your project directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-verify-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Verify it works
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configure-ai-access" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2435,17 +2557,23 @@
 <p>Set up your local development environment and choose your starting point.</p>
 <h2 id="choose-your-path">Choose your path</h2>
 <p>Select the approach that matches your goals:</p>
-<p><strong>Path A: Use the template</strong> (Recommended for first-time users)
+<p><strong><a href="#path-a-use-the-template">Path A: Use the template</a></strong> (Recommended for first-time users)
 - Pre-configured MkDocs site with Material theme
 - Basic structure already in place
 - Focus on content creation
 - Estimated time: 30 minutes</p>
-<p><strong>Path B: Build from scratch</strong>
+<p><strong><a href="#path-b-build-from-scratch">Path B: Build from scratch</a></strong>
 - Learn complete MkDocs configuration
 - Full customization control
 - Understand every component
 - Estimated time: 1-2 hours</p>
-<p>This guide covers both paths. Skip to the section that matches your choice.</p>
+<p><strong><a href="#path-c-use-claude-code-cli">Path C: Use Claude Code CLI</a></strong> (Recommended if you prefer interactive AI)
+- Conversational workflow — no scripts or API keys
+- Claude reads and writes files directly in your terminal
+- Requires a claude.ai Pro or Max subscription
+- Estimated time: 30 minutes setup, then interactive</p>
+<p>This guide covers all three paths. Skip to the section that matches your choice.</p>
+<p><strong>Which path is right for you?</strong> If you want a repeatable, automated workflow and are comfortable managing an API key and running Python scripts, choose Path A or B. Path A gets you started faster with a pre-built template; Path B gives you full control by building from scratch. If you'd rather skip API keys and scripts entirely and instead have a back-and-forth conversation with Claude directly in your terminal — where Claude reads and writes files for you — choose Path C. Path C requires a claude.ai Pro or Max subscription but has no additional setup beyond installing the Claude Code CLI.</p>
 <h2 id="prerequisites-check">Prerequisites check</h2>
 <p>Verify you have these installed:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python3<span class="w"> </span>--version<span class="w">  </span><span class="c1"># Should be 3.8 or higher</span>
@@ -2495,7 +2623,7 @@
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>cp<span class="w"> </span>-r<span class="w"> </span>template<span class="w"> </span>my-portfolio
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nb">cd</span><span class="w"> </span>my-portfolio
 </code></pre></div>
-<p>Now you have your own copy to modify without affecting the template.</p>
+<p>Now you have your own copy to modify without affecting the template. Jump ahead to <a href="#configure-ai-access">Configure AI access</a> to continue.</p>
 <h2 id="path-b-build-from-scratch">Path B: Build from scratch</h2>
 <h3 id="1-create-project-directory">1. Create project directory</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>mkdir<span class="w"> </span>my-portfolio
@@ -2579,8 +2707,32 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>mkdocs<span class="w"> </span>serve
 </code></pre></div>
 <p>Open <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a> to see your site.</p>
+<h2 id="path-c-use-claude-code-cli">Path C: Use Claude Code CLI</h2>
+<p>Claude Code is Anthropic's CLI that lets you interact with Claude directly in your terminal. Instead of running scripts, you describe what you want and Claude reads, creates, and edits files for you.</p>
+<h3 id="1-install-claude-code">1. Install Claude Code</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>@anthropic-ai/claude-code
+</code></pre></div>
+<p>Requires Node.js 18 or higher. Verify with <code>node --version</code>.</p>
+<h3 id="2-authenticate">2. Authenticate</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>claude
+</code></pre></div>
+<p>This opens a browser login prompt. Sign in with your Anthropic account. A <strong>claude.ai Pro or Max subscription</strong> is required — no separate API key is needed.</p>
+<h3 id="3-open-your-project-directory">3. Open your project directory</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nb">cd</span><span class="w"> </span>docs-automation-examples/02-doc-site-portfolio/my-portfolio
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>claude
+</code></pre></div>
+<p>Claude Code starts in your project directory and can see all your files.</p>
+<h3 id="4-verify-it-works">4. Verify it works</h3>
+<p>Type a quick test prompt:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>What files are in this directory?
+</code></pre></div>
+<p>Claude will list your project files, confirming it has access.</p>
+<p>From here, instead of running Python scripts in later steps, you will type prompts directly in this terminal session. Claude will generate content and write it to the correct files.</p>
 <h2 id="configure-ai-access">Configure AI access</h2>
-<p>Both paths require AI provider setup for content generation.</p>
+<blockquote>
+<p><strong>Path C users</strong>: Skip this section. Claude Code handles authentication through your claude.ai account — no API key or <code>config.yaml</code> needed. Jump ahead to <a href="#customize-theme-optional">Customize theme</a>.</p>
+</blockquote>
+<p>Paths A and B require AI provider setup for content generation.</p>
 <h3 id="option-a-anthropic-claude">Option A: Anthropic (Claude)</h3>
 <ol>
 <li>Go to <a href="https://console.anthropic.com/">console.anthropic.com</a></li>
@@ -2603,31 +2755,31 @@
 <p>Store the key securely in your password manager.</p>
 <h3 id="set-up-configyaml">Set up config.yaml</h3>
 <p>The content generation scripts read credentials from <code>config.yaml</code> at the root of the repository. Copy the example file and fill in your details:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># From the docs-automation-examples/ root directory</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>cp<span class="w"> </span>config.example.yaml<span class="w"> </span>config.yaml
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># From the docs-automation-examples/ root directory</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>cp<span class="w"> </span>config.example.yaml<span class="w"> </span>config.yaml
 </code></pre></div>
 <p>Open <code>config.yaml</code> and update these fields:</p>
 <p>For Anthropic (Claude):
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">ai_provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">anthropic</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nt">ai_api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sk-ant-your-key-here</span>
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">claude-3-5-sonnet-20241022</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">ai_provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">anthropic</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nt">ai_api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sk-ant-your-key-here</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">claude-3-5-sonnet-20241022</span>
 </code></pre></div></p>
 <p>For OpenAI (GPT):
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nt">ai_provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nt">ai_api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sk-your-key-here</span>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpt-4</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nt">ai_provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">openai</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="nt">ai_api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sk-your-key-here</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpt-4</span>
 </code></pre></div></p>
 <p><code>config.yaml</code> is already listed in <code>.gitignore</code> and will not be committed to version control.</p>
 <h2 id="customize-theme-optional">Customize theme (optional)</h2>
 <p>Basic theme customization makes your portfolio unique. These changes are optional but recommended.</p>
 <h3 id="choose-colors">Choose colors</h3>
 <p>Edit <code>mkdocs.yml</code> to change color scheme:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nt">theme</span><span class="p">:</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">  </span><span class="nt">palette</span><span class="p">:</span>
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="nt">scheme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span><span class="w">  </span><span class="c1"># or &#39;slate&#39; for dark mode</span>
-<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">    </span><span class="nt">primary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">indigo</span><span class="w">  </span><span class="c1"># Change to: blue, teal, purple, etc.</span>
-<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">    </span><span class="nt">accent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cyan</span><span class="w">     </span><span class="c1"># Change to: light blue, green, orange, etc.</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nt">theme</span><span class="p">:</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">  </span><span class="nt">palette</span><span class="p">:</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">    </span><span class="nt">scheme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span><span class="w">  </span><span class="c1"># or &#39;slate&#39; for dark mode</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">    </span><span class="nt">primary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">indigo</span><span class="w">  </span><span class="c1"># Change to: blue, teal, purple, etc.</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">    </span><span class="nt">accent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cyan</span><span class="w">     </span><span class="c1"># Change to: light blue, green, orange, etc.</span>
 </code></pre></div>
 <p><strong>Color options</strong>: red, pink, purple, deep purple, indigo, blue, light blue, cyan, teal, green, light green, lime, yellow, amber, orange, deep orange</p>
 <p><strong>Recommended combinations</strong>:
@@ -2636,61 +2788,61 @@
 - Vibrant: <code>primary: teal</code>, <code>accent: green</code></p>
 <h3 id="enable-dark-mode-toggle">Enable dark mode toggle</h3>
 <p>Allow visitors to switch between light and dark:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nt">theme</span><span class="p">:</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">  </span><span class="nt">palette</span><span class="p">:</span>
-<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">    </span><span class="c1"># Light mode</span>
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">media</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;(prefers-color-scheme:</span><span class="nv"> </span><span class="s">light)&quot;</span>
-<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">      </span><span class="nt">scheme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
-<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">      </span><span class="nt">primary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">indigo</span>
-<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">      </span><span class="nt">accent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cyan</span>
-<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="w">      </span><span class="nt">toggle</span><span class="p">:</span>
-<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="w">        </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material/brightness-7</span>
-<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Switch to dark mode</span>
-<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
-<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="w">    </span><span class="c1"># Dark mode</span>
-<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">media</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;(prefers-color-scheme:</span><span class="nv"> </span><span class="s">dark)&quot;</span>
-<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="w">      </span><span class="nt">scheme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">slate</span>
-<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">      </span><span class="nt">primary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">indigo</span>
-<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="w">      </span><span class="nt">accent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cyan</span>
-<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="w">      </span><span class="nt">toggle</span><span class="p">:</span>
-<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a><span class="w">        </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material/brightness-4</span>
-<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Switch to light mode</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nt">theme</span><span class="p">:</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">  </span><span class="nt">palette</span><span class="p">:</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">    </span><span class="c1"># Light mode</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">media</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;(prefers-color-scheme:</span><span class="nv"> </span><span class="s">light)&quot;</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">      </span><span class="nt">scheme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">      </span><span class="nt">primary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">indigo</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">      </span><span class="nt">accent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cyan</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="w">      </span><span class="nt">toggle</span><span class="p">:</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="w">        </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material/brightness-7</span>
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Switch to dark mode</span>
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="w">    </span><span class="c1"># Dark mode</span>
+<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">media</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;(prefers-color-scheme:</span><span class="nv"> </span><span class="s">dark)&quot;</span>
+<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="w">      </span><span class="nt">scheme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">slate</span>
+<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a><span class="w">      </span><span class="nt">primary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">indigo</span>
+<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a><span class="w">      </span><span class="nt">accent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cyan</span>
+<a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a><span class="w">      </span><span class="nt">toggle</span><span class="p">:</span>
+<a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a><span class="w">        </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material/brightness-4</span>
+<a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Switch to light mode</span>
 </code></pre></div>
 <p>This adds a theme toggle button in the header.</p>
 <h3 id="choose-fonts-optional">Choose fonts (optional)</h3>
 <p>Change text and code fonts:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">theme</span><span class="p">:</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">  </span><span class="nt">font</span><span class="p">:</span>
-<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Inter</span><span class="w">       </span><span class="c1"># or: Open Sans, Ubuntu, Roboto</span>
-<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">    </span><span class="nt">code</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Fira Code</span><span class="w">   </span><span class="c1"># or: Source Code Pro, Roboto Mono</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nt">theme</span><span class="p">:</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">  </span><span class="nt">font</span><span class="p">:</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">    </span><span class="nt">text</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Inter</span><span class="w">       </span><span class="c1"># or: Open Sans, Ubuntu, Roboto</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">    </span><span class="nt">code</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Fira Code</span><span class="w">   </span><span class="c1"># or: Source Code Pro, Roboto Mono</span>
 </code></pre></div>
 <p>Or use system fonts for faster loading:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nt">theme</span><span class="p">:</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">  </span><span class="nt">font</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nt">theme</span><span class="p">:</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">  </span><span class="nt">font</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
 <h3 id="test-your-customizations">Test your customizations</h3>
 <p>After making changes:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># Restart the server</span>
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="c1"># Press Ctrl+C to stop, then:</span>
-<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>mkdocs<span class="w"> </span>serve
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c1"># Restart the server</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="c1"># Press Ctrl+C to stop, then:</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>mkdocs<span class="w"> </span>serve
 </code></pre></div>
 <p>Open <a href="http://127.0.0.1:8000">http://127.0.0.1:8000</a> to see your customizations.</p>
 <p>For more customization options, see <a href="../../reference/theme-customization/">Theme customization reference</a>.</p>
 <h2 id="verify-setup">Verify setup</h2>
 <p>Check everything is working:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># Virtual environment is activated</span>
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>which<span class="w"> </span>python
-<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="c1"># Should show path ending in /venv/bin/python</span>
-<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
-<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="c1"># MkDocs is installed</span>
-<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>mkdocs<span class="w"> </span>--version
-<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="c1"># Should show version 1.5.0 or higher</span>
-<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>
-<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="c1"># Site builds successfully</span>
-<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>mkdocs<span class="w"> </span>build
-<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="c1"># Should complete without errors</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c1"># Virtual environment is activated</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>which<span class="w"> </span>python
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="c1"># Should show path ending in /venv/bin/python</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="c1"># MkDocs is installed</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>mkdocs<span class="w"> </span>--version
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="c1"># Should show version 1.5.0 or higher</span>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="c1"># Site builds successfully</span>
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>mkdocs<span class="w"> </span>build
+<a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="c1"># Should complete without errors</span>
 </code></pre></div>
 <h2 id="summary">Summary</h2>
 <p>You completed these tasks:</p>

@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -1378,6 +1378,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Use the improvement script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-c-use-claude-code-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option C: Use Claude Code CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2177,6 +2194,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Use the improvement script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-c-use-claude-code-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option C: Use Claude Code CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2604,7 +2638,18 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>scripts/improve_content.py<span class="w"> </span>--sample<span class="w"> </span>--preview
 </code></pre></div>
 <p>Always review the output before accepting it. Revert anything that doesn't sound like you or loses important detail.</p>
-<p>The manual techniques below give you more targeted control when the script's output needs further refinement.</p>
+<h3 id="option-c-use-claude-code-cli">Option C: Use Claude Code CLI</h3>
+<p>In your terminal Claude Code session, prompt:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Review docs/about.md for clarity and conciseness and improve it in place.
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Don&#39;t change technical terms or code examples. Flag anything you&#39;re unsure about
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>rather than changing it.
+</code></pre></div>
+<p>To target a specific area:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Review docs/projects/developer-portal.md for tone consistency.
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Compare it against docs/about.md and align the voice to match.
+</code></pre></div>
+<p>Claude edits the file directly. Use <code>git diff</code> afterward to review every change before accepting it.</p>
+<p>The manual techniques below give you more targeted control when needed.</p>
 <h2 id="overview">Overview</h2>
 <p>This step focuses on using AI as an editing partner rather than a content generator. You will learn to:</p>
 <ul>
@@ -2613,33 +2658,36 @@
 <li>Apply style guides and standards</li>
 <li>Maintain authentic voice while improving quality</li>
 </ul>
+<blockquote>
+<p><strong>Path C users</strong>: The prompts in each technique below work directly in Claude Code CLI. Instead of pasting content into a web interface, reference the file path in your prompt — for example: <code>"Apply the clarity improvements in this prompt to docs/about.md."</code> Claude will read the file, apply the changes, and save them without requiring copy-paste.</p>
+</blockquote>
 <h2 id="technique-1-improve-clarity-and-conciseness">Technique 1: Improve clarity and conciseness</h2>
 <p>AI excels at identifying verbose or unclear writing.</p>
 <h3 id="prompt-for-clarity-improvement">Prompt for clarity improvement</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Review this documentation section for clarity and conciseness:
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>[Paste your content]
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Identify:
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">1.</span> Sentences that are too long or complex
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">2.</span> Jargon that should be simplified or explained
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="k">3.</span> Passive voice that should be active
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="k">4.</span> Redundant phrases
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="k">5.</span> Unclear pronouns or references
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>Suggest specific improvements while maintaining technical accuracy.
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>Do not change code examples or technical terms that must remain precise.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Review this documentation section for clarity and conciseness:
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>[Paste your content]
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>Identify:
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="k">1.</span> Sentences that are too long or complex
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="k">2.</span> Jargon that should be simplified or explained
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="k">3.</span> Passive voice that should be active
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="k">4.</span> Redundant phrases
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="k">5.</span> Unclear pronouns or references
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>Suggest specific improvements while maintaining technical accuracy.
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>Do not change code examples or technical terms that must remain precise.
 </code></pre></div>
 <h3 id="example-refinement">Example refinement</h3>
 <p><strong>Original</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>The API endpoint that is used for the creation of new events in the 
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>system can be accessed by making a POST request to the /events path. 
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Authentication is required and this is done through the use of a 
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Bearer token that must be included in the Authorization header.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>The API endpoint that is used for the creation of new events in the 
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>system can be accessed by making a POST request to the /events path. 
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Authentication is required and this is done through the use of a 
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>Bearer token that must be included in the Authorization header.
 </code></pre></div></p>
 <p><strong>AI-suggested improvement</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Create new events by sending a POST request to <span class="sb">`/events`</span>. Include a 
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Bearer token in the Authorization header for authentication.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Create new events by sending a POST request to <span class="sb">`/events`</span>. Include a 
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Bearer token in the Authorization header for authentication.
 </code></pre></div></p>
 <h3 id="apply-improvements-selectively">Apply improvements selectively</h3>
 <p>AI suggestions are not always better. Evaluate each change:</p>
@@ -2654,56 +2702,56 @@
 <p>Documentation should maintain consistent voice across all samples.</p>
 <h3 id="define-your-documentation-voice">Define your documentation voice</h3>
 <p>First, document your target voice. Create <code>style-guide.md</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gh"># Documentation Style Guide</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="gu">## Voice and tone</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Professional but approachable**</span>: Technical credibility without stuffiness
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="k">-</span><span class="w"> </span><span class="gs">**User-focused**</span>: Address reader as &quot;you&quot;, emphasize benefits
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Confident without arrogance**</span>: State facts clearly, acknowledge limitations
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Encouraging**</span>: Support learning, celebrate progress
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Precise**</span>: Use exact technical terms, avoid ambiguity
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="gu">## Grammar and mechanics</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="k">-</span><span class="w"> </span>Active voice preferred (passive acceptable for operations or systems)
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="k">-</span><span class="w"> </span>Present tense for documentation
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="k">-</span><span class="w"> </span>Second person (you) for instructions
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="k">-</span><span class="w"> </span>Sentence case for headings
-<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="k">-</span><span class="w"> </span>Oxford comma in lists
-<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
-<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="gu">## Specific preferences</span>
-<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
-<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="k">-</span><span class="w"> </span>&quot;Set up&quot; (verb), &quot;setup&quot; (noun)
-<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="k">-</span><span class="w"> </span>&quot;Log in&quot; (verb), &quot;login&quot; (noun)
-<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="k">-</span><span class="w"> </span>&quot;Command line&quot; not &quot;command-line&quot; when used as noun
-<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="k">-</span><span class="w"> </span>Use &quot;to&quot; not &quot;in order to&quot;
-<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="k">-</span><span class="w"> </span>Use &quot;because&quot; not &quot;since&quot; for causation
-<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>
-<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="gu">## Code formatting</span>
-<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>
-<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="k">-</span><span class="w"> </span>Inline code: <span class="sb">`variable`</span>, <span class="sb">`function()`</span>, <span class="sb">`command`</span>
-<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="k">-</span><span class="w"> </span>Code blocks: Always specify language
-<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a><span class="k">-</span><span class="w"> </span>File paths: <span class="sb">`path/to/file.md`</span>
-<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a><span class="k">-</span><span class="w"> </span>Commands: Show with prompt or without based on context
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="gh"># Documentation Style Guide</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="gu">## Voice and tone</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Professional but approachable**</span>: Technical credibility without stuffiness
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="k">-</span><span class="w"> </span><span class="gs">**User-focused**</span>: Address reader as &quot;you&quot;, emphasize benefits
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Confident without arrogance**</span>: State facts clearly, acknowledge limitations
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Encouraging**</span>: Support learning, celebrate progress
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Precise**</span>: Use exact technical terms, avoid ambiguity
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="gu">## Grammar and mechanics</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="k">-</span><span class="w"> </span>Active voice preferred (passive acceptable for operations or systems)
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="k">-</span><span class="w"> </span>Present tense for documentation
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="k">-</span><span class="w"> </span>Second person (you) for instructions
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="k">-</span><span class="w"> </span>Sentence case for headings
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="k">-</span><span class="w"> </span>Oxford comma in lists
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="gu">## Specific preferences</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="k">-</span><span class="w"> </span>&quot;Set up&quot; (verb), &quot;setup&quot; (noun)
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="k">-</span><span class="w"> </span>&quot;Log in&quot; (verb), &quot;login&quot; (noun)
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="k">-</span><span class="w"> </span>&quot;Command line&quot; not &quot;command-line&quot; when used as noun
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="k">-</span><span class="w"> </span>Use &quot;to&quot; not &quot;in order to&quot;
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="k">-</span><span class="w"> </span>Use &quot;because&quot; not &quot;since&quot; for causation
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a>
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="gu">## Code formatting</span>
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a>
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="k">-</span><span class="w"> </span>Inline code: <span class="sb">`variable`</span>, <span class="sb">`function()`</span>, <span class="sb">`command`</span>
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="k">-</span><span class="w"> </span>Code blocks: Always specify language
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="k">-</span><span class="w"> </span>File paths: <span class="sb">`path/to/file.md`</span>
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a><span class="k">-</span><span class="w"> </span>Commands: Show with prompt or without based on context
 </code></pre></div>
 <h3 id="prompt-for-tone-consistency">Prompt for tone consistency</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Review these two documentation sections for tone consistency:
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="gu">## Section 1: Getting Started Guide</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>[Paste content]
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="gu">## Section 2: API Reference</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>[Paste content]
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>Compare the voice and tone. Identify:
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="k">1.</span> Inconsistent use of person (I/we/you)
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="k">2.</span> Formality level differences
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="k">3.</span> Sentence structure patterns that differ
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="k">4.</span> Terminology inconsistencies
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>Suggest specific changes to make tone consistent across both sections.
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>Target voice: Professional, user-focused, encouraging, technically precise.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Review these two documentation sections for tone consistency:
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="gu">## Section 1: Getting Started Guide</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>[Paste content]
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="gu">## Section 2: API Reference</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>[Paste content]
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>Compare the voice and tone. Identify:
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="k">1.</span> Inconsistent use of person (I/we/you)
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="k">2.</span> Formality level differences
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="k">3.</span> Sentence structure patterns that differ
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="k">4.</span> Terminology inconsistencies
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>Suggest specific changes to make tone consistent across both sections.
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a>Target voice: Professional, user-focused, encouraging, technically precise.
 </code></pre></div>
 <h3 id="review-for-consistency">Review for consistency</h3>
 <p>Check these common inconsistencies:</p>
@@ -2716,55 +2764,55 @@
 </ul>
 <h3 id="batch-consistency-fixes">Batch consistency fixes</h3>
 <p>Use AI to apply consistent patterns:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Update all code blocks in this document to follow this pattern:
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Commands shown with bash prompt:
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>```bash
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>$ docker ps
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>CONTAINER ID   IMAGE     COMMAND    CREATED    STATUS
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>abc123         nginx     &quot;nginx&quot;    2m ago     Up 2m
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Update all code blocks in this document to follow this pattern:
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Commands shown with bash prompt:
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>```bash
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>$ docker ps
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>CONTAINER ID   IMAGE     COMMAND    CREATED    STATUS
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>abc123         nginx     &quot;nginx&quot;    2m ago     Up 2m
 </code></pre></div>
 <p>But output examples without prompt:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>CONTAINER ID   IMAGE     COMMAND    CREATED    STATUS
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>abc123         nginx     &quot;nginx&quot;    2m ago     Up 2m
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>CONTAINER ID   IMAGE     COMMAND    CREATED    STATUS
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>abc123         nginx     &quot;nginx&quot;    2m ago     Up 2m
 </code></pre></div></p>
 <p>Apply this consistently to all code blocks in:
 [Paste document]
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>## Technique 3: Enhance technical accuracy
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Use AI to identify potential technical errors or ambiguities.
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>### Prompt for accuracy review
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>```markdown
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>Review this technical documentation for accuracy issues:
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>[Paste content]
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>Check for:
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>1. Potentially incorrect technical statements
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>2. Ambiguous or imprecise technical language
-<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>3. Missing important caveats or limitations
-<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>4. Outdated practices or deprecated features
-<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>5. Code examples that might not work as shown
-<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>
-<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>Flag concerns without making assumptions. Phrase as questions: 
-<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>&quot;Is it accurate that...?&quot; rather than corrections.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>## Technique 3: Enhance technical accuracy
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Use AI to identify potential technical errors or ambiguities.
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>### Prompt for accuracy review
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>```markdown
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>Review this technical documentation for accuracy issues:
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>[Paste content]
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>Check for:
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>1. Potentially incorrect technical statements
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>2. Ambiguous or imprecise technical language
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>3. Missing important caveats or limitations
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>4. Outdated practices or deprecated features
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>5. Code examples that might not work as shown
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>Flag concerns without making assumptions. Phrase as questions: 
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>&quot;Is it accurate that...?&quot; rather than corrections.
 </code></pre></div></p>
 <h3 id="example-accuracy-review">Example accuracy review</h3>
 <p><strong>Content</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Always use <span class="sb">`docker run --rm`</span> to automatically remove containers 
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>when they stop. This ensures your system stays clean.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Always use <span class="sb">`docker run --rm`</span> to automatically remove containers 
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>when they stop. This ensures your system stays clean.
 </code></pre></div></p>
 <p><strong>AI flags potential issue</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Question: Is it accurate to say &quot;always&quot; use <span class="sb">`--rm`</span>? This flag 
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>removes containers immediately upon exit, which might not be 
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>desired when:
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="k">-</span><span class="w"> </span>Debugging failed containers
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="k">-</span><span class="w"> </span>Inspecting container logs after stopping
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="k">-</span><span class="w"> </span>Preserving container state for analysis
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>Consider qualifying this recommendation.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Question: Is it accurate to say &quot;always&quot; use <span class="sb">`--rm`</span>? This flag 
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>removes containers immediately upon exit, which might not be 
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>desired when:
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="k">-</span><span class="w"> </span>Debugging failed containers
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="k">-</span><span class="w"> </span>Inspecting container logs after stopping
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="k">-</span><span class="w"> </span>Preserving container state for analysis
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>Consider qualifying this recommendation.
 </code></pre></div></p>
 <h3 id="verify-and-correct">Verify and correct</h3>
 <p>When AI flags potential issues:</p>
@@ -2779,12 +2827,12 @@
 <h2 id="technique-4-improve-code-examples">Technique 4: Improve code examples</h2>
 <p>Code examples are critical. Use AI to enhance them.</p>
 <h3 id="prompt-for-example-improvement">Prompt for example improvement</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Review this code example for improvement:
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>```python
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>r = requests.get(&#39;https://api.example.com/events/123&#39;)
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>d = r.json()
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>print(d[&#39;name&#39;])
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Review this code example for improvement:
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>```python
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>r = requests.get(&#39;https://api.example.com/events/123&#39;)
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>d = r.json()
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>print(d[&#39;name&#39;])
 </code></pre></div>
 <p>Improve by:
 1. Using meaningful variable names
@@ -2794,19 +2842,19 @@
 5. Making example production-ready or explicitly marking as simplified</p>
 <p>Context: This is from an API documentation getting started guide 
 for developers learning to use the API.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>**AI-improved example**:
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>```python
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>import requests
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a># Fetch a specific event by ID
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>response = requests.get(&#39;https://api.example.com/events/123&#39;)
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
-<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a># Check if request was successful
-<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>if response.status_code == 200:
-<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>    event_data = response.json()
-<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>    print(f&quot;Event name: {event_data[&#39;name&#39;]}&quot;)
-<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>else:
-<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>    print(f&quot;Error: {response.status_code}&quot;)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>**AI-improved example**:
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>```python
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>import requests
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a># Fetch a specific event by ID
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>response = requests.get(&#39;https://api.example.com/events/123&#39;)
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a># Check if request was successful
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>if response.status_code == 200:
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>    event_data = response.json()
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>    print(f&quot;Event name: {event_data[&#39;name&#39;]}&quot;)
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>else:
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>    print(f&quot;Error: {response.status_code}&quot;)
 </code></pre></div></p>
 <h3 id="balance-realism-with-clarity">Balance realism with clarity</h3>
 <p>Examples should be:
@@ -2815,41 +2863,41 @@ for developers learning to use the API.
 - <strong>Complete enough</strong> to actually run
 - <strong>Focused enough</strong> to illustrate the point</p>
 <p>Use comments to bridge gaps:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Error handling omitted for brevity</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="c1"># In production, handle all possible HTTP status codes</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># Error handling omitted for brevity</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="c1"># In production, handle all possible HTTP status codes</span>
 </code></pre></div>
 <h2 id="technique-5-add-helpful-callouts">Technique 5: Add helpful callouts</h2>
 <p>Use admonitions to highlight important information.</p>
 <h3 id="types-of-callouts">Types of callouts</h3>
 <p>MkDocs Material supports these admonition types:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>!!! note
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    Additional information that helps understanding.
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>!!! tip
-<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    Helpful suggestions or best practices.
-<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
-<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>!!! warning
-<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>    Important caveats or potential issues.
-<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>
-<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>!!! danger
-<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>    Critical information about breaking changes or data loss.
-<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>
-<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>!!! example
-<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>    Code samples or usage examples.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>!!! note
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    Additional information that helps understanding.
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>!!! tip
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>    Helpful suggestions or best practices.
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>!!! warning
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>    Important caveats or potential issues.
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>!!! danger
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>    Critical information about breaking changes or data loss.
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>!!! example
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>    Code samples or usage examples.
 </code></pre></div>
 <h3 id="prompt-for-callout-suggestions">Prompt for callout suggestions</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Review this documentation and suggest where to add callouts:
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>[Paste content]
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>Identify places where:
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="k">-</span><span class="w"> </span>NOTE: Would help explain context or background
-<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="k">-</span><span class="w"> </span>TIP: Could provide helpful best practices
-<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="k">-</span><span class="w"> </span>WARNING: Should alert about potential issues
-<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="k">-</span><span class="w"> </span>DANGER: Must warn about critical problems
-<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="k">-</span><span class="w"> </span>EXAMPLE: Could clarify with a code sample
-<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>
-<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>Suggest specific callout text for each recommendation.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Review this documentation and suggest where to add callouts:
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>[Paste content]
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>Identify places where:
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="k">-</span><span class="w"> </span>NOTE: Would help explain context or background
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="k">-</span><span class="w"> </span>TIP: Could provide helpful best practices
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="k">-</span><span class="w"> </span>WARNING: Should alert about potential issues
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="k">-</span><span class="w"> </span>DANGER: Must warn about critical problems
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="k">-</span><span class="w"> </span>EXAMPLE: Could clarify with a code sample
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>Suggest specific callout text for each recommendation.
 </code></pre></div>
 <h3 id="add-callouts-strategically">Add callouts strategically</h3>
 <p>Do not overuse callouts. Add them for:
@@ -2860,79 +2908,79 @@ for developers learning to use the API.
 - Alternative approaches</p>
 <p>Example addition:</p>
 <p><strong>Before</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Run <span class="sb">`docker system prune`</span> to clean up unused containers, networks, 
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>and images. This frees up disk space.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>Run <span class="sb">`docker system prune`</span> to clean up unused containers, networks, 
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>and images. This frees up disk space.
 </code></pre></div></p>
 <p><strong>After</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Run <span class="sb">`docker system prune`</span> to clean up unused containers, networks, 
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>and images. This frees up disk space.
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
-<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>!!! warning
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>    This command removes all unused Docker objects. Review what 
-<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>    will be deleted with <span class="sb">`docker system prune --dry-run`</span> first.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Run <span class="sb">`docker system prune`</span> to clean up unused containers, networks, 
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>and images. This frees up disk space.
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>!!! warning
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>    This command removes all unused Docker objects. Review what 
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>    will be deleted with <span class="sb">`docker system prune --dry-run`</span> first.
 </code></pre></div></p>
 <h2 id="technique-6-enhance-navigation-and-structure">Technique 6: Enhance navigation and structure</h2>
 <p>Improve how readers move through your documentation.</p>
 <h3 id="prompt-for-structure-review">Prompt for structure review</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>Review this documentation structure for improvements:
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>[Paste table of contents or navigation]
-<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
-<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>Evaluate:
-<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="k">1.</span> Logical flow of topics
-<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="k">2.</span> Appropriate nesting depth
-<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="k">3.</span> Clear section naming
-<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="k">4.</span> Helpful cross-references
-<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="k">5.</span> Missing sections or topics
-<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>
-<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>Suggest specific structural improvements to enhance usability.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>Review this documentation structure for improvements:
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>[Paste table of contents or navigation]
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>Evaluate:
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="k">1.</span> Logical flow of topics
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="k">2.</span> Appropriate nesting depth
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="k">3.</span> Clear section naming
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="k">4.</span> Helpful cross-references
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="k">5.</span> Missing sections or topics
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>Suggest specific structural improvements to enhance usability.
 </code></pre></div>
 <h3 id="add-strategic-cross-references">Add strategic cross-references</h3>
 <p>Link related content:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>For API authentication details, see [<span class="nt">Authentication</span>](<span class="na">authentication.md</span>).
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>Related guides:
-<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="k">-</span><span class="w"> </span>[<span class="nt">Getting Started</span>](<span class="na">getting-started.md</span>)
-<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="k">-</span><span class="w"> </span>[<span class="nt">Error Handling</span>](<span class="na">errors.md</span>)
-<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="k">-</span><span class="w"> </span>[<span class="nt">Rate Limiting</span>](<span class="na">rate-limits.md</span>)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>For API authentication details, see [<span class="nt">Authentication</span>](<span class="na">authentication.md</span>).
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>Related guides:
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="k">-</span><span class="w"> </span>[<span class="nt">Getting Started</span>](<span class="na">getting-started.md</span>)
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="k">-</span><span class="w"> </span>[<span class="nt">Error Handling</span>](<span class="na">errors.md</span>)
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="k">-</span><span class="w"> </span>[<span class="nt">Rate Limiting</span>](<span class="na">rate-limits.md</span>)
 </code></pre></div>
 <h3 id="improve-section-headings">Improve section headings</h3>
 <p>Use AI to suggest better headings:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>Improve these section headings for clarity and scannability:
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
-<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>Current headings:
-<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="k">-</span><span class="w"> </span>Info
-<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="k">-</span><span class="w"> </span>Details
-<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="k">-</span><span class="w"> </span>How to use it
-<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="k">-</span><span class="w"> </span>Things to know
-<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="k">-</span><span class="w"> </span>Problems
-<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>
-<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>These should be:
-<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="k">-</span><span class="w"> </span>Specific and descriptive
-<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="k">-</span><span class="w"> </span>Parallel structure
-<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="k">-</span><span class="w"> </span>Action-oriented where appropriate
-<a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="k">-</span><span class="w"> </span>Easy to scan
-<a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a>
-<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>Suggest improved headings.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>Improve these section headings for clarity and scannability:
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>Current headings:
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="k">-</span><span class="w"> </span>Info
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="k">-</span><span class="w"> </span>Details
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="k">-</span><span class="w"> </span>How to use it
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="k">-</span><span class="w"> </span>Things to know
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="k">-</span><span class="w"> </span>Problems
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>These should be:
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="k">-</span><span class="w"> </span>Specific and descriptive
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="k">-</span><span class="w"> </span>Parallel structure
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="k">-</span><span class="w"> </span>Action-oriented where appropriate
+<a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a><span class="k">-</span><span class="w"> </span>Easy to scan
+<a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>
+<a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>Suggest improved headings.
 </code></pre></div>
 <h2 id="technique-7-polish-for-professionalism">Technique 7: Polish for professionalism</h2>
 <p>Final review for professional presentation.</p>
 <h3 id="comprehensive-review-prompt">Comprehensive review prompt</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>Perform a final review of this documentation:
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
-<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>[Paste content]
-<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>
-<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>Check for:
-<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="k">1.</span> Spelling and grammar errors
-<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="k">2.</span> Broken links
-<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="k">3.</span> Missing code syntax highlighting
-<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="k">4.</span> Inconsistent formatting
-<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="k">5.</span> Unclear transitions between sections
-<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="k">6.</span> Missing prerequisites
-<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="k">7.</span> Incomplete examples
-<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="k">8.</span> Unhelpful error messages in examples
-<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>
-<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>Provide specific fixes for each issue found.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>Perform a final review of this documentation:
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>[Paste content]
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>Check for:
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="k">1.</span> Spelling and grammar errors
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="k">2.</span> Broken links
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="k">3.</span> Missing code syntax highlighting
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="k">4.</span> Inconsistent formatting
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="k">5.</span> Unclear transitions between sections
+<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="k">6.</span> Missing prerequisites
+<a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="k">7.</span> Incomplete examples
+<a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="k">8.</span> Unhelpful error messages in examples
+<a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a>
+<a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a>Provide specific fixes for each issue found.
 </code></pre></div>
 <h3 id="manual-checks-ai-cannot-do">Manual checks AI cannot do</h3>
 <p>Some checks require human review:</p>
@@ -2946,70 +2994,70 @@ for developers learning to use the API.
 </ul>
 <h2 id="create-a-refinement-checklist">Create a refinement checklist</h2>
 <p>Document your refinement process in <code>refinement-checklist.md</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="gh"># Documentation Refinement Checklist</span>
-<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
-<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>For each documentation sample, complete:
-<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
-<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="gu">## Clarity</span>
-<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="k">- [ ]</span> Remove unnecessary words
-<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="k">- [ ]</span> Simplify complex sentences
-<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="k">- [ ]</span> Explain jargon or link to definitions
-<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="k">- [ ]</span> Use active voice where appropriate
-<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>
-<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="gu">## Consistency</span>
-<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="k">- [ ]</span> Tone matches style guide
-<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="k">- [ ]</span> Code examples formatted consistently
-<a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a><span class="k">- [ ]</span> Headings follow same pattern
-<a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a><span class="k">- [ ]</span> Terminology used consistently
-<a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>
-<a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a><span class="gu">## Technical accuracy</span>
-<a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a><span class="k">- [ ]</span> All commands tested
-<a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a><span class="k">- [ ]</span> Code examples run successfully
-<a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a><span class="k">- [ ]</span> API details match spec
-<a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a><span class="k">- [ ]</span> Version numbers correct
-<a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a>
-<a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a><span class="gu">## Examples</span>
-<a id="__codelineno-26-24" name="__codelineno-26-24" href="#__codelineno-26-24"></a><span class="k">- [ ]</span> Variable names are meaningful
-<a id="__codelineno-26-25" name="__codelineno-26-25" href="#__codelineno-26-25"></a><span class="k">- [ ]</span> Error handling included or noted as omitted
-<a id="__codelineno-26-26" name="__codelineno-26-26" href="#__codelineno-26-26"></a><span class="k">- [ ]</span> Comments explain key steps
-<a id="__codelineno-26-27" name="__codelineno-26-27" href="#__codelineno-26-27"></a><span class="k">- [ ]</span> Examples are complete enough to use
-<a id="__codelineno-26-28" name="__codelineno-26-28" href="#__codelineno-26-28"></a>
-<a id="__codelineno-26-29" name="__codelineno-26-29" href="#__codelineno-26-29"></a><span class="gu">## Navigation</span>
-<a id="__codelineno-26-30" name="__codelineno-26-30" href="#__codelineno-26-30"></a><span class="k">- [ ]</span> All links work
-<a id="__codelineno-26-31" name="__codelineno-26-31" href="#__codelineno-26-31"></a><span class="k">- [ ]</span> Cross-references added
-<a id="__codelineno-26-32" name="__codelineno-26-32" href="#__codelineno-26-32"></a><span class="k">- [ ]</span> Table of contents updated
-<a id="__codelineno-26-33" name="__codelineno-26-33" href="#__codelineno-26-33"></a><span class="k">- [ ]</span> Related content linked
-<a id="__codelineno-26-34" name="__codelineno-26-34" href="#__codelineno-26-34"></a>
-<a id="__codelineno-26-35" name="__codelineno-26-35" href="#__codelineno-26-35"></a><span class="gu">## Professional polish</span>
-<a id="__codelineno-26-36" name="__codelineno-26-36" href="#__codelineno-26-36"></a><span class="k">- [ ]</span> Spelling and grammar checked
-<a id="__codelineno-26-37" name="__codelineno-26-37" href="#__codelineno-26-37"></a><span class="k">- [ ]</span> Code syntax highlighting added
-<a id="__codelineno-26-38" name="__codelineno-26-38" href="#__codelineno-26-38"></a><span class="k">- [ ]</span> Callouts added where helpful
-<a id="__codelineno-26-39" name="__codelineno-26-39" href="#__codelineno-26-39"></a><span class="k">- [ ]</span> Final review completed
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="gh"># Documentation Refinement Checklist</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>For each documentation sample, complete:
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="gu">## Clarity</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="k">- [ ]</span> Remove unnecessary words
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="k">- [ ]</span> Simplify complex sentences
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="k">- [ ]</span> Explain jargon or link to definitions
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="k">- [ ]</span> Use active voice where appropriate
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>
+<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a><span class="gu">## Consistency</span>
+<a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a><span class="k">- [ ]</span> Tone matches style guide
+<a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a><span class="k">- [ ]</span> Code examples formatted consistently
+<a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a><span class="k">- [ ]</span> Headings follow same pattern
+<a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a><span class="k">- [ ]</span> Terminology used consistently
+<a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a>
+<a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a><span class="gu">## Technical accuracy</span>
+<a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a><span class="k">- [ ]</span> All commands tested
+<a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a><span class="k">- [ ]</span> Code examples run successfully
+<a id="__codelineno-28-20" name="__codelineno-28-20" href="#__codelineno-28-20"></a><span class="k">- [ ]</span> API details match spec
+<a id="__codelineno-28-21" name="__codelineno-28-21" href="#__codelineno-28-21"></a><span class="k">- [ ]</span> Version numbers correct
+<a id="__codelineno-28-22" name="__codelineno-28-22" href="#__codelineno-28-22"></a>
+<a id="__codelineno-28-23" name="__codelineno-28-23" href="#__codelineno-28-23"></a><span class="gu">## Examples</span>
+<a id="__codelineno-28-24" name="__codelineno-28-24" href="#__codelineno-28-24"></a><span class="k">- [ ]</span> Variable names are meaningful
+<a id="__codelineno-28-25" name="__codelineno-28-25" href="#__codelineno-28-25"></a><span class="k">- [ ]</span> Error handling included or noted as omitted
+<a id="__codelineno-28-26" name="__codelineno-28-26" href="#__codelineno-28-26"></a><span class="k">- [ ]</span> Comments explain key steps
+<a id="__codelineno-28-27" name="__codelineno-28-27" href="#__codelineno-28-27"></a><span class="k">- [ ]</span> Examples are complete enough to use
+<a id="__codelineno-28-28" name="__codelineno-28-28" href="#__codelineno-28-28"></a>
+<a id="__codelineno-28-29" name="__codelineno-28-29" href="#__codelineno-28-29"></a><span class="gu">## Navigation</span>
+<a id="__codelineno-28-30" name="__codelineno-28-30" href="#__codelineno-28-30"></a><span class="k">- [ ]</span> All links work
+<a id="__codelineno-28-31" name="__codelineno-28-31" href="#__codelineno-28-31"></a><span class="k">- [ ]</span> Cross-references added
+<a id="__codelineno-28-32" name="__codelineno-28-32" href="#__codelineno-28-32"></a><span class="k">- [ ]</span> Table of contents updated
+<a id="__codelineno-28-33" name="__codelineno-28-33" href="#__codelineno-28-33"></a><span class="k">- [ ]</span> Related content linked
+<a id="__codelineno-28-34" name="__codelineno-28-34" href="#__codelineno-28-34"></a>
+<a id="__codelineno-28-35" name="__codelineno-28-35" href="#__codelineno-28-35"></a><span class="gu">## Professional polish</span>
+<a id="__codelineno-28-36" name="__codelineno-28-36" href="#__codelineno-28-36"></a><span class="k">- [ ]</span> Spelling and grammar checked
+<a id="__codelineno-28-37" name="__codelineno-28-37" href="#__codelineno-28-37"></a><span class="k">- [ ]</span> Code syntax highlighting added
+<a id="__codelineno-28-38" name="__codelineno-28-38" href="#__codelineno-28-38"></a><span class="k">- [ ]</span> Callouts added where helpful
+<a id="__codelineno-28-39" name="__codelineno-28-39" href="#__codelineno-28-39"></a><span class="k">- [ ]</span> Final review completed
 </code></pre></div>
 <h2 id="update-case-studies-with-refinement-details">Update case studies with refinement details</h2>
 <p>Add a refinement section to each case study:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="gu">## Refinement process</span>
-<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
-<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="gu">### Initial quality assessment</span>
-<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="k">-</span><span class="w"> </span>[What needed improvement]
-<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>
-<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="gu">### AI-assisted refinement</span>
-<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="k">-</span><span class="w"> </span>Clarity improvements: [Details]
-<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="k">-</span><span class="w"> </span>Consistency fixes: [Details]
-<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="k">-</span><span class="w"> </span>Technical accuracy reviews: [Details]
-<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>
-<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="gu">### Manual enhancements</span>
-<a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="k">-</span><span class="w"> </span>Code examples tested and improved
-<a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="k">-</span><span class="w"> </span>Cross-references added
-<a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a><span class="k">-</span><span class="w"> </span>Callouts placed strategically
-<a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a>
-<a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a><span class="gu">### Final quality level</span>
-<a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a><span class="k">-</span><span class="w"> </span>[Self-assessment of quality]
-<a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a>
-<a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a><span class="gu">### Refinement time investment</span>
-<a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a><span class="k">-</span><span class="w"> </span>AI-assisted review: [X minutes]
-<a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a><span class="k">-</span><span class="w"> </span>Manual improvements: [X minutes]
-<a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a><span class="k">-</span><span class="w"> </span>Testing and verification: [X minutes]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="gu">## Refinement process</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="gu">### Initial quality assessment</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="k">-</span><span class="w"> </span>[What needed improvement]
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="gu">### AI-assisted refinement</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="k">-</span><span class="w"> </span>Clarity improvements: [Details]
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="k">-</span><span class="w"> </span>Consistency fixes: [Details]
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="k">-</span><span class="w"> </span>Technical accuracy reviews: [Details]
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>
+<a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a><span class="gu">### Manual enhancements</span>
+<a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a><span class="k">-</span><span class="w"> </span>Code examples tested and improved
+<a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a><span class="k">-</span><span class="w"> </span>Cross-references added
+<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a><span class="k">-</span><span class="w"> </span>Callouts placed strategically
+<a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a>
+<a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a><span class="gu">### Final quality level</span>
+<a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a><span class="k">-</span><span class="w"> </span>[Self-assessment of quality]
+<a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a>
+<a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a><span class="gu">### Refinement time investment</span>
+<a id="__codelineno-29-20" name="__codelineno-29-20" href="#__codelineno-29-20"></a><span class="k">-</span><span class="w"> </span>AI-assisted review: [X minutes]
+<a id="__codelineno-29-21" name="__codelineno-29-21" href="#__codelineno-29-21"></a><span class="k">-</span><span class="w"> </span>Manual improvements: [X minutes]
+<a id="__codelineno-29-22" name="__codelineno-29-22" href="#__codelineno-29-22"></a><span class="k">-</span><span class="w"> </span>Testing and verification: [X minutes]
 </code></pre></div>
 <h2 id="summary">Summary</h2>
 <p>You completed these tasks:</p>

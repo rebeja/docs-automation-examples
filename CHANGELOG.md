@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Changelog page added to the doc site (`docs/changelog.md`); uses the snippets extension to render `CHANGELOG.md` directly so content stays in one place
+- **Project 03: README Generator** (`03-readme-generator/`) — new automation project that analyzes a local directory or GitHub repository and generates a complete README section by section using AI
+  - `readme_generator.py`: main script with repo analysis (language detection, dependency parsing, entry point detection, license detection), section-by-section AI generation, and Jinja2 assembly
+  - `prompts/`: four prompt files for description, installation, usage, and contributing sections; each accepts `{REPO_CONTEXT}` placeholder
+  - `examples/sample_project/`: built-in TaskFlow CLI app for `--sample` mode (no API key needed for testing)
+  - `templates/readme_template.md.j2`: default Jinja2 output template
+  - CLI flags: `--input`, `--output`, `--config`, `--prompts`, `--template`, `--sections`, `--analyze`, `--sample`
+  - `tests/test_readme_generator.py`: 39 tests covering language detection, project name detection, license detection, dependency parsing, context summary building, sample mode, and README assembly
+  - Full tutorial (5 steps), reference docs (configuration, prompt engineering), sample outputs, troubleshooting, and FAQ added to the doc site under `docs/readme-generator/`
+  - `config.example.yaml`: added `readme_max_file_lines` and `readme_sections` fields
+  - `mkdocs.yml`: README Generator nav section added after Doc Site Portfolio
 
 ### Changed
 - Tutorial steps 1, 3, 4, and 5 updated to add **Path C: Use Claude Code CLI** as a third AI workflow option alongside the existing script-based paths

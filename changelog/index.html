@@ -2770,6 +2770,16 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <h3 id="added">Added</h3>
 <ul>
 <li>Changelog page added to the doc site (<code>docs/changelog.md</code>); uses the snippets extension to render <code>CHANGELOG.md</code> directly so content stays in one place</li>
+<li><strong>Project 03: README Generator</strong> (<code>03-readme-generator/</code>) — new automation project that analyzes a local directory or GitHub repository and generates a complete README section by section using AI</li>
+<li><code>readme_generator.py</code>: main script with repo analysis (language detection, dependency parsing, entry point detection, license detection), section-by-section AI generation, and Jinja2 assembly</li>
+<li><code>prompts/</code>: four prompt files for description, installation, usage, and contributing sections; each accepts <code>{REPO_CONTEXT}</code> placeholder</li>
+<li><code>examples/sample_project/</code>: built-in TaskFlow CLI app for <code>--sample</code> mode (no API key needed for testing)</li>
+<li><code>templates/readme_template.md.j2</code>: default Jinja2 output template</li>
+<li>CLI flags: <code>--input</code>, <code>--output</code>, <code>--config</code>, <code>--prompts</code>, <code>--template</code>, <code>--sections</code>, <code>--analyze</code>, <code>--sample</code></li>
+<li><code>tests/test_readme_generator.py</code>: 39 tests covering language detection, project name detection, license detection, dependency parsing, context summary building, sample mode, and README assembly</li>
+<li>Full tutorial (5 steps), reference docs (configuration, prompt engineering), sample outputs, troubleshooting, and FAQ added to the doc site under <code>docs/readme-generator/</code></li>
+<li><code>config.example.yaml</code>: added <code>readme_max_file_lines</code> and <code>readme_sections</code> fields</li>
+<li><code>mkdocs.yml</code>: README Generator nav section added after Doc Site Portfolio</li>
 </ul>
 <h3 id="changed">Changed</h3>
 <ul>

@@ -1764,6 +1764,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changed
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1793,7 +1804,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#changed" class="md-nav__link">
+  <a href="#changed_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Changed
@@ -1832,7 +1843,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#changed_1" class="md-nav__link">
+  <a href="#changed_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Changed
@@ -1847,34 +1858,6 @@
     <span class="md-ellipsis">
       
         Documentation
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#100-yyyy-mm-dd" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        [1.0.0] - YYYY-MM-DD
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="[1.0.0] - YYYY-MM-DD">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#added_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Added
       
     </span>
   </a>
@@ -1908,17 +1891,6 @@
   
     <nav class="md-nav" aria-label="Future Releases (Planned)">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#version-110-planned" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Version 1.1.0 (Planned)
-      
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#version-120-planned" class="md-nav__link">
@@ -2026,6 +1998,17 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changed
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2055,7 +2038,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#changed" class="md-nav__link">
+  <a href="#changed_1" class="md-nav__link">
     <span class="md-ellipsis">
       
         Changed
@@ -2094,7 +2077,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#changed_1" class="md-nav__link">
+  <a href="#changed_2" class="md-nav__link">
     <span class="md-ellipsis">
       
         Changed
@@ -2109,34 +2092,6 @@
     <span class="md-ellipsis">
       
         Documentation
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#100-yyyy-mm-dd" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        [1.0.0] - YYYY-MM-DD
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="[1.0.0] - YYYY-MM-DD">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#added_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Added
       
     </span>
   </a>
@@ -2170,17 +2125,6 @@
   
     <nav class="md-nav" aria-label="Future Releases (Planned)">
       <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#version-110-planned" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Version 1.1.0 (Planned)
-      
-    </span>
-  </a>
-  
-</li>
         
           <li class="md-nav__item">
   <a href="#version-120-planned" class="md-nav__link">
@@ -2260,18 +2204,28 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <ul>
 <li>Changelog page added to the doc site (<code>docs/changelog.md</code>); uses the snippets extension to render <code>CHANGELOG.md</code> directly so content stays in one place</li>
 </ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Tutorial steps 1, 3, 4, and 5 updated to add <strong>Path C: Use Claude Code CLI</strong> as a third AI workflow option alongside the existing script-based paths</li>
+<li>Step 1: Added Path C to "Choose your path", added a "which path is right for you?" guidance paragraph, added full Path C setup section (install, authenticate, verify), added skip note in "Configure AI access" for Path C users, and added jump-ahead links on all three path names</li>
+<li>Step 3: Added "Option C" blocks for generating nav structure, homepage, and about page via Claude Code CLI</li>
+<li>Step 4: Added "Option C" block for generating project pages, plus a callout explaining how Path C users can direct Claude to write output to a file</li>
+<li>Step 5: Added "Option C" block for content refinement, plus a callout explaining how to reference file paths in prompts</li>
+</ul>
 <h2 id="110-2026-04-02">[1.1.0] - 2026-04-02</h2>
 <h3 id="added_1">Added</h3>
-<p><strong>Release notes automation (01-release-notes-automation)</strong>
-- GitLab integration via <code>python-gitlab</code> — <code>GitLabProvider</code> class with support for self-hosted instances via <code>gitlab_url</code> config
-- Bitbucket integration via <code>atlassian-python-api</code> — <code>BitbucketProvider</code> class with app password authentication
-- Azure OpenAI provider — <code>AzureOpenAIProvider</code> class using the existing <code>openai</code> library's <code>AzureOpenAI</code> client; requires <code>azure_endpoint</code> and <code>azure_api_version</code> config fields
-- Hybrid categorization pipeline — three-stage strategy: conventional commit prefix parsing → keyword rules → AI fallback; AI only processes commits not matched by earlier stages
-- <code>categorization_rules.example.yaml</code> — example keyword rules file with pre-built rule sets for Security, Performance, Database, Infrastructure, and Dependencies categories
-- Batch processing — <code>--repos</code> CLI argument and <code>batch_repos</code> config field; <code>--batch-output</code> controls separate files per repo or a single combined report
-- Custom Jinja2 output templates — <code>--template</code> CLI argument accepts any <code>.j2</code> file; <code>templates/default.md.j2</code> ships as the built-in default and preserves existing output format
-- <code>vcs_provider</code> config field and <code>VCS_PROVIDER</code> environment variable for selecting GitHub, GitLab, or Bitbucket</p>
-<h3 id="changed">Changed</h3>
+<p><strong>Release notes automation (01-release-notes-automation)</strong></p>
+<ul>
+<li>GitLab integration via <code>python-gitlab</code> — <code>GitLabProvider</code> class with support for self-hosted instances via <code>gitlab_url</code> config</li>
+<li>Bitbucket integration via <code>atlassian-python-api</code> — <code>BitbucketProvider</code> class with app password authentication</li>
+<li>Azure OpenAI provider — <code>AzureOpenAIProvider</code> class using the existing <code>openai</code> library's <code>AzureOpenAI</code> client; requires <code>azure_endpoint</code> and <code>azure_api_version</code> config fields</li>
+<li>Hybrid categorization pipeline — three-stage strategy: conventional commit prefix parsing → keyword rules → AI fallback; AI only processes commits not matched by earlier stages</li>
+<li><code>categorization_rules.example.yaml</code> — example keyword rules file with pre-built rule sets for Security, Performance, Database, Infrastructure, and Dependencies categories</li>
+<li>Batch processing — <code>--repos</code> CLI argument and <code>batch_repos</code> config field; <code>--batch-output</code> controls separate files per repo or a single combined report</li>
+<li>Custom Jinja2 output templates — <code>--template</code> CLI argument accepts any <code>.j2</code> file; <code>templates/default.md.j2</code> ships as the built-in default and preserves existing output format</li>
+<li><code>vcs_provider</code> config field and <code>VCS_PROVIDER</code> environment variable for selecting GitHub, GitLab, or Bitbucket</li>
+</ul>
+<h3 id="changed_1">Changed</h3>
 <ul>
 <li><code>generate_release_notes()</code> signature updated: now accepts categorized commit data (<code>List[Dict]</code>) instead of a raw AI response string, enabling template rendering</li>
 <li><code>load_config()</code> no longer requires <code>github_token</code> as a universal required field; VCS token validation moved to each provider class to support multiple VCS sources</li>
@@ -2304,15 +2258,10 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 - Troubleshooting guide with 40+ common issues
 - Comprehensive FAQ with 50+ questions
 - Contributing guidelines and Code of Conduct</p>
-<h3 id="changed_1">Changed</h3>
+<h3 id="changed_2">Changed</h3>
 <ul>
 <li>Doc site portfolio tutorial steps 1–5 updated to reference the new scripts alongside the existing manual prompting approach</li>
 <li>Tutorial step 1 corrected: AI setup now uses <code>config.yaml</code> (matching the actual scripts) instead of a <code>.env</code> file with wrong variable names</li>
-<li>Tutorial steps 1, 3, 4, and 5 updated to add <strong>Path C: Use Claude Code CLI</strong> as a third AI workflow option alongside the existing script-based paths</li>
-<li>Step 1: Added Path C to "Choose your path", added a "which path is right for you?" guidance paragraph, added full Path C setup section (install, authenticate, verify), added skip note in "Configure AI access" for Path C users, and added jump-ahead links on all three path names</li>
-<li>Step 3: Added "Option C" blocks for generating nav structure, homepage, and about page via Claude Code CLI</li>
-<li>Step 4: Added "Option C" block for generating project pages, plus a callout explaining how Path C users can direct Claude to write output to a file</li>
-<li>Step 5: Added "Option C" block for content refinement, plus a callout explaining how to reference file paths in prompts</li>
 <li>Tutorial step 2 now includes a profile setup section for <code>profile.yaml</code></li>
 </ul>
 <h3 id="documentation">Documentation</h3>
@@ -2323,21 +2272,6 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <li>Sample outputs demonstrating categorization quality</li>
 <li>Getting started guide for first-time users</li>
 <li>Portfolio examples with five profile patterns</li>
-</ul>
-<h2 id="100-yyyy-mm-dd">[1.0.0] - YYYY-MM-DD</h2>
-<h3 id="added_3">Added</h3>
-<ul>
-<li>Release notes automation script with GitHub API integration and AI-powered categorization</li>
-<li>Doc site portfolio project with AI content generation and improvement scripts</li>
-<li>Complete prompt templates for all content types</li>
-<li>Profile-driven content generation (<code>profile.example.yaml</code>)</li>
-<li>Sample data mode in all scripts for zero-API-cost testing</li>
-<li>pytest test suite (39 tests) with no external dependencies required</li>
-<li>Complete MkDocs Material documentation site covering both projects</li>
-<li>5-step release notes tutorial and 6-step doc site tutorial</li>
-<li>Troubleshooting guides, FAQs, reference docs, and portfolio examples</li>
-<li>Configuration management via <code>config.yaml</code> with environment variable overrides</li>
-<li>Contributing guidelines and Code of Conduct</li>
 </ul>
 <hr />
 <h2 id="release-note-categories">Release Note Categories</h2>
@@ -2353,15 +2287,6 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 </ul>
 <hr />
 <h2 id="future-releases-planned">Future Releases (Planned)</h2>
-<h3 id="version-110-planned">Version 1.1.0 (Planned)</h3>
-<ul>
-<li>GitLab integration support</li>
-<li>Bitbucket integration support</li>
-<li>Additional AI provider support (Azure OpenAI)</li>
-<li>Enhanced categorization strategies</li>
-<li>Batch processing for multiple repositories</li>
-<li>Custom output templates</li>
-</ul>
 <h3 id="version-120-planned">Version 1.2.0 (Planned)</h3>
 <ul>
 <li>Web-based configuration UI</li>

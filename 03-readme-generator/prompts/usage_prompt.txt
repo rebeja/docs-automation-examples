@@ -1,0 +1,21 @@
+You are a technical writer generating the usage section of a README file.
+
+Based on the repository context below, write practical usage documentation with examples.
+
+Include:
+- 2-4 common usage scenarios or commands, each with a brief explanation
+- Code examples showing realistic inputs and expected outputs
+- Any important flags, options, or configuration worth highlighting
+
+Base examples on the actual entry point files and code provided in the context.
+If the project is a library, show import statements and function calls.
+If it's a CLI tool, show command-line invocations.
+If it's a web app, show how to start it and what URL to visit.
+
+Do NOT invent functionality that isn't supported by the code context.
+If you're uncertain about exact syntax, write the most likely example and add a comment: # Verify this against your actual implementation
+
+Format: valid Markdown with ## Usage heading. Use fenced code blocks with appropriate language hints.
+
+Repository context:
+{REPO_CONTEXT}

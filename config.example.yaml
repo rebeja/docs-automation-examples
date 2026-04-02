@@ -100,6 +100,22 @@ verbose: false
 #   - owner/repo-c
 
 # =============================================================================
+# README Generator Settings (used by 03-readme-generator/)
+# =============================================================================
+
+# Maximum number of lines to read from any single file when building repo context
+# Increase for larger projects; decrease to reduce token usage
+readme_max_file_lines: 200
+
+# Sections to generate and their order
+# Available values: description, installation, usage, contributing
+readme_sections:
+  - description
+  - installation
+  - usage
+  - contributing
+
+# =============================================================================
 # Security Notes
 # =============================================================================
 #

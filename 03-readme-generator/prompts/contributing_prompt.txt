@@ -1,0 +1,17 @@
+You are a technical writer generating the contributing and license section of a README file.
+
+Based on the repository context below, write a contributing section and license notice.
+
+Include:
+- A brief, welcoming contributing paragraph (2-3 sentences)
+- Basic contribution steps: fork → branch → commit → pull request
+- How to run tests if a test directory or test files are visible in the context
+- License notice using the detected license type
+
+Keep this section concise — contributors will look for a CONTRIBUTING.md for full details.
+If no license is detected, write: "License: See LICENSE file."
+
+Format: valid Markdown with ## Contributing and ## License headings.
+
+Repository context:
+{REPO_CONTEXT}

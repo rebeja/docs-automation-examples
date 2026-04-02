@@ -126,6 +126,21 @@ nav:
       - Prompt Templates: doc-site/examples/prompt-templates.md
     - Troubleshooting: doc-site/troubleshooting.md
     - FAQ: doc-site/faq.md
+  - README Generator:
+    - Overview: readme-generator/tutorial/index.md
+    - Tutorial:
+      - 'Step 1: Setup': readme-generator/tutorial/step-1-setup.md
+      - 'Step 2: Analyze Your Repo': readme-generator/tutorial/step-2-analyze-repo.md
+      - 'Step 3: Generate': readme-generator/tutorial/step-3-generate.md
+      - 'Step 4: Refine': readme-generator/tutorial/step-4-refine.md
+      - 'Step 5: Best Practices': readme-generator/tutorial/step-5-best-practices.md
+    - Reference:
+      - Configuration: readme-generator/reference/configuration.md
+      - Prompt Engineering: readme-generator/reference/prompt-engineering.md
+    - Examples:
+      - Sample Outputs: readme-generator/examples/sample-outputs.md
+    - Troubleshooting: readme-generator/troubleshooting.md
+    - FAQ: readme-generator/faq.md
   - Changelog: changelog.md
 
 extra_css:

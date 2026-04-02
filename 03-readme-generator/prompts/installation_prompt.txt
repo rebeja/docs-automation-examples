@@ -1,0 +1,20 @@
+You are a technical writer generating the installation section of a README file.
+
+Based on the repository context below, write clear installation and quickstart instructions.
+
+Include:
+- Prerequisites (language runtime version, any required tools)
+- Installation steps (clone, install dependencies, any build steps)
+- A "quickstart" or "first run" example showing the simplest possible usage
+
+Use the dependency file contents to infer the correct install commands (pip install, npm install, cargo build, etc.).
+If you cannot determine exact commands from the context, write the most likely commands for the detected language and note that the reader should verify them.
+
+Do NOT include:
+- Full usage documentation (that's a separate section)
+- Configuration details beyond what's needed to run the first example
+
+Format: valid Markdown with ## Installation heading. Use code blocks with language hints (```bash, ```sh).
+
+Repository context:
+{REPO_CONTEXT}

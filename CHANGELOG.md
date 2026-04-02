@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Changelog page added to the doc site (`docs/changelog.md`); uses the snippets extension to render `CHANGELOG.md` directly so content stays in one place
+
 ## [1.1.0] - 2026-04-02
 
 ### Added
